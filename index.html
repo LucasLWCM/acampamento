@@ -7,6 +7,7 @@
   
   <!-- Estilos Específicos -->
   <link rel="stylesheet" href="css/estoicismo.css">
+  <link rel="stylesheet" href="css/story.css">
 </head>
 <body>
 
@@ -125,54 +126,40 @@
   </section>
 
   <!-- ==========================================
-       DOBRA 4 — EXPERIÊNCIA / CONTEÚDO
+       DOBRA 4 — DEMONSTRAÇÃO APPLE (SCROLL STORYTELLING)
        ========================================== -->
-  <section class="container">
-    <h2 class="h-headline font-serif text-center reveal-up" style="margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-      Um dia para tirar o estoicismo da teoria e colocar nas situações reais da sua vida.
-    </h2>
-
-    <p class="text-body text-center text-muted reveal-up" style="margin-bottom: 3rem;">
-      Ao longo do sábado, você vai aplicar os três movimentos do processo às situações que hoje conseguem tirar você do eixo.
-    </p>
-
-    <div class="mechanism-timeline">
-      <div class="mechanism-step reveal-up">
-        <span class="text-small text-muted">01 — FATO</span>
-        <h3 class="h-sub font-serif" style="margin-bottom: 8px;">Enxergue a situação antes da reação.</h3>
-        <p class="text-body text-muted" style="margin-bottom: 12px;">Aprenda a distinguir aquilo que realmente aconteceu daquilo que sua mente acrescentou depois.</p>
-        <p class="text-small" style="color: var(--c-accent);">NA PRÁTICA: Você vai trabalhar situações reais da sua vida separando fato de interpretação.</p>
+  <section class="theme-dark scroll-story-section" id="story-demo" data-step="0">
+    <div class="sticky-container">
+      <!-- Mensagens que aparecem na tela (Steps 3-5) -->
+      <div class="story-messages">
+        <div class="story-msg msg-1 text-center">
+          <span class="text-small" style="color: var(--c-accent); display: block; margin-bottom: 1rem;">01 / FATO</span>
+          <h3 class="h-sub font-serif" style="font-size: clamp(2rem, 4vw, 3rem); max-width: 500px; line-height: 1.2; color: var(--c-light);">Alguém pediu para conversar.</h3>
+        </div>
+        <div class="story-msg msg-2 text-center">
+          <span class="text-small" style="color: var(--c-accent); display: block; margin-bottom: 1rem;">02 / CONTROLE</span>
+          <h3 class="h-sub font-serif" style="font-size: clamp(2rem, 4vw, 3rem); max-width: 500px; line-height: 1.2; color: var(--c-light);">A mente criando cenários ruins.</h3>
+        </div>
+        <div class="story-msg msg-3 text-center">
+          <span class="text-small" style="color: var(--c-accent); display: block; margin-bottom: 1rem;">03 / RESPOSTA</span>
+          <h3 class="h-sub font-serif" style="font-size: clamp(2rem, 4vw, 3rem); max-width: 500px; line-height: 1.2; color: var(--c-light);">Você escolhe como agir, em vez de reagir.</h3>
+        </div>
       </div>
 
-      <div class="mechanism-step reveal-up">
-        <span class="text-small text-muted">02 — CONTROLE</span>
-        <h3 class="h-sub font-serif" style="margin-bottom: 8px;">Descubra onde sua ação começa — e onde ela termina.</h3>
-        <p class="text-body text-muted" style="margin-bottom: 12px;">Identifique aquilo que realmente depende de você e aquilo que está consumindo sua energia sem estar sob seu controle.</p>
-        <p class="text-small" style="color: var(--c-accent);">NA PRÁTICA: Você vai separar o que depende de você daquilo que não depende.</p>
+      <!-- O Celular -->
+      <div class="phone-mockup-container">
+        <div class="phone-hardware">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="chat-bubble chat-receive">Precisamos conversar.</div>
+            <div class="phone-thoughts">
+              <div class="thought-bubble t1">Tem alguma coisa errada?</div>
+              <div class="thought-bubble t2">Recebi uma notícia ruim?</div>
+              <div class="thought-bubble t3">Fiz alguma coisa?</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="mechanism-step reveal-up">
-        <span class="text-small text-muted">03 — RESPOSTA</span>
-        <h3 class="h-sub font-serif" style="margin-bottom: 8px;">Escolha o que fazer em vez de simplesmente reagir.</h3>
-        <p class="text-body text-muted" style="margin-bottom: 12px;">Aprenda a criar espaço entre aquilo que acontece e sua resposta diante de medo, raiva, culpa, pressão ou frustração.</p>
-        <p class="text-small" style="color: var(--c-accent);">NA PRÁTICA: Você vai definir como deseja responder quando essas situações voltarem a acontecer.</p>
-      </div>
-
-      <div class="mechanism-step reveal-up">
-        <span class="text-small text-muted">04 — LEVE PARA A VIDA</span>
-        <h3 class="h-sub font-serif" style="margin-bottom: 8px;">Saia sabendo como usar isso depois do evento.</h3>
-        <p class="text-body text-muted">Ao final do sábado, você terá passado situações reais da sua vida pelo processo:</p>
-        <ul style="list-style: none; padding-left: 12px; border-left: 2px solid var(--c-border); margin: 16px 0; color: var(--c-dark); font-weight: 500;">
-          <li style="margin-bottom: 8px;">O que aconteceu?</li>
-          <li style="margin-bottom: 8px;">O que depende de mim?</li>
-          <li>Como eu escolho responder?</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="text-center reveal-up" style="margin-top: 4rem;">
-      <p class="text-body text-muted" style="margin-bottom: 8px;">Você não sai apenas sabendo mais sobre estoicismo.</p>
-      <p class="h-sub font-serif" style="color: var(--c-accent);">Sai sabendo como começar a usá-lo.</p>
     </div>
   </section>
 
@@ -470,5 +457,6 @@
 
   <!-- Scripts -->
   <script src="js/estoicismo.js"></script>
+  <script src="js/story.js"></script>
 </body>
 </html>
