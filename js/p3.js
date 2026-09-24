@@ -48,17 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Floating CTA Logic (Aparece apenas após rolar pela primeira dobra)
+  // 3. Floating CTA Logic (Aparece apenas quando não há botões na tela, após a primeira dobra)
   const floatingCta = document.getElementById('floatingCta');
   const headerSection = document.querySelector('header');
-  const offerSection = document.getElementById('oferta');
+  const allOtherBtns = document.querySelectorAll('.btn:not(#floatingCta .btn)');
 
   let isPastHeader = false;
-  let isOfferVisible = false;
+  let visibleBtns = 0;
 
   function updateFloatingCta() {
     if (floatingCta) {
-      if (isPastHeader && !isOfferVisible) {
+      if (isPastHeader && visibleBtns === 0) {
         floatingCta.classList.add('visible');
       } else {
         floatingCta.classList.remove('visible');
@@ -67,31 +67,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (floatingCta && headerSection) {
-    const floatingObserver = new IntersectionObserver((entries) => {
+    const headerObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         isPastHeader = !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
         updateFloatingCta();
       });
-    }, {
-      root: null,
-      threshold: 0
-    });
-
-    floatingObserver.observe(headerSection);
+    }, { root: null, threshold: 0 });
+    headerObserver.observe(headerSection);
   }
 
-  if (floatingCta && offerSection) {
-    const offerObserver = new IntersectionObserver((entries) => {
+  if (floatingCta && allOtherBtns.length > 0) {
+    const btnObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        isOfferVisible = entry.isIntersecting;
-        updateFloatingCta();
+        if (entry.isIntersecting) {
+          visibleBtns++;
+        } else {
+          visibleBtns--;
+        }
       });
-    }, {
-      root: null,
-      threshold: 0
-    });
-
-    offerObserver.observe(offerSection);
+      if (visibleBtns < 0) visibleBtns = 0;
+      updateFloatingCta();
+    }, { root: null, threshold: 0 });
+    
+    allOtherBtns.forEach(btn => btnObserver.observe(btn));
   }
   // 4. Cycle Infographic Animation (Auto-play without sticky)
   const cycleInfographic = document.querySelector('.cycle-infographic');
