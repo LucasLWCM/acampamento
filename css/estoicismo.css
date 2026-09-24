@@ -403,3 +403,19 @@ section {
     margin-right: auto;
   }
 }
+
+/* Imagem Carousel Adjustments */
+.carousel-img-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.carousel-img-item img {
+  height: 45vh;
+  max-height: 500px;
+  min-height: 300px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid var(--c-border);
+}
