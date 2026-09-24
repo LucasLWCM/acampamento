@@ -1,0 +1,54 @@
+/* ==========================================================================
+   DESIGN SYSTEM - VARIÁVEIS GLOBAIS
+   ========================================================================== */
+
+:root {
+  /* Cores Principais */
+  --primary: #4F46E5;
+  --primary-hover: #4338CA;
+  --primary-light: rgba(79, 70, 229, 0.1);
+  
+  --secondary: #06B6D4;
+  --accent: #F59E0B;
+  
+  /* Cores Neutras / Dark Mode Base */
+  --bg-main: #0F172A;
+  --bg-surface: #1E293B;
+  --bg-surface-hover: #334155;
+  --bg-glass: rgba(30, 41, 59, 0.7);
+  
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-inverse: #0F172A;
+
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+
+  /* Tipografia */
+  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.25rem;
+
+  /* Arredondamento */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Sombras & Efeitos */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 30px rgba(79, 70, 229, 0.35);
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Layout */
+  --container-max-width: 1200px;
+}
