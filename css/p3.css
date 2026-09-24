@@ -1025,3 +1025,181 @@ h1, h2, h3, h4, h5, h6, .h-display, .h-title {
 
 .text-graphite { color: var(--c-graphite) !important; }
 .text-sand { color: var(--c-sand) !important; }
+
+/* ==========================================================================
+   SCROLL STORYTELLING
+   ========================================================================== */
+.scroll-story-section {
+  position: relative;
+  height: 400vh;
+  background-color: var(--c-graphite);
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-mockup-container {
+  position: relative;
+  width: 320px;
+  height: 650px;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
+}
+
+.phone-hardware {
+  border: 12px solid #222;
+  border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 25px;
+  background: #222;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 10;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #111;
+  padding: 5rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-bubble {
+  background: #333;
+  color: #FFF;
+  padding: 1rem;
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.phone-thoughts {
+  flex: 1;
+  position: relative;
+}
+
+.thought-bubble {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8);
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.thought-bubble.t1 { right: -50px; top: 10px; }
+.thought-bubble.t2 { left: -30px; top: 70px; transition-delay: 0.1s; }
+.thought-bubble.t3 { right: -20px; top: 130px; transition-delay: 0.2s; }
+
+.story-messages {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.story-msg {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ANIMATION STATES VIA DATA-STEP */
+/* Step 0: Initial */
+.scroll-story-section[data-step="0"] .chat-bubble { opacity: 0; }
+
+/* Step 1: Message appears */
+.scroll-story-section[data-step="1"] .chat-bubble { opacity: 1; transform: translateY(0); }
+
+/* Step 2: Thoughts appear */
+.scroll-story-section[data-step="2"] .chat-bubble { opacity: 1; transform: translateY(0); }
+.scroll-story-section[data-step="2"] .thought-bubble.t1 { opacity: 1; transform: translateX(-20px); }
+.scroll-story-section[data-step="2"] .thought-bubble.t2 { opacity: 1; transform: translateX(20px); }
+.scroll-story-section[data-step="2"] .thought-bubble.t3 { opacity: 1; transform: translateX(-20px); }
+
+/* Desktop Transformations */
+@media (min-width: 768px) {
+  .scroll-story-section[data-step="3"] .phone-mockup-container,
+  .scroll-story-section[data-step="4"] .phone-mockup-container,
+  .scroll-story-section[data-step="5"] .phone-mockup-container {
+    transform: translateX(-25vw) scale(0.85);
+    opacity: 0.2;
+    filter: blur(4px);
+  }
+  
+  .story-msg {
+    transform: translateX(20vw) translateY(30px);
+  }
+  
+  .scroll-story-section[data-step="3"] .msg-1,
+  .scroll-story-section[data-step="4"] .msg-2,
+  .scroll-story-section[data-step="5"] .msg-3 {
+    opacity: 1;
+    transform: translateX(20vw) translateY(0);
+  }
+}
+
+/* Mobile Transformations */
+@media (max-width: 767px) {
+  .scroll-story-section[data-step="3"] .phone-mockup-container,
+  .scroll-story-section[data-step="4"] .phone-mockup-container,
+  .scroll-story-section[data-step="5"] .phone-mockup-container {
+    transform: translateY(-20vh) scale(0.65);
+    opacity: 0.15;
+    filter: blur(5px);
+  }
+
+  .story-msg {
+    transform: translateY(20vh) translateY(30px);
+    width: 90%;
+  }
+
+  .scroll-story-section[data-step="3"] .msg-1,
+  .scroll-story-section[data-step="4"] .msg-2,
+  .scroll-story-section[data-step="5"] .msg-3 {
+    opacity: 1;
+    transform: translateY(20vh) translateY(0);
+  }
+}
+
+/* Step 3,4,5 elements remain visible */
+.scroll-story-section[data-step="3"] .chat-bubble, .scroll-story-section[data-step="4"] .chat-bubble, .scroll-story-section[data-step="5"] .chat-bubble { opacity: 1; transform: translateY(0); }
+.scroll-story-section[data-step="3"] .thought-bubble.t1, .scroll-story-section[data-step="4"] .thought-bubble.t1, .scroll-story-section[data-step="5"] .thought-bubble.t1 { opacity: 1; transform: translateX(-20px); }
+.scroll-story-section[data-step="3"] .thought-bubble.t2, .scroll-story-section[data-step="4"] .thought-bubble.t2, .scroll-story-section[data-step="5"] .thought-bubble.t2 { opacity: 1; transform: translateX(20px); }
+.scroll-story-section[data-step="3"] .thought-bubble.t3, .scroll-story-section[data-step="4"] .thought-bubble.t3, .scroll-story-section[data-step="5"] .thought-bubble.t3 { opacity: 1; transform: translateX(-20px); }
