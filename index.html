@@ -8,6 +8,7 @@
   <!-- Estilos Específicos -->
   <link rel="stylesheet" href="css/estoicismo.css">
   <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/pass.css">
 </head>
 <body>
 
@@ -268,22 +269,49 @@
   <!-- ==========================================
        DOBRA 7 — OFERTA / PREÇO (Quebra Visual Escura)
        ========================================== -->
-  <section id="oferta" class="theme-dark text-center" style="padding: 6rem 0;">
+  <section id="oferta" class="theme-dark text-center" style="padding: 8rem 0; overflow: hidden; position: relative;">
+    
+    <!-- Background Glow Elements -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(160,107,74,0.15) 0%, transparent 70%); pointer-events: none;"></div>
+
     <div class="container reveal-up">
-      <span class="text-small" style="color: var(--c-accent);">17/10 · AO VIVO · SEM REPLAY</span>
-      <h2 class="h-headline font-serif" style="margin-top: 1rem; margin-bottom: 2rem;">
-        Um sábado inteiro de estoicismo aplicado à sua vida real.
+      <h2 class="h-headline font-serif" style="margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Seu passe para uma vida menos reativa.
       </h2>
-      <p class="text-body text-muted" style="max-width: 500px; margin: 0 auto 3rem;">
-        Ao garantir seu ingresso, você participa da experiência ao vivo e recebe os materiais necessários para acompanhar e aplicar o que será trabalhado.
-      </p>
 
-      <p class="text-small text-muted" style="margin-bottom: 8px;">Seu ingresso a partir de</p>
-      <div class="h-display" style="color: var(--c-accent); margin-bottom: 2rem; font-weight: 600;">R$27</div>
+      <!-- Premium Pass Ticket -->
+      <div class="premium-pass">
+        <div class="pass-header">
+          <span class="pass-logo font-serif">ACAMPAMENTO ESTOICO</span>
+          <span class="pass-date">17 DE OUTUBRO</span>
+        </div>
+        
+        <div class="pass-body">
+          <div class="pass-info text-left">
+            <p class="pass-label">ACESSO</p>
+            <p class="pass-value">Transmissão Ao Vivo (Sem Replay)</p>
+          </div>
+          <div class="pass-info text-left">
+            <p class="pass-label">BÔNUS INCLUSO</p>
+            <p class="pass-value">Websérie "Um Dia com Acorelio"</p>
+          </div>
+        </div>
 
-      <div style="max-width: 320px; margin: 0 auto;">
-        <a href="#checkout" class="btn">QUERO PARTICIPAR DO EVENTO</a>
+        <div class="pass-footer">
+          <div class="pass-price">
+            <span class="price-currency">R$</span>
+            <span class="price-amount">27</span>
+            <span class="price-cents">,00</span>
+          </div>
+          <a href="#checkout" class="btn pass-btn">GARANTIR MINHA VAGA</a>
+        </div>
+        
+        <!-- Decorative elements on the ticket -->
+        <div class="pass-cutout left"></div>
+        <div class="pass-cutout right"></div>
       </div>
+      
+      <p class="text-small text-muted" style="margin-top: 2rem;">Compra segura · Acesso imediato à websérie preparatória</p>
     </div>
   </section>
 
