@@ -485,12 +485,13 @@ section {
   display: flex;
   gap: 1.5rem;
   padding-right: 1.5rem; /* Gap exato para o loop perfeito */
+    flex-shrink: 0;
 }
 
 .carousel-img {
   height: 180px; /* Tamanho reduzido para formato de card */
   width: auto;
-  max-width: 85vw; /* Garante que nunca vaze a largura da tela no mobile */
+  flex-shrink: 0;
   background: #FFF;
   padding: 1rem;
   border: 1px solid var(--c-border);
