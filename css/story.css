@@ -176,3 +176,57 @@
 .scroll-story-section[data-step="3"] .thought-bubble.t1, .scroll-story-section[data-step="4"] .thought-bubble.t1, .scroll-story-section[data-step="5"] .thought-bubble.t1 { opacity: 1; transform: translateX(-20px); }
 .scroll-story-section[data-step="3"] .thought-bubble.t2, .scroll-story-section[data-step="4"] .thought-bubble.t2, .scroll-story-section[data-step="5"] .thought-bubble.t2 { opacity: 1; transform: translateX(20px); }
 .scroll-story-section[data-step="3"] .thought-bubble.t3, .scroll-story-section[data-step="4"] .thought-bubble.t3, .scroll-story-section[data-step="5"] .thought-bubble.t3 { opacity: 1; transform: translateX(-20px); }
+
+/* ==========================================================================
+   FOTO GRID IDENTIFICACAO
+   ========================================================================== */
+.ident-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .ident-photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.ident-photo-card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease;
+}
+
+.ident-photo-card:hover {
+  transform: translateY(-5px);
+}
+
+.ident-photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  padding: 2rem 1.5rem 1.5rem;
+  color: #FFF;
+}
+
+.ident-photo-overlay h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.ident-photo-overlay p {
+  opacity: 0.8;
+  margin: 0;
+  line-height: 1.4;
+}
