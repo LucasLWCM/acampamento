@@ -998,8 +998,8 @@ h1, h2, h3, h4, h5, h6, .h-display, .h-title {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--c-sand);
-  color: var(--c-graphite);
+  background-color: var(--c-graphite);
+  color: var(--c-sand);
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 700;
