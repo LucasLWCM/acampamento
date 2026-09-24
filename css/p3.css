@@ -1021,3 +1021,6 @@ h1, h2, h3, h4, h5, h6, .h-display, .h-title {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+
+.text-graphite { color: var(--c-graphite) !important; }
+.text-sand { color: var(--c-sand) !important; }
