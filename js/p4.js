@@ -433,4 +433,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // DOBRA 9 — CONTADORES ANIMADOS
+    // ==========================================
+    const contadores = document.querySelectorAll('.contador');
+    if (contadores.length > 0) {
+        const observerContadores = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = +el.getAttribute('data-target');
+                    const duration = 2000; // 2 segundos
+                    const frameRate = 16; // ~60fps
+                    const totalFrames = duration / frameRate;
+                    const increment = target / totalFrames;
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            // Formata com ponto para milhares
+                            el.innerText = Math.ceil(current).toLocaleString('pt-BR');
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            el.innerText = target.toLocaleString('pt-BR');
+                        }
+                    };
+                    
+                    updateCounter();
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        contadores.forEach(c => observerContadores.observe(c));
+    }
+
 });
