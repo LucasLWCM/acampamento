@@ -7,8 +7,18 @@
   flex-direction: column;
   min-height: 90vh;
   padding-top: 4rem;
-  background-color: var(--c-light);
+  background-color: #040D14;
+  color: #FFFFFF;
   overflow: hidden;
+}
+
+.hero-split .text-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.hero-split .badge {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
 }
 
 .hero-content {
