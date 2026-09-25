@@ -138,9 +138,15 @@ function animateProgressBar(targetPercentage) {
 
   if (fill && text) {
     const widthStr = targetPercentage.toFixed(1) + '%';
-    fill.style.width = widthStr;
-    if (fillFloat) fillFloat.style.width = widthStr;
-    if (fillOffer) fillOffer.style.width = widthStr;
+    
+    // Aguarda 100ms para garantir que a renderização do width: 0% foi computada
+    // e assim disparar a transition CSS
+    setTimeout(() => {
+      fill.style.width = widthStr;
+      if (fillFloat) fillFloat.style.width = widthStr;
+      if (fillOffer) fillOffer.style.width = widthStr;
+    }, 100);
+
     
     let currentNumber = 0;
     const targetNumber = parseInt(targetPercentage.toFixed(0));
