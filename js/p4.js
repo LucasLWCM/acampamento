@@ -343,37 +343,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // DOBRA 6 — PRINTS (CARROSSEL AUTOMÁTICO)
     // ==========================================
-    const carrosselContainer = document.querySelector('.carrossel-prints-container');
-    if (carrosselContainer) {
+    const carrosseis = document.querySelectorAll('.carrossel-prints-container');
+    
+    carrosseis.forEach(container => {
         let isHovered = false;
         let scrollInterval;
+        const direction = container.getAttribute('data-direction') || 'normal';
+
+        // Iniciar com o scroll todo para a direita se for reverso
+        if (direction === 'reverse') {
+            setTimeout(() => {
+                container.scrollLeft = container.scrollWidth - container.clientWidth;
+            }, 500); // pequeno delay para garantir que o layout renderizou
+        }
 
         const startAutoScroll = () => {
             if (scrollInterval) clearInterval(scrollInterval);
             scrollInterval = setInterval(() => {
                 if (isHovered) return;
 
-                const maxScroll = carrosselContainer.scrollWidth - carrosselContainer.clientWidth;
-                const slides = carrosselContainer.querySelectorAll('.print-slide');
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                const slides = container.querySelectorAll('.print-slide');
                 if (slides.length === 0) return;
                 
                 const slideWidth = slides[0].clientWidth + 16; // ~16px de gap
                 
-                // Se chegou no final (com uma margem de erro de 10px)
-                if (carrosselContainer.scrollLeft >= maxScroll - 10) {
-                    carrosselContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                if (direction === 'normal') {
+                    // Vai para a direita
+                    if (container.scrollLeft >= maxScroll - 10) {
+                        container.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        container.scrollTo({ left: container.scrollLeft + slideWidth, behavior: 'smooth' });
+                    }
                 } else {
-                    carrosselContainer.scrollTo({ left: carrosselContainer.scrollLeft + slideWidth, behavior: 'smooth' });
+                    // Vai para a esquerda
+                    if (container.scrollLeft <= 10) {
+                        container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+                    } else {
+                        container.scrollTo({ left: container.scrollLeft - slideWidth, behavior: 'smooth' });
+                    }
                 }
             }, 2500); // Rola a cada 2.5 segundos
         };
 
         // Pausar se o usuário estiver interagindo
-        carrosselContainer.addEventListener('mouseenter', () => isHovered = true);
-        carrosselContainer.addEventListener('mouseleave', () => isHovered = false);
-        carrosselContainer.addEventListener('touchstart', () => isHovered = true, {passive: true});
-        carrosselContainer.addEventListener('touchend', () => {
-            setTimeout(() => isHovered = false, 2000); // Aguarda 2s após o toque para voltar a rolar
+        container.addEventListener('mouseenter', () => isHovered = true);
+        container.addEventListener('mouseleave', () => isHovered = false);
+        container.addEventListener('touchstart', () => isHovered = true, {passive: true});
+        container.addEventListener('touchend', () => {
+            setTimeout(() => isHovered = false, 2000); 
         }, {passive: true});
 
         // Otimização: só roda a animação quando o carrossel está na tela
@@ -385,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { threshold: 0.1 });
         
-        observer.observe(carrosselContainer);
-    }
+        observer.observe(container);
+    });
 
 });
