@@ -469,4 +469,49 @@ document.addEventListener('DOMContentLoaded', () => {
         contadores.forEach(c => observerContadores.observe(c));
     }
 
+    // ==========================================
+    // DOBRA 12 — FAQ
+    // ==========================================
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    // Função para atualizar a altura
+    function updateFaqHeight(item) {
+        const answer = item.querySelector('.faq-answer');
+        if (item.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+            answer.style.maxHeight = '0';
+        }
+    }
+
+    // Inicializa a primeira pergunta aberta
+    faqItems.forEach(item => {
+        if (item.classList.contains('active')) {
+            // Um pequeno delay para garantir que o DOM renderizou
+            setTimeout(() => {
+                updateFaqHeight(item);
+            }, 100);
+        }
+        
+        const questionBtn = item.querySelector('.faq-question');
+        questionBtn.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Opcional: fechar as outras (descomente se quiser acordeão exclusivo)
+            /*
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                updateFaqHeight(otherItem);
+            });
+            */
+            
+            if (!isActive) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+            updateFaqHeight(item);
+        });
+    });
+
 });

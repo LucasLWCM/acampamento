@@ -1077,3 +1077,74 @@ section {
     transform: rotate(360deg);
   }
 }
+
+/* ==========================================
+   DOBRA 12 — FAQ
+   ========================================== */
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.faq-question:hover {
+  color: var(--c-ambar);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-vertical {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.faq-item.active .faq-icon {
+  color: var(--c-ambar);
+}
+
+.faq-item.active .faq-vertical {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-item.active .faq-answer {
+  transition: max-height 0.25s ease-in-out;
+}
+
+.faq-answer p {
+  padding-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
