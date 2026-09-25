@@ -176,13 +176,14 @@ section {
 
 /* Ciclo SVG */
 .ciclo-container {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 34 / 26;
   margin: 0 auto;
   position: relative;
 }
 @media (min-width: 768px) {
-  .ciclo-container { width: 340px; height: 340px; }
+  .ciclo-container { max-width: 400px; }
 }
 
 .ciclo-anel {
@@ -193,7 +194,7 @@ section {
   stroke-dasharray: 628;
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: center;
+  transform-origin: 170px 130px;
 }
 
 .ciclo-palavra {
@@ -213,7 +214,7 @@ section {
 .ciclo-brasa {
   fill: var(--c-ambar);
   filter: drop-shadow(0 0 6px var(--c-ambar));
-  transform-origin: center;
+  transform-origin: 170px 130px;
 }
 
 .anim-rodar {
