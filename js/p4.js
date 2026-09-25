@@ -89,5 +89,121 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // ==========================================
+    // DOBRA 2 — CAMINHO
+    // ==========================================
+
+    // Contador Animado
+    const contador = document.getElementById('contador-afastamentos');
+    const triggerContador = document.getElementById('trigger-contador');
+    let contadorRodou = false;
+
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.floor(easeProgress * (end - start) + start);
+            obj.innerHTML = current.toLocaleString('pt-BR');
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    if (triggerContador && contador) {
+        const contadorObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !contadorRodou) {
+                contadorRodou = true;
+                animateValue(contador, 0, 546254, 2500);
+            }
+        }, { threshold: 0.5 });
+        contadorObserver.observe(triggerContador);
+    }
+
+    // Pictograma
+    const triggerPictograma = document.getElementById('trigger-pictograma');
+    let pictogramaRodou = false;
+    
+    if (triggerPictograma) {
+        const picObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !pictogramaRodou) {
+                pictogramaRodou = true;
+                const bonecos = document.querySelectorAll('#pictograma-bonecos .boneco');
+                setTimeout(() => {
+                    for(let i=0; i<7; i++) {
+                        bonecos[i].classList.add('acende');
+                    }
+                    setTimeout(() => {
+                        for(let i=0; i<5; i++) {
+                            bonecos[i].classList.add('nunca-ajuda');
+                        }
+                        document.getElementById('legenda-bonecos').classList.add('visible');
+                    }, 1200);
+                }, 400);
+            }
+        }, { threshold: 0.5 });
+        picObserver.observe(triggerPictograma);
+    }
+
+    // Ciclo Scroll Diagrama
+    const passoTriggers = document.querySelectorAll('.passo-trigger');
+    const anelProgresso = document.getElementById('passos-anel-progresso');
+    
+    if (passoTriggers.length > 0) {
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const step = parseInt(entry.target.getAttribute('data-step'));
+                    
+                    // Atualiza nós
+                    for(let i=1; i<=4; i++) {
+                        const node = document.getElementById(`node-${i}`);
+                        if (node) {
+                            if (i <= step) node.classList.add('active');
+                            else node.classList.remove('active');
+                        }
+                    }
+
+                    // Atualiza Anel (628 é a circunferência total do raio 100)
+                    if (anelProgresso) {
+                        const pct = step / 4;
+                        const offset = 628 - (628 * pct);
+                        anelProgresso.style.strokeDashoffset = offset;
+                    }
+                }
+            });
+        }, { threshold: 0.2, rootMargin: "-10% 0px -40% 0px" });
+
+        passoTriggers.forEach(t => scrollObserver.observe(t));
+    }
+
+    // Verbos Gigantes
+    const verbosTrigger = document.getElementById('verbos-trigger');
+    let verbosRodou = false;
+
+    if (verbosTrigger) {
+        const verbosObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !verbosRodou) {
+                verbosRodou = true;
+                setTimeout(() => document.getElementById('verbo-1').classList.add('visible'), 200);
+                setTimeout(() => document.getElementById('verbo-2').classList.add('visible'), 1200);
+                setTimeout(() => {
+                    document.getElementById('verbo-3').classList.add('visible');
+                    // Quebra o anel lá em cima
+                    const anelBg = document.getElementById('passos-anel-bg');
+                    if(anelBg) {
+                        anelBg.style.strokeDasharray = '628';
+                        anelBg.style.strokeDashoffset = '62';
+                        anelBg.style.transition = 'stroke-dashoffset 1s ease';
+                    }
+                    if(anelProgresso) anelProgresso.style.display = 'none';
+                }, 2200);
+            }
+        }, { threshold: 0.5 });
+        verbosObserver.observe(verbosTrigger);
+    }
 
 });

@@ -335,3 +335,177 @@ section {
 .price {
   color: #16a34a;
 }
+
+/* ==========================================
+   DOBRA 2 — CAMINHO
+   ========================================== */
+.dados-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .dados-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+}
+
+.dado-card {
+  background-color: rgba(245, 240, 230, 0.03);
+  border: 1px solid rgba(245, 240, 230, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.dado-numero {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--c-ambar);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) { .dado-numero { font-size: 64px; } }
+
+.fonte-pequena {
+  font-size: 14px;
+  color: rgba(245, 240, 230, 0.6);
+  margin-top: 0;
+}
+
+/* Pictograma */
+.bonecos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+.boneco {
+  width: 32px;
+  height: 32px;
+  fill: rgba(245, 240, 230, 0.2);
+  transition: fill 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+.boneco.acende { fill: var(--c-ambar); }
+.boneco.nunca-ajuda {
+  opacity: 0.3;
+  transform: scale(0.9);
+}
+.legenda-pictograma {
+  font-size: 14px;
+  color: #ef4444;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.legenda-pictograma.visible { opacity: 1; }
+
+/* Ciclo Scroll */
+.ciclo-passos-wrapper {
+  position: relative;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+}
+.ciclo-passos-sticky {
+  position: sticky;
+  top: 15vh;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.ciclo-diagrama-box {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+}
+@media (min-width: 768px) {
+  .ciclo-diagrama-box { max-width: 400px; }
+}
+
+.passos-anel {
+  fill: none;
+  stroke: rgba(245, 240, 230, 0.1);
+  stroke-width: 4;
+}
+.passos-anel-progress {
+  fill: none;
+  stroke: var(--c-ambar);
+  stroke-width: 4;
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628;
+  transition: stroke-dashoffset 0.5s ease-out;
+  transform-origin: 150px 150px;
+  transform: rotate(-90deg);
+}
+
+.passo-node circle {
+  fill: #1F2A24;
+  stroke: rgba(245, 240, 230, 0.2);
+  stroke-width: 3;
+  transition: stroke 0.4s ease, fill 0.4s ease;
+}
+.passo-node text {
+  fill: rgba(245, 240, 230, 0.3);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  transition: fill 0.4s ease;
+}
+.passo-node .node-label {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+@media (min-width: 768px) {
+  .passo-node .node-label { font-size: 14px; }
+}
+
+/* Estado Ativo do Node */
+.passo-node.active circle {
+  stroke: var(--c-ambar);
+  fill: var(--c-ambar);
+}
+.passo-node.active text { fill: var(--c-texto-escuro); }
+.passo-node.active .node-label { opacity: 1; }
+
+.scroll-triggers {
+  position: relative;
+  z-index: 2;
+  margin-top: -70vh; /* Para sobrepor ao sticky */
+}
+.passo-trigger {
+  height: 60vh;
+  pointer-events: none;
+}
+
+/* Verbos */
+.verbos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .verbos-container { flex-direction: row; justify-content: center; gap: 3rem; }
+}
+
+.verbo-gigante {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(245, 240, 230, 0.2);
+  transform: translateY(20px);
+  transition: color 0.6s ease, transform 0.6s ease;
+}
+.verbo-gigante.visible {
+  color: var(--c-texto-escuro);
+  transform: translateY(0);
+}
+.verbo-agir.visible {
+  color: var(--c-ambar);
+}
