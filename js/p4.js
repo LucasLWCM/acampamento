@@ -306,4 +306,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // DOBRA 5 — CRONOGRAMA
+    // ==========================================
+    const timelineWrapper = document.getElementById('timeline-wrapper');
+    const timelineFill = document.getElementById('timeline-fill');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    if (timelineWrapper && timelineFill) {
+        window.addEventListener('scroll', () => {
+            const rect = timelineWrapper.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // "Ponto da caneta" a 60% da altura da tela
+            const drawPoint = windowHeight * 0.6; 
+            
+            let progress = (drawPoint - rect.top) / rect.height;
+            if (progress < 0) progress = 0;
+            if (progress > 1) progress = 1;
+
+            timelineFill.style.height = `${progress * 100}%`;
+
+            // Ativar os itens que a linha já alcançou
+            timelineItems.forEach(item => {
+                const itemRect = item.getBoundingClientRect();
+                // Verifica se a metade do ícone (34px de 68px) cruzou a linha
+                if (itemRect.top + 34 <= drawPoint) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        });
+    }
+
 });
