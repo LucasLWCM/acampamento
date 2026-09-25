@@ -79,7 +79,7 @@ section {
 
 .manuscrito {
   font-family: var(--font-hand);
-  font-size: 28px;
+  font-size: 24px;
   color: var(--c-texto-claro);
   line-height: 1.1;
 }
