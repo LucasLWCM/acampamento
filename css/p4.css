@@ -861,3 +861,99 @@ section {
   color: var(--c-botao);
   margin-bottom: 1rem;
 }
+
+/* ==========================================
+   DOBRA 6 — PRINTS
+   ========================================== */
+.badge-alunos {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--c-ambar);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.badge-alunos svg {
+  width: 18px;
+  height: 18px;
+}
+
+.print-destaque-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+}
+.print-destaque-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  display: block;
+}
+
+/* Grifo amarelo simulado - a posição será relativa à imagem */
+.grifo-animado-wrapper {
+  position: absolute;
+  top: 65%; /* ajuste dependendo da imagem */
+  left: 5%;
+  width: 90%;
+  height: 15%;
+  pointer-events: none;
+}
+.grifo-animado {
+  width: 0%;
+  height: 100%;
+  background-color: var(--c-ambar); /* Ou amarelo */
+  opacity: 0.35;
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.5s;
+}
+.print-destaque-wrapper.active .grifo-animado {
+  width: 100%;
+}
+
+.carrossel-prints-container {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 2rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.carrossel-prints-container::-webkit-scrollbar {
+  display: none;
+}
+.carrossel-prints-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding: 0 1rem;
+}
+.carrossel-prints-track::after {
+  content: "";
+  flex: 0 0 1px; /* Para garantir o gap final no mobile */
+}
+.print-slide {
+  scroll-snap-align: center;
+  flex: 0 0 85%;
+  max-width: 320px;
+}
+.print-slide img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: block;
+}
+@media (min-width: 768px) {
+  .print-slide {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+  }
+}
