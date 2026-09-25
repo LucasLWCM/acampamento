@@ -276,53 +276,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hzWrapper && cardsTrack) {
         window.addEventListener('scroll', () => {
-            if (window.innerWidth >= 768) {
-                // Desktop: scroll horizontal linkado ao scroll vertical
-                const rect = hzWrapper.getBoundingClientRect();
-                const wrapperTop = rect.top; 
-                const wrapperHeight = rect.height;
-                const windowHeight = window.innerHeight;
-                
-                const maxScroll = wrapperHeight - windowHeight;
-                const scrolled = Math.max(0, -wrapperTop);
-                let progress = scrolled / maxScroll;
-                
-                if (progress < 0) progress = 0;
-                if (progress > 1) progress = 1;
+            // Scroll horizontal linkado ao scroll vertical para todas as telas (Desktop e Mobile)
+            const rect = hzWrapper.getBoundingClientRect();
+            const wrapperTop = rect.top; 
+            const wrapperHeight = rect.height;
+            const windowHeight = window.innerHeight;
+            
+            const maxScroll = wrapperHeight - windowHeight;
+            const scrolled = Math.max(0, -wrapperTop);
+            let progress = scrolled / maxScroll;
+            
+            if (progress < 0) progress = 0;
+            if (progress > 1) progress = 1;
 
-                // Translação máxima para chegar até o fim do container
-                const maxTranslate = cardsTrack.scrollWidth - window.innerWidth;
-                const translateX = progress * maxTranslate;
+            // Translação máxima para chegar até o fim do container
+            const maxTranslate = cardsTrack.scrollWidth - window.innerWidth;
+            const translateX = progress * maxTranslate;
 
-                cardsTrack.style.transform = `translateX(-${translateX}px)`;
-                
-                if (hzProgress) {
-                    hzProgress.style.width = `${progress * 100}%`;
-                }
+            cardsTrack.style.transform = `translateX(-${translateX}px)`;
+            
+            if (hzProgress) {
+                hzProgress.style.width = `${progress * 100}%`;
+            }
 
-                // Ativar animação de escrita no card mockup no fim da rolagem
-                if (progress > 0.90 && cardMockup) {
-                    cardMockup.classList.add('active');
-                }
-            } else {
-                // Mobile: Reset do transform (usa scroll nativo)
-                cardsTrack.style.transform = 'none';
+            // Ativar animação de escrita no card mockup no fim da rolagem
+            if (progress > 0.90 && cardMockup) {
+                cardMockup.classList.add('active');
             }
         });
-
-        // Mobile: Ativar o card final usando scroll nativo
-        const cardsContainer = document.getElementById('cards-track-container');
-        if (cardMockup && cardsContainer) {
-            cardsContainer.addEventListener('scroll', () => {
-                if (window.innerWidth < 768) {
-                    const rect = cardMockup.getBoundingClientRect();
-                    const containerRect = cardsContainer.getBoundingClientRect();
-                    if (rect.left < containerRect.right - 50) {
-                        cardMockup.classList.add('active');
-                    }
-                }
-            });
-        }
     }
 
 });

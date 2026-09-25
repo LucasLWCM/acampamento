@@ -623,56 +623,36 @@ section {
    ========================================== */
 .horizontal-scroll-wrapper {
   position: relative;
-}
-@media (min-width: 768px) {
-  .horizontal-scroll-wrapper {
-    height: 400vh; /* dá espaço para o scroll horizontal */
-  }
+  height: 400vh; /* dá espaço para o scroll horizontal */
 }
 
 .horizontal-scroll-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 4rem;
-}
-@media (min-width: 768px) {
-  .horizontal-scroll-sticky {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-    padding-bottom: 0;
-  }
+  overflow: hidden;
+  padding-bottom: 0;
 }
 
 .cards-track-container {
   width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0 1rem 2rem 1rem;
+  overflow-x: visible;
+  scroll-snap-type: none;
+  padding: 0;
   scrollbar-width: none;
 }
 .cards-track-container::-webkit-scrollbar { display: none; }
-@media (min-width: 768px) {
-  .cards-track-container {
-    overflow-x: visible;
-    scroll-snap-type: none;
-    padding: 0;
-  }
-}
 
 .cards-track {
   display: flex;
   gap: 1.5rem;
   width: max-content;
   will-change: transform;
-}
-@media (min-width: 768px) {
-  .cards-track {
-    padding-left: calc(50vw - 140px); /* centraliza o primeiro no desktop (280/2 = 140) */
-    padding-right: calc(50vw - 160px); /* centraliza o ultimo (320/2 = 160) */
-  }
+  padding-left: calc(50vw - 140px); /* centraliza o primeiro no desktop/mobile (280/2 = 140) */
+  padding-right: calc(50vw - 160px); /* centraliza o ultimo (320/2 = 160) */
 }
 
 .conteudo-card {
