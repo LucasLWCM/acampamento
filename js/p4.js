@@ -406,4 +406,31 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(container);
     });
 
+    // ==========================================
+    // DOBRA 7 — TILT EFFECT MOCKUP
+    // ==========================================
+    const tiltWrapper = document.querySelector('.mockup-tilt-wrapper');
+    const tiltImg = document.querySelector('.mockup-tilt-img');
+    
+    if (tiltWrapper && tiltImg) {
+        tiltWrapper.addEventListener('mousemove', (e) => {
+            const rect = tiltWrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left; // posição do mouse no wrapper
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Inverte para parecer que acompanha o mouse
+            const rotateX = ((y - centerY) / centerY) * -15; 
+            const rotateY = ((x - centerX) / centerX) * 15;
+
+            tiltImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        tiltWrapper.addEventListener('mouseleave', () => {
+            tiltImg.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+    }
+
 });
