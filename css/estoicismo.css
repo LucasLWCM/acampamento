@@ -514,3 +514,28 @@ section {
     max-height: 240px;
   }
 }
+
+/* Floating CTA for Mobile */
+.floating-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--c-dark);
+  padding: 1rem 0;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transform: translateY(110%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.floating-cta.visible {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .floating-cta {
+    display: none;
+  }
+}
