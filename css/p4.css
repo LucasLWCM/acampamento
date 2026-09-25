@@ -952,9 +952,20 @@ section {
   display: block;
 }
 @media (min-width: 768px) {
+  .carrossel-prints-track {
+    align-items: center; /* Centraliza verticalmente caso haja diferença de altura */
+  }
   .print-slide {
-    flex: 0 0 300px;
+    flex: 0 0 auto;
+    width: auto;
+    height: 220px; /* Altura fixa no desktop para uniformizar */
+    max-width: none;
     scroll-snap-align: start;
+  }
+  .print-slide img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
