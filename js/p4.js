@@ -217,5 +217,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.5 });
         verbosObserver.observe(verbosTrigger);
     }
+    // ==========================================
+    // DOBRA 3 — IDENTIFICAÇÃO
+    // ==========================================
+
+    // Bilhetes
+    const bilhetesTrigger = document.getElementById('bilhetes-trigger');
+    const bilhetes = document.querySelectorAll('.bilhete');
+    let bilhetesRodou = false;
+
+    if (bilhetesTrigger && bilhetes.length > 0) {
+        // Interação de clique (já disse)
+        bilhetes.forEach(b => {
+            b.addEventListener('click', () => {
+                b.classList.toggle('checked');
+            });
+        });
+
+        // Revelar no scroll
+        const bilhetesObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !bilhetesRodou) {
+                bilhetesRodou = true;
+                bilhetes.forEach((b, index) => {
+                    setTimeout(() => {
+                        b.classList.add('visible');
+                    }, index * 150);
+                });
+            }
+        }, { threshold: 0.2 });
+        bilhetesObserver.observe(bilhetesTrigger);
+    }
+
+    // Checklist "Já leu, já assistiu..."
+    const checklistTrigger = document.getElementById('checklist-trigger');
+    const checklistItems = document.querySelectorAll('.checklist-item');
+    let checklistRodou = false;
+
+    if (checklistTrigger && checklistItems.length > 0) {
+        const checklistObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !checklistRodou) {
+                checklistRodou = true;
+                checklistItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('checked');
+                    }, index * 400); // 400ms de intervalo
+                });
+            }
+        }, { threshold: 0.3 });
+        checklistObserver.observe(checklistTrigger);
+    }
 
 });
