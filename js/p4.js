@@ -340,4 +340,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
+    // DOBRA 6 — PRINTS (CARROSSEL AUTOMÁTICO)
+    // ==========================================
+    const carrosselContainer = document.querySelector('.carrossel-prints-container');
+    if (carrosselContainer) {
+        let isHovered = false;
+        let scrollInterval;
+
+        const startAutoScroll = () => {
+            if (scrollInterval) clearInterval(scrollInterval);
+            scrollInterval = setInterval(() => {
+                if (isHovered) return;
+
+                const maxScroll = carrosselContainer.scrollWidth - carrosselContainer.clientWidth;
+                const slides = carrosselContainer.querySelectorAll('.print-slide');
+                if (slides.length === 0) return;
+                
+                const slideWidth = slides[0].clientWidth + 16; // ~16px de gap
+                
+                // Se chegou no final (com uma margem de erro de 10px)
+                if (carrosselContainer.scrollLeft >= maxScroll - 10) {
+                    carrosselContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carrosselContainer.scrollTo({ left: carrosselContainer.scrollLeft + slideWidth, behavior: 'smooth' });
+                }
+            }, 2500); // Rola a cada 2.5 segundos
+        };
+
+        // Pausar se o usuário estiver interagindo
+        carrosselContainer.addEventListener('mouseenter', () => isHovered = true);
+        carrosselContainer.addEventListener('mouseleave', () => isHovered = false);
+        carrosselContainer.addEventListener('touchstart', () => isHovered = true, {passive: true});
+        carrosselContainer.addEventListener('touchend', () => {
+            setTimeout(() => isHovered = false, 2000); // Aguarda 2s após o toque para voltar a rolar
+        }, {passive: true});
+
+        // Otimização: só roda a animação quando o carrossel está na tela
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                startAutoScroll();
+            } else {
+                clearInterval(scrollInterval);
+            }
+        }, { threshold: 0.1 });
+        
+        observer.observe(carrosselContainer);
+    }
+
 });
