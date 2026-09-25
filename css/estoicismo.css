@@ -494,9 +494,9 @@ section {
 }
 
 .marquee-item img {
-  height: 25vh;
-  min-height: 180px;
-  max-height: 220px;
+  height: 20vh;
+  min-height: 150px;
+  max-height: 200px;
   width: auto;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
@@ -510,7 +510,7 @@ section {
 
 @media (min-width: 768px) {
   .marquee-item img {
-    height: 30vh;
-    max-height: 260px;
+    height: 25vh;
+    max-height: 240px;
   }
 }
