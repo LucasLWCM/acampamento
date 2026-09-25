@@ -316,14 +316,20 @@ section {
 
 .price-container {
   margin-bottom: 0.5rem;
+  text-align: center;
+}
+.price-text {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-texto-claro);
+  letter-spacing: 0.02em;
 }
 .pre-price {
-  font-size: 14px;
-  color: #666;
+  color: #ef4444;
   text-decoration: line-through;
-  margin-right: 8px;
+  margin: 0 2px;
 }
 .price {
-  font-size: 20px;
-  font-weight: 700;
+  color: #16a34a;
 }
