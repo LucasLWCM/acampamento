@@ -7,7 +7,13 @@
   <title>Acampamento Estoico | Rafa Barbosa</title>
   <link rel="icon" type="image/png" href="../assets/images/Logo_evento.webp">
 
+  <!-- Otimização de Fontes (Preconnect e Load direto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Fraunces:opsz,wght@9..144,400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Estilos P4 -->
+  <link rel="preload" href="../css/p4.css" as="style">
   <link rel="stylesheet" href="../css/p4.css">
 </head>
 
@@ -700,7 +706,7 @@
         <!-- Mockup 3D Tilt -->
         <div class="mockup-tilt-wrapper"
           style="flex: 1; display: flex; justify-content: center; position: relative; margin-bottom: 2rem;">
-          <img src="../assets/images/mockup.webp" alt="Série Um Dia Com Marco Aurélio" class="mockup-tilt-img"
+          <img src="../assets/images/mockup.webp" alt="Série Um Dia Com Marco Aurélio" class="mockup-tilt-img" loading="lazy"
             style="max-width: 100%; width: 500px; border-radius: 12px; transition: transform 0.2s ease-out; transform-style: preserve-3d; will-change: transform;">
         </div>
 
@@ -948,7 +954,7 @@
 
         <!-- Foto -->
         <div class="sobre-img-wrapper" style="flex: 1; max-width: 450px; margin: 0 auto;">
-          <img src="../assets/images/rafa-perfil.webp" alt="Rafa Barbosa"
+          <img src="../assets/images/rafa-perfil.webp" alt="Rafa Barbosa" loading="lazy"
             style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
 
