@@ -465,6 +465,8 @@ section {
   gap: 16px;
   width: max-content;
   padding-left: 16px;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 .marquee-track.left {
@@ -480,13 +482,13 @@ section {
 }
 
 @keyframes scrollMarqueeLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes scrollMarqueeRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
 }
 
 .marquee-item {
