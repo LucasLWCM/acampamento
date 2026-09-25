@@ -421,59 +421,72 @@ section {
 }
 
 /* Infinite Marquee Carousel */
-.marquee-container {
+.marquee-wrapper {
   overflow: hidden;
   width: 100vw;
-  margin-left: calc(-50vw + 50%); /* Forca ocupar 100% da tela ignorando o container */
-  white-space: nowrap;
-  display: flex;
-  margin-top: 2rem;
-  padding: 1rem 0 2rem 0;
+  margin-left: calc(-50vw + 50%);
   position: relative;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /* Gradientes nas bordas para suavizar a entrada e saida */
-.marquee-container::before,
-.marquee-container::after {
+.marquee-wrapper::before,
+.marquee-wrapper::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80px;
+  width: 60px;
   z-index: 2;
   pointer-events: none;
 }
-.marquee-container::before {
+.marquee-wrapper::before {
   left: 0;
   background: linear-gradient(to right, var(--c-bg) 0%, transparent 100%);
 }
-.marquee-container::after {
+.marquee-wrapper::after {
   right: 0;
   background: linear-gradient(to left, var(--c-bg) 0%, transparent 100%);
 }
 
-.theme-dark .marquee-container::before {
+.theme-dark .marquee-wrapper::before {
   background: linear-gradient(to right, var(--c-dark) 0%, transparent 100%);
 }
-.theme-dark .marquee-container::after {
+.theme-dark .marquee-wrapper::after {
   background: linear-gradient(to left, var(--c-dark) 0%, transparent 100%);
 }
 
 .marquee-track {
   display: flex;
   gap: 16px;
-  animation: scrollMarquee 40s linear infinite;
   width: max-content;
   padding-left: 16px;
 }
 
-.marquee-container:hover .marquee-track {
+.marquee-track.left {
+  animation: scrollMarqueeLeft 40s linear infinite;
+}
+
+.marquee-track.right {
+  animation: scrollMarqueeRight 40s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
   animation-play-state: paused;
 }
 
-@keyframes scrollMarquee {
+@keyframes scrollMarqueeLeft {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollMarqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 .marquee-item {
@@ -481,12 +494,12 @@ section {
 }
 
 .marquee-item img {
-  height: 40vh;
-  min-height: 280px;
-  max-height: 420px;
+  height: 25vh;
+  min-height: 180px;
+  max-height: 220px;
   width: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   border: 1px solid var(--c-border);
   transition: transform 0.3s ease;
 }
@@ -497,7 +510,7 @@ section {
 
 @media (min-width: 768px) {
   .marquee-item img {
-    height: 50vh;
-    max-height: 550px;
+    height: 30vh;
+    max-height: 260px;
   }
 }
