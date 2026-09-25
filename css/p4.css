@@ -1037,3 +1037,30 @@ section {
     box-shadow: 0 0 0 0 rgba(184, 92, 46, 0);
   }
 }
+
+.sobre-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contadores-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .sobre-layout {
+    flex-direction: row;
+    align-items: center;
+  }
+  .sobre-layout > * {
+    flex: 1;
+  }
+  
+  .contadores-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
