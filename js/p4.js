@@ -266,5 +266,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.3 });
         checklistObserver.observe(checklistTrigger);
     }
+    // ==========================================
+    // DOBRA 4 — CONTEÚDO (Horizontal Scroll)
+    // ==========================================
+    const hzWrapper = document.getElementById('hz-scroll-wrapper');
+    const cardsTrack = document.getElementById('cards-track');
+    const hzProgress = document.getElementById('hz-progress');
+    const cardMockup = document.getElementById('card-mockup');
+
+    if (hzWrapper && cardsTrack) {
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 768) {
+                // Desktop: scroll horizontal linkado ao scroll vertical
+                const rect = hzWrapper.getBoundingClientRect();
+                const wrapperTop = rect.top; 
+                const wrapperHeight = rect.height;
+                const windowHeight = window.innerHeight;
+                
+                const maxScroll = wrapperHeight - windowHeight;
+                const scrolled = Math.max(0, -wrapperTop);
+                let progress = scrolled / maxScroll;
+                
+                if (progress < 0) progress = 0;
+                if (progress > 1) progress = 1;
+
+                // Translação máxima para chegar até o fim do container
+                const maxTranslate = cardsTrack.scrollWidth - window.innerWidth;
+                const translateX = progress * maxTranslate;
+
+                cardsTrack.style.transform = `translateX(-${translateX}px)`;
+                
+                if (hzProgress) {
+                    hzProgress.style.width = `${progress * 100}%`;
+                }
+
+                // Ativar animação de escrita no card mockup no fim da rolagem
+                if (progress > 0.90 && cardMockup) {
+                    cardMockup.classList.add('active');
+                }
+            } else {
+                // Mobile: Reset do transform (usa scroll nativo)
+                cardsTrack.style.transform = 'none';
+            }
+        });
+
+        // Mobile: Ativar o card final usando IntersectionObserver no container nativo
+        if (cardMockup) {
+            const mockupObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && window.innerWidth < 768) {
+                    cardMockup.classList.add('active');
+                }
+            }, { threshold: 0.5 });
+            mockupObserver.observe(cardMockup);
+        }
+    }
 
 });
