@@ -148,42 +148,55 @@ document.addEventListener('DOMContentLoaded', () => {
         picObserver.observe(triggerPictograma);
     }
 
-    // Ciclo Scroll Diagrama
+    // Ciclo Scroll Diagrama e Quebra do Anel
     const passoTriggers = document.querySelectorAll('.passo-trigger');
     const anelProgresso = document.getElementById('passos-anel-progresso');
-    
-    if (passoTriggers.length > 0) {
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const step = parseInt(entry.target.getAttribute('data-step'));
-                    
-                    // Atualiza nós
-                    for(let i=1; i<=4; i++) {
-                        const node = document.getElementById(`node-${i}`);
-                        if (node) {
-                            if (i <= step) node.classList.add('active');
-                            else node.classList.remove('active');
-                        }
-                    }
-
-                    // Atualiza Anel (628 é a circunferência total do raio 100)
-                    if (anelProgresso) {
-                        const pct = step / 4;
-                        const offset = 628 - (628 * pct);
-                        anelProgresso.style.strokeDashoffset = offset;
-                    }
-                }
-            });
-        }, { threshold: 0.2, rootMargin: "-10% 0px -40% 0px" });
-
-        passoTriggers.forEach(t => scrollObserver.observe(t));
-    }
-
-    // Verbos Gigantes
+    const anelBg = document.getElementById('passos-anel-bg');
     const verbosTrigger = document.getElementById('verbos-trigger');
     let verbosRodou = false;
 
+    if (passoTriggers.length > 0) {
+        window.addEventListener('scroll', () => {
+            let currentStep = 0;
+            passoTriggers.forEach(t => {
+                const rect = t.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.6) {
+                    currentStep = Math.max(currentStep, parseInt(t.getAttribute('data-step')));
+                }
+            });
+            
+            // Atualiza nós
+            for(let i=1; i<=4; i++) {
+                const node = document.getElementById(`node-${i}`);
+                if (node) {
+                    if (i <= currentStep) node.classList.add('active');
+                    else node.classList.remove('active');
+                }
+            }
+
+            // Restaura o anel se rolarmos para cima antes da quebra
+            if (verbosRodou && verbosTrigger) {
+                const vRect = verbosTrigger.getBoundingClientRect();
+                if (vRect.top > window.innerHeight * 0.8) {
+                    if (anelBg) {
+                        anelBg.style.strokeDashoffset = '0';
+                    }
+                    if (anelProgresso) {
+                        anelProgresso.style.display = 'block';
+                    }
+                }
+            }
+
+            // Atualiza Anel
+            if (anelProgresso && anelProgresso.style.display !== 'none') {
+                const pct = currentStep / 4;
+                const offset = 628 - (628 * pct);
+                anelProgresso.style.strokeDashoffset = offset;
+            }
+        });
+    }
+
+    // Verbos Gigantes
     if (verbosTrigger) {
         const verbosObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !verbosRodou) {
@@ -193,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     document.getElementById('verbo-3').classList.add('visible');
                     // Quebra o anel lá em cima
-                    const anelBg = document.getElementById('passos-anel-bg');
                     if(anelBg) {
                         anelBg.style.strokeDasharray = '628';
                         anelBg.style.strokeDashoffset = '62';
