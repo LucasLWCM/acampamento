@@ -142,7 +142,7 @@
         <div class="ciclo-passos-sticky">
           <div class="ciclo-diagrama-box">
             <!-- Círculo de Passos SVG -->
-            <svg viewBox="0 0 300 300" width="100%" height="100%" style="overflow: visible;">
+            <svg viewBox="-50 -50 400 400" width="100%" height="100%" style="overflow: visible;">
               <circle cx="150" cy="150" r="100" class="passos-anel" id="passos-anel-bg" />
               <circle cx="150" cy="150" r="100" class="passos-anel-progress" id="passos-anel-progresso" />
               
@@ -155,17 +155,26 @@
               <g class="passo-node" id="node-2" transform="translate(250, 150)">
                 <circle cx="0" cy="0" r="12" />
                 <text x="0" y="5" text-anchor="middle">2</text>
-                <text x="20" y="5" text-anchor="start" class="node-label">Você trava, explode,<br>foge ou se culpa.</text>
+                <text x="20" y="0" text-anchor="start" class="node-label">
+                  <tspan x="20" dy="0">Você trava, explode,</tspan>
+                  <tspan x="20" dy="1.4em">foge ou se culpa.</tspan>
+                </text>
               </g>
               <g class="passo-node" id="node-3" transform="translate(150, 250)">
                 <circle cx="0" cy="0" r="12" />
                 <text x="0" y="5" text-anchor="middle">3</text>
-                <text x="0" y="35" text-anchor="middle" class="node-label">Depois vem o arrependimento.<br>E o cansaço.</text>
+                <text x="0" y="30" text-anchor="middle" class="node-label">
+                  <tspan x="0" dy="0">Depois vem o arrependimento.</tspan>
+                  <tspan x="0" dy="1.4em">E o cansaço.</tspan>
+                </text>
               </g>
               <g class="passo-node" id="node-4" transform="translate(50, 150)">
                 <circle cx="0" cy="0" r="12" />
                 <text x="0" y="5" text-anchor="middle">4</text>
-                <text x="-20" y="5" text-anchor="end" class="node-label">Na próxima vez,<br>tudo se repete.</text>
+                <text x="-20" y="0" text-anchor="end" class="node-label">
+                  <tspan x="-20" dy="0">Na próxima vez,</tspan>
+                  <tspan x="-20" dy="1.4em">tudo se repete.</tspan>
+                </text>
               </g>
             </svg>
           </div>
