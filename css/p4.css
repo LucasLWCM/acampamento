@@ -2,8 +2,8 @@
 :root {
   --c-bg-claro: #F5F0E6;
   --c-bg-escuro: #1F2A24;
-  --c-texto-claro: #F5F0E6;
-  --c-texto-escuro: #1F2A24;
+  --c-texto-claro: #1F2A24;
+  --c-texto-escuro: #F5F0E6;
   --c-marca: #3E5641;
   --c-botao: #B85C2E;
   --c-ambar: #D98A2B;
@@ -813,12 +813,12 @@ section {
   height: 68px;
   border-radius: 50%;
   background-color: var(--c-bg-claro);
-  border: 4px solid var(--c-texto-escuro);
+  border: 4px solid var(--c-texto-claro);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--c-texto-escuro);
+  color: var(--c-texto-claro);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .timeline-item.active .timeline-icon {
@@ -839,7 +839,7 @@ section {
   font-size: 28px;
   font-weight: 700;
   line-height: 1;
-  color: var(--c-texto-escuro);
+  color: var(--c-texto-claro);
 }
 .timeline-content .event {
   display: block;
