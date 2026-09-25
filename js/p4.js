@@ -310,17 +310,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Mobile: Ativar o card final usando IntersectionObserver no container nativo
-        if (cardMockup) {
-            const mockupObserver = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting && window.innerWidth < 768) {
-                    cardMockup.classList.add('active');
+        // Mobile: Ativar o card final usando scroll nativo
+        const cardsContainer = document.getElementById('cards-track-container');
+        if (cardMockup && cardsContainer) {
+            cardsContainer.addEventListener('scroll', () => {
+                if (window.innerWidth < 768) {
+                    const rect = cardMockup.getBoundingClientRect();
+                    const containerRect = cardsContainer.getBoundingClientRect();
+                    if (rect.left < containerRect.right - 50) {
+                        cardMockup.classList.add('active');
+                    }
                 }
-            }, { 
-                root: document.getElementById('cards-track-container'),
-                threshold: 0.2 
             });
-            mockupObserver.observe(cardMockup);
         }
     }
 
