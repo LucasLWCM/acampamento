@@ -316,7 +316,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entries[0].isIntersecting && window.innerWidth < 768) {
                     cardMockup.classList.add('active');
                 }
-            }, { threshold: 0.5 });
+            }, { 
+                root: document.getElementById('cards-track-container'),
+                threshold: 0.2 
+            });
             mockupObserver.observe(cardMockup);
         }
     }

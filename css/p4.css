@@ -749,17 +749,21 @@ section {
 .caderno-linha {
   font-size: 14px;
   padding-left: 20px;
-  white-space: nowrap;
+  line-height: 32px;
 }
 .escrita-animada {
   font-family: 'Caveat', cursive;
   color: #1d4ed8;
   font-size: 18px;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1.5s ease-in-out;
+  display: inline-block;
+  vertical-align: bottom;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  transition: max-width 1.5s ease-in-out;
 }
 .card-mockup.active .escrita-animada {
-  clip-path: inset(0 0 0 0);
+  max-width: 300px;
 }
 
 .hz-progress-bg {
