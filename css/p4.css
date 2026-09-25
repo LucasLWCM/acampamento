@@ -1064,3 +1064,14 @@ section {
     align-items: flex-start;
   }
 }
+
+.spin-slow {
+  animation: spin-slow 15s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin-slow {
+  100% {
+    transform: rotate(360deg);
+  }
+}
