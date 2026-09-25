@@ -1148,3 +1148,15 @@ section {
   line-height: 1.6;
 }
 
+@keyframes pulse-fogueira {
+  0% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+
