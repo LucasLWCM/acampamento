@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acampamento Estoico | Rafa Barbosa</title>
+  <link rel="icon" type="image/png" href="../assets/images/Logo_evento.webp">
+
+  <!-- Estilos P4 -->
+  <link rel="stylesheet" href="../css/p4.css">
+</head>
+
+<body>
+  
+  <!-- ==========================================
+       DOBRA 1 — PROMESSA
+       ========================================== -->
+  <section id="dobra-1" style="overflow: hidden;">
+    <div class="container dobra-1-grid">
+      
+      <!-- Lado Esquerdo / Topo (Texto) -->
+      <div class="dobra-1-text reveal">
+        <div class="selo-caixa">ACAMPAMENTO ESTOICO</div>
+        <span class="data-destaque">SÁBADO, 17/10 | AO VIVO</span>
+        
+        <h1 class="h1">Monte, em apenas um dia, seu protocolo para lidar com pessoas difíceis sem perder o controle.</h1>
+        
+        <h2 class="h2">Com os afastamentos por ansiedade em recorde, o Rafa, professor de 3 mil alunos, te guia a quebrar o ciclo de ansiedade e raiva que te prende no lugar.</h2>
+        
+        <div class="tagline-container">
+          <div class="tagline-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            SEM PRECISAR SABER FILOSOFIA
+          </div>
+          <div class="tagline-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            PELO YOUTUBE
+          </div>
+          <div class="tagline-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            REEMBOLSO GARANTIDO
+          </div>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <div class="price-container">
+            <span class="pre-price">De R$ 97</span>
+            <span class="price">por R$ 17</span>
+          </div>
+          <a href="#dobra-preco" class="btn has-hover btn-dobra-1">
+            <span class="btn-text">Comprar ingresso | Lote 0</span>
+            <span class="btn-hover-text">Pix ou cartão</span>
+          </a>
+          <div class="progress-container">
+            <span class="progress-label">65% dos ingressos do Lote 0 vendidos</span>
+            <div class="progress-bar-bg">
+              <div class="progress-fill" id="lote-0-progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado Direito / Base (Visual: O Ciclo) -->
+      <div class="dobra-1-visual reveal" style="transition-delay: 200ms;">
+        <div class="ciclo-container">
+          <svg viewBox="0 0 260 260" width="100%" height="100%">
+            <!-- Anel (Circunferência: 2 * pi * 100 =~ 628.3) -->
+            <circle cx="130" cy="130" r="100" class="ciclo-anel" id="anel" />
+            
+            <!-- Palavras -->
+            <text x="130" y="22" text-anchor="middle" class="ciclo-palavra" data-word="TRAVO" data-pct="15">TRAVO</text>
+            <text x="238" y="135" text-anchor="start" class="ciclo-palavra" data-word="EXPLODO" data-pct="42">EXPLODO</text>
+            <text x="130" y="248" text-anchor="middle" class="ciclo-palavra" data-word="FUJO" data-pct="16">FUJO</text>
+            <text x="22" y="135" text-anchor="end" class="ciclo-palavra" data-word="ME CULPO" data-pct="27">ME CULPO</text>
+
+            <!-- A Brasa que Roda -->
+            <g class="ciclo-brasa anim-rodar" id="brasa-group">
+              <circle cx="130" cy="30" r="6" />
+            </g>
+          </svg>
+
+          <!-- Centro do Anel -->
+          <div class="ciclo-centro">
+            <div class="manuscrito" id="ciclo-pergunta">Qual é o seu?</div>
+            <div class="ciclo-resultado" id="ciclo-resultado"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA PREÇO (Âncora Provisória)
+       ========================================== -->
+  <section id="dobra-preco" style="background-color: var(--c-bg-escuro); color: var(--c-texto-escuro); text-align: center; padding: 4rem 1rem;">
+    <h2 class="h1" style="color: var(--c-texto-escuro);">[Dobras Ocultas]</h2>
+    <p>As próximas dobras virão aqui. Esta é a dobra de preço por enquanto.</p>
+    <a href="https://checkout.thebank.com.br/7509325389419266048" class="btn" style="margin-top: 2rem;">IR PARA O CHECKOUT</a>
+  </section>
+
+  <script src="../js/p4.js"></script>
+</body>
+</html>
