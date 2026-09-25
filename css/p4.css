@@ -130,6 +130,7 @@ section {
 
 @media (min-width: 768px) {
   .btn { width: auto; padding: 0 32px; }
+  .btn.btn-dobra-1 { width: 100%; }
   .btn.has-hover:hover .btn-text { opacity: 0; }
   .btn.has-hover:hover .btn-hover-text { opacity: 1; }
 }
