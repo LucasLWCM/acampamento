@@ -7,20 +7,27 @@ O projeto é uma **Landing Page de Alta Conversão** (focada em tráfego pago) p
 O site foi construído estaticamente (HTML, CSS e JS puros), sem frameworks complexos, visando máxima velocidade e performance.
 
 ## 2. Estrutura Atual de Pastas
-Após uma limpeza profunda de iterações antigas (versões p1, p2, p3), a estrutura consolidada do projeto é a seguinte:
+O repositório contém várias iterações de Landing Pages que funcionam como testes A/B (diferentes estilos e narrativas) para validar conversão:
 
 ```text
 /
+├── index.html           (Versão 1 - Estrutura antiga/raiz para teste A/B)
+├── p2/
+│   └── index.html       (Versão 2 - Estilo visual diferente para teste A/B)
+├── p3/
+│   └── index.html       (Versão 3 - Estilo visual diferente para teste A/B)
 ├── p4/
-│   └── index.html       (Página Principal c/ Bônus da Websérie)
+│   └── index.html       (Versão 4 - Vencedora atual, c/ Bônus da Websérie)
 ├── p5/
-│   └── index.html       (Variação da Página Principal SEM Bônus)
+│   └── index.html       (Versão 5 - Variação exata da p4, porém SEM Bônus)
 ├── css/
-│   └── p4.css           (Folha de estilos única compartilhada entre p4 e p5)
+│   ├── p4.css           (Folha de estilos otimizada, usada pela p4 e p5)
+│   └── ...              (Folhas de estilos das versões anteriores: p2, p3, main, etc.)
 ├── js/
-│   └── p4.js            (Script único compartilhado entre p4 e p5)
+│   ├── p4.js            (Script otimizado, usado pela p4 e p5)
+│   └── ...              (Scripts das versões anteriores)
 ├── assets/
-│   └── images/          (Imagens otimizadas em WebP para produção)
+│   └── images/          (Imagens de todas as versões do projeto)
 ├── Dockerfile           (Configuração de container NGINX)
 ├── nginx.conf           (Regras de GZIP e Cache para performance extrema)
 ├── optimize.py          (Script utilitário em Python para otimização - legado)
@@ -32,7 +39,7 @@ Após uma limpeza profunda de iterações antigas (versões p1, p2, p3), a estru
 - **Construção da P4:** Foi montada uma estrutura narrativa completa de 13 dobras, focada na quebra do ciclo de raiva/ansiedade.
 - **Animações e Micro-interações:** Foram incluídos gráficos interativos (SVG giratório na Hero, árvore de progresso, timeline animada) nativos, sem bibliotecas externas.
 - **Variação P5:** O diretório `p5/` foi criado como um clone da `p4`, porém limpo de qualquer menção à "série de bônus do Marco Aurélio" (para ser usado quando o Lote 0 ou o bônus se encerrar).
-- **Limpeza de Arquivos (Cleanup):** Foram deletadas do repositório todas as antigas landing pages de rascunho (`p2`, `p3`, `.html` antigos), assim como CSS e JS legados (`story.css`, `estoicismo.js`, etc.) e imagens grandes não utilizadas.
+- **Manutenção de Histórico (Teste A/B):** As versões antigas (`index.html`, `p2`, `p3`) e seus respectivos assets foram mantidos intencionalmente para fins de teste A/B.
 - **Otimização de Performance (Tempo de Carregamento < 2s):**
   - Fontes (Google Fonts) configuradas com preconnect no HTML.
   - Imagens de dobras inferiores receberam `loading="lazy"`.
