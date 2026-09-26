@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acampamento Estoico | Rafa Barbosa</title>
+  <link rel="icon" type="image/png" href="../assets/images/Logo_evento.webp">
+
+  <!-- Otimização de Fontes (Preconnect e Load direto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat&family=Fraunces:opsz,wght@9..144,400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos P4 -->
+  <link rel="preload" href="../css/p4.css" as="style">
+  <link rel="stylesheet" href="../css/p4.css">
+</head>
+
+<body>
+
+  <!-- ==========================================
+       DOBRA 1 — PROMESSA
+       ========================================== -->
+  <section id="dobra-1" style="overflow: hidden;">
+    <div class="container dobra-1-grid">
+
+      <!-- Lado Esquerdo / Topo (Texto) -->
+      <div class="dobra-1-text reveal">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+          <img src="../assets/images/Logo2.webp" alt="Acampamento Estoico" style="height: 45px; object-fit: contain;">
+          <span class="data-destaque" style="margin-bottom: 0; display: inline-block;">SÁBADO, 17/10 | AO VIVO</span>
+        </div>
+
+        <h1 class="h1">Monte, em apenas um dia, seu protocolo para lidar com pessoas difíceis sem perder o controle.
+        </h1>
+
+        <h2 class="h2">Com os afastamentos por ansiedade em recorde, o Rafa, professor de 3 mil alunos, te guia a
+          quebrar o ciclo de ansiedade e raiva que te prende no lugar.</h2>
+
+        <div class="tagline-container">
+          <div class="tagline-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            CONTEÚDO PRATICO
+          </div>
+          <div class="tagline-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            ACESSO FACILITADO
+          </div>
+          <div class="tagline-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            REEMBOLSO GARANTIDO
+          </div>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <div class="price-container">
+            <span class="price-text">LOTE 0 DE <span class="pre-price">R$ 97,00</span> POR <span
+                class="price">17,00</span></span>
+          </div>
+          <a href="#dobra-preco" class="btn has-hover btn-dobra-1">
+            <span class="btn-text">Comprar ingresso | Lote 0</span>
+            <span class="btn-hover-text">Pix ou cartão</span>
+          </a>
+          <div class="progress-container">
+            <span class="progress-label">65% dos ingressos do Lote 0 vendidos</span>
+            <div class="progress-bar-bg">
+              <div class="progress-fill" id="lote-0-progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado Direito / Base (Visual: O Ciclo) -->
+      <div class="dobra-1-visual reveal" style="transition-delay: 200ms;">
+        <div class="ciclo-container">
+          <svg viewBox="0 0 340 260" width="100%" height="100%" style="overflow: visible;">
+            <!-- Anel (Circunferência: 2 * pi * 100 =~ 628.3) -->
+            <circle cx="170" cy="130" r="100" class="ciclo-anel" id="anel" />
+
+            <!-- Palavras -->
+            <text x="170" y="22" text-anchor="middle" class="ciclo-palavra" data-word="TRAVO" data-pct="15">TRAVO</text>
+            <text x="280" y="135" text-anchor="start" class="ciclo-palavra" data-word="EXPLODO"
+              data-pct="42">EXPLODO</text>
+            <text x="170" y="248" text-anchor="middle" class="ciclo-palavra" data-word="FUJO" data-pct="16">FUJO</text>
+            <text x="60" y="135" text-anchor="end" class="ciclo-palavra" data-word="ME CULPO" data-pct="27">ME
+              CULPO</text>
+
+            <!-- A Brasa que Roda -->
+            <g class="ciclo-brasa anim-rodar" id="brasa-group">
+              <circle cx="170" cy="30" r="6" />
+            </g>
+          </svg>
+
+          <!-- Centro do Anel -->
+          <div class="ciclo-centro">
+            <div class="manuscrito" id="ciclo-pergunta">Quando alguém te tira do sério, você…</div>
+            <div class="ciclo-resultado" id="ciclo-resultado"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 2 — CAMINHO
+       ========================================== -->
+  <section id="dobra-2" style="background-color: var(--c-bg-escuro); color: var(--c-texto-escuro);">
+    <div class="container">
+
+      <div class="text-wrapper reveal">
+        <h2 class="h1" style="color: var(--c-texto-escuro);">O Brasil nunca esteve tão no limite.</h2>
+      </div>
+
+      <!-- Dados -->
+      <div class="dados-grid">
+        <!-- Dado 1: Contador -->
+        <div class="dado-card reveal" id="trigger-contador">
+          <div class="dado-numero"><span id="contador-afastamentos">0</span></div>
+          <p class="h2" style="color: var(--c-texto-escuro); margin-bottom: 0.5rem;">afastamentos do trabalho por saúde
+            mental em 2025. O maior número da última década.</p>
+          <p class="fonte-pequena">(Fonte: Ministério da Previdência Social)</p>
+        </div>
+
+        <!-- Dado 2: Pictograma -->
+        <div class="dado-card reveal" id="trigger-pictograma" style="transition-delay: 200ms;">
+          <div class="pictograma-container" id="pictograma-bonecos">
+            <!-- Os bonecos serão injetados via JS ou CSS, colocaremos HTML direto -->
+            <div class="bonecos-grid">
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+              <svg class="boneco" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="3" />
+                <path d="M12 11c-3.3 0-6 2.7-6 6v4h4v-4h4v4h4v-4c0-3.3-2.7-6-6-6z" />
+              </svg>
+            </div>
+            <div class="legenda-pictograma" id="legenda-bonecos">Mais da metade nunca procurou ajuda.</div>
+          </div>
+          <p class="h2" style="color: var(--c-texto-escuro); margin-bottom: 0.5rem;"><span
+              style="color: var(--c-ambar); font-weight: 700;">68% dos brasileiros</span> relatam ansiedade, nervosismo
+            e tensão. Mais da metade nunca procurou ajuda.</p>
+          <p class="fonte-pequena">(Fonte: Instituto Cactus e AtlasIntel)</p>
+        </div>
+      </div>
+
+      <div class="text-wrapper reveal" style="margin-top: 4rem;">
+        <p class="h2" style="color: var(--c-texto-escuro);">E quase sempre começa do mesmo jeito. Com uma pessoa.</p>
+        <p class="h2" style="color: var(--c-texto-escuro);">O ciclo que te prende no lugar:</p>
+      </div>
+
+      <!-- O Ciclo Interativo / Scroll -->
+      <div class="ciclo-passos-wrapper">
+        <div class="ciclo-passos-sticky">
+          <div class="ciclo-diagrama-box">
+            <!-- Círculo de Passos SVG -->
+            <svg viewBox="-50 -50 400 400" width="100%" height="100%" style="overflow: visible;">
+              <circle cx="150" cy="150" r="100" class="passos-anel" id="passos-anel-bg" />
+              <circle cx="150" cy="150" r="100" class="passos-anel-progress" id="passos-anel-progresso" />
+
+              <!-- Nods (pontos) -->
+              <g class="passo-node" id="node-1" transform="translate(150, 50)">
+                <circle cx="0" cy="0" r="12" />
+                <text x="0" y="5" text-anchor="middle">1</text>
+                <text x="0" y="-20" text-anchor="middle" class="node-label">Alguém te provoca.</text>
+              </g>
+              <g class="passo-node" id="node-2" transform="translate(250, 150)">
+                <circle cx="0" cy="0" r="12" />
+                <text x="0" y="5" text-anchor="middle">2</text>
+                <text x="20" y="0" text-anchor="start" class="node-label">
+                  <tspan x="20" dy="0">Você trava, explode,</tspan>
+                  <tspan x="20" dy="1.4em">foge ou se culpa.</tspan>
+                </text>
+              </g>
+              <g class="passo-node" id="node-3" transform="translate(150, 250)">
+                <circle cx="0" cy="0" r="12" />
+                <text x="0" y="5" text-anchor="middle">3</text>
+                <text x="0" y="30" text-anchor="middle" class="node-label">
+                  <tspan x="0" dy="0">Depois vem o arrependimento.</tspan>
+                  <tspan x="0" dy="1.4em">E o cansaço.</tspan>
+                </text>
+              </g>
+              <g class="passo-node" id="node-4" transform="translate(50, 150)">
+                <circle cx="0" cy="0" r="12" />
+                <text x="0" y="5" text-anchor="middle">4</text>
+                <text x="-20" y="0" text-anchor="end" class="node-label">
+                  <tspan x="-20" dy="0">Na próxima vez,</tspan>
+                  <tspan x="-20" dy="1.4em">tudo se repete.</tspan>
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Triggers de Scroll -->
+        <div class="scroll-triggers">
+          <div class="passo-trigger" data-step="1"></div>
+          <div class="passo-trigger" data-step="2"></div>
+          <div class="passo-trigger" data-step="3"></div>
+          <div class="passo-trigger" data-step="4"></div>
+        </div>
+      </div>
+
+      <div class="text-wrapper reveal" style="margin-top: 4rem;">
+        <p class="h2" style="color: var(--c-texto-escuro);">Ler sobre isso ajuda a entender o ciclo. Só o treino muda a
+          sua reação na hora em que a pessoa te provoca.</p>
+        <p class="h2" style="color: var(--c-texto-escuro);">Esse treino tem mais de 2 mil anos. Epicteto ensinava aos
+          alunos. Marco Aurélio praticava todo dia, governando um império.</p>
+        <p class="h2" style="color: var(--c-texto-escuro);">Ele cabe em três verbos:</p>
+      </div>
+
+      <!-- Verbos (Pensar, Querer, Agir) -->
+      <div class="verbos-container" id="verbos-trigger">
+        <div class="verbo-gigante" id="verbo-1">Pensar.</div>
+        <div class="verbo-gigante" id="verbo-2">Querer.</div>
+        <div class="verbo-gigante verbo-agir" id="verbo-3">Agir.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 3 — IDENTIFICAÇÃO
+       ========================================== -->
+  <section id="dobra-3" style="background-color: var(--c-bg-claro); color: var(--c-texto-claro);">
+    <div class="container">
+      <div class="text-wrapper reveal">
+        <h2 class="h1">Você já disse alguma dessas frases?</h2>
+      </div>
+
+      <!-- Bilhetes -->
+      <div class="bilhetes-grid" id="bilhetes-trigger">
+        <div class="bilhete rot-esq" data-index="1">
+          <div class="manuscrito">"Deixa, não vale a pena." E engoliu de novo.</div>
+          <div class="bilhete-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Já disse</div>
+        </div>
+        <div class="bilhete rot-dir" data-index="2">
+          <div class="manuscrito">"Por que eu fui falar aquilo?"</div>
+          <div class="bilhete-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Já disse</div>
+        </div>
+        <div class="bilhete rot-esq" data-index="3">
+          <div class="manuscrito">"Da próxima vez, eu não vou me irritar."</div>
+          <div class="bilhete-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Já disse</div>
+        </div>
+        <div class="bilhete rot-dir" data-index="4">
+          <div class="manuscrito">"Depois eu resolvo isso."</div>
+          <div class="bilhete-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg> Já disse</div>
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="text-wrapper" style="margin-top: 4rem;" id="checklist-trigger">
+        <div class="checklist-item">
+          <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg></div>
+          <span class="h2" style="margin-bottom:0;">Você já leu sobre isso.</span>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg></div>
+          <span class="h2" style="margin-bottom:0;">Já assistiu vídeos.</span>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg></div>
+          <span class="h2" style="margin-bottom:0;">Talvez já tenha feito terapia.</span>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg></div>
+          <span class="h2" style="margin-bottom:0;">Prometeu que da próxima vez seria diferente.</span>
+        </div>
+
+        <p class="h2 reveal" style="margin-top: 3rem; margin-bottom: 3rem;">E mesmo assim, na hora H, reagiu igual.</p>
+
+        <h2 class="h1 reveal info-final" style="color: var(--c-botao);">Informação você já tem. O que faltou foi treino.
+        </h2>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 4 — CONTEÚDO
+       ========================================== -->
+  <section id="dobra-4" style="background-color: var(--c-bg-escuro); color: var(--c-texto-claro);">
+    <div class="horizontal-scroll-wrapper" id="hz-scroll-wrapper">
+      <div class="horizontal-scroll-sticky">
+        <div class="container text-wrapper reveal" style="padding-top: 4rem;">
+          <h2 class="h1" style="margin-bottom: 2rem; color: #FFFFFF;">Por onde vamos passar no sábado</h2>
+        </div>
+
+        <div class="cards-track-container" id="cards-track-container">
+          <div class="cards-track" id="cards-track">
+
+            <!-- Card 01 -->
+            <div class="conteudo-card">
+              <div class="card-numero">01</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <h3 class="card-titulo">Descubra o seu padrão.</h3>
+              <p class="card-texto">Entenda se você trava, explode, foge ou se culpa. E o que dispara isso em você.</p>
+            </div>
+
+            <!-- Card 02 -->
+            <div class="conteudo-card">
+              <div class="card-numero">02</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20 M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <h3 class="card-titulo">Separe o que é seu e o que é do outro.</h3>
+              <p class="card-texto">Pare de carregar problemas que não são seus.</p>
+            </div>
+
+            <!-- Card 03 -->
+            <div class="conteudo-card">
+              <div class="card-numero">03</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+              <h3 class="card-titulo">Responda sem reagir.</h3>
+              <p class="card-texto">Treine a pausa entre a provocação e a sua resposta.</p>
+            </div>
+
+            <!-- Card 04 -->
+            <div class="conteudo-card">
+              <div class="card-numero">04</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <h3 class="card-titulo">Lide com pessoas difíceis.</h3>
+              <p class="card-texto">Família, trabalho, relacionamento. Sem engolir e sem explodir.</p>
+            </div>
+
+            <!-- Card 05 -->
+            <div class="conteudo-card">
+              <div class="card-numero">05</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <h3 class="card-titulo">Desarme a preocupação com o futuro.</h3>
+              <p class="card-texto">Pare de sofrer pelo que ainda nem aconteceu.</p>
+            </div>
+
+            <!-- Card 06 -->
+            <div class="conteudo-card">
+              <div class="card-numero">06</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M14 10.5V5a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M10 10.5V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M6 14v-2a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                <path d="M18 11v5a6 6 0 0 1-6 6h-2.5A7.5 7.5 0 0 1 2 14.5v-3.8"></path>
+              </svg>
+              <h3 class="card-titulo">Diga não sem culpa.</h3>
+              <p class="card-texto">Coloque limites e continue em paz.</p>
+            </div>
+
+            <!-- Card 07 -->
+            <div class="conteudo-card">
+              <div class="card-numero">07</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <h3 class="card-titulo">Saia do ciclo da culpa.</h3>
+              <p class="card-texto">Errou, corrigiu, seguiu. Sem se punir por dias.</p>
+            </div>
+
+            <!-- Card 08 -->
+            <div class="conteudo-card">
+              <div class="card-numero">08</div>
+              <svg class="card-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+              <h3 class="card-titulo">Mantenha o treino depois do sábado.</h3>
+              <p class="card-texto">Um ritual curto para a manhã e para a noite.</p>
+            </div>
+
+            <!-- Card final "Você sai com" -->
+            <div class="conteudo-card card-mockup" id="card-mockup">
+              <h3 class="card-titulo" style="color: var(--c-botao);">Você sai com:</h3>
+              <p class="card-texto" style="color: var(--c-texto-claro);">seu protocolo escrito por você, pronto para
+                usar na segunda-feira.</p>
+
+              <div class="caderno-mockup">
+                <div class="caderno-linha">Meu padrão: <span class="escrita-animada"
+                    style="transition-delay: 0.2s">_______________</span></div>
+                <div class="caderno-linha">Quando <span class="escrita-animada"
+                    style="transition-delay: 0.8s">_______</span> me provocar, eu <span class="escrita-animada"
+                    style="transition-delay: 1.4s">_________</span></div>
+                <div class="caderno-linha">Manhã: <span class="escrita-animada"
+                    style="transition-delay: 2.0s">_______________</span></div>
+                <div class="caderno-linha">Noite: <span class="escrita-animada"
+                    style="transition-delay: 2.6s">_______________</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="desktop-controls container">
+          <div class="hz-progress-bg">
+            <div class="hz-progress-fill" id="hz-progress"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 5 — CRONOGRAMA
+       ========================================== -->
+  <section id="dobra-5"
+    style="background-color: var(--c-bg-claro); color: var(--c-texto-escuro); position: relative; padding: 6rem 0;">
+    <div class="container reveal">
+      <div class="text-center" style="margin-bottom: 4rem;">
+        <span class="tag-label"
+          style="display: block; color: var(--c-ambar); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">17
+          de outubro | 9h às 18h</span>
+        <h2 class="h1" style="margin-top: 0; margin-bottom: 1rem;">Para você se preparar e organizar seu sábado com
+          antecedência.</h2>
+      </div>
+
+      <div class="timeline-wrapper" id="timeline-wrapper">
+        <div class="timeline-line-bg"></div>
+        <div class="timeline-line-fill" id="timeline-fill"></div>
+
+        <!-- 09h00 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 2v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m17.66 6.34 1.41-1.41" />
+              <path d="M22 22H2" />
+              <path d="M8 6a4 4 0 0 1 8 0v6H8z" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="time font-serif">09h00</span>
+            <span class="event">Início</span>
+          </div>
+        </div>
+
+        <!-- 10h45 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+              <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+              <line x1="6" y1="2" x2="6" y2="4" />
+              <line x1="10" y1="2" x2="10" y2="4" />
+              <line x1="14" y1="2" x2="14" y2="4" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="time font-serif">10h45</span>
+            <span class="event">Pausa</span>
+          </div>
+        </div>
+
+        <!-- 11h00 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="time font-serif">11h00</span>
+            <span class="event">Retorno</span>
+          </div>
+        </div>
+
+        <!-- 12h30 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+              <path d="M7 2v20" />
+              <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="time font-serif">12h30</span>
+            <span class="event">Almoço</span>
+          </div>
+        </div>
+
+        <!-- 14h00 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="time font-serif">14h00</span>
+            <span class="event">Terceiro bloco</span>
+          </div>
+        </div>
+
+        <!-- 16h15 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+              <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+              <line x1="6" y1="2" x2="6" y2="4" />
+              <line x1="10" y1="2" x2="10" y2="4" />
+              <line x1="14" y1="2" x2="14" y2="4" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="time font-serif">16h15</span>
+            <span class="event">Pausa</span>
+          </div>
+        </div>
+
+        <!-- 16h30 -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon"
+            style="background-color: var(--c-ambar); border-color: var(--c-ambar); color: #fff;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+            </svg>
+          </div>
+          <div class="timeline-content">
+            <span class="time font-serif" style="color: var(--c-ambar);">16h30</span>
+            <span class="event">Bloco final e encerramento*</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cronograma-notes reveal text-center"
+        style="margin-top: 4rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <p class="text-small" style="color: rgba(31, 42, 36, 0.7); margin-bottom: 3rem;">*O encerramento pode passar um
+          pouco das 18h, se a turma pedir para aprofundar algum ponto. O conteúdo combinado é entregue dentro do
+          horário.</p>
+
+
+      </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 6 — PRINTS DE ALUNOS
+       ========================================== -->
+  <section id="dobra-6"
+    style="background-color: var(--c-bg-escuro); color: var(--c-texto-claro); padding: 6rem 0; overflow: hidden;">
+    <div class="container reveal">
+
+      <!-- Cabeçalho da Dobra -->
+      <div class="text-wrapper text-center" style="margin-bottom: 4rem; position: relative;">
+        <!-- Selo flutuante -->
+        <div class="badge-alunos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" width="16" height="16">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          +3.000 alunos
+        </div>
+
+        <h2 class="h1" style="color: #FFFFFF; margin-bottom: 1rem;">3 mil alunos já estudam com o Rafa.</h2>
+        <p class="h2" style="color: rgba(245, 240, 230, 0.8);">Veja o que alguns disseram.</p>
+      </div>
+
+      <!-- Carrosséis Duplos por Swipe -->
+      <div class="carrosseis-wrapper"
+        style="position: relative; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+
+        <!-- Carrossel 1: Linha de cima (Scroll normal) -->
+        <div class="carrossel-prints-container reveal" data-direction="normal" style="margin-bottom: 2rem;">
+          <div class="carrossel-prints-track">
+            <div class="print-slide"><img src="../assets/images/Dep_1.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_2.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_3.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_4.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_5.webp" alt="Depoimento" loading="lazy"></div>
+          </div>
+        </div>
+
+        <!-- Carrossel 2: Linha de baixo (Scroll reverso) -->
+        <div class="carrossel-prints-container reveal" data-direction="reverse">
+          <div class="carrossel-prints-track">
+            <div class="print-slide"><img src="../assets/images/Dep_10.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_9.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_8.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_7.webp" alt="Depoimento" loading="lazy"></div>
+            <div class="print-slide"><img src="../assets/images/Dep_6.webp" alt="Depoimento" loading="lazy"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ==========================================
+       DOBRA 8 — PREÇO
+       ========================================== -->
+  <section id="dobra-8"
+    style="background-color: var(--c-verde-musgo, #1F2A24); color: var(--c-texto-claro); padding: 6rem 1rem;">
+    <div class="container reveal">
+
+      <div class="text-wrapper text-center"
+        style="margin-bottom: 3rem; text-align: center; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; display: flex; justify-content: center;">
+        <h2 class="h1" style="color: #FFFFFF; margin-bottom: 1rem; text-align: center; width: 100%;">Quanto vale um dia
+          inteiro com o Rafa?</h2>
+      </div>
+
+      <!-- Infográfico de Comparação -->
+      <div class="comparacao-precos justify-center reveal"
+        style="margin-bottom: -2rem; position: relative; z-index: 2; max-width: 650px; margin-left: auto; margin-right: auto;">
+
+        <div class="bloco-palestra bg-dark"
+          style="background-color: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; flex: 1; text-align: center;">
+          <p class="text-small"
+            style="color: rgba(245,240,230,0.7); margin-bottom: 0.5rem; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">
+            1 hora de palestra</p>
+          <p class="h2" style="color: rgba(255,255,255,0.5); text-decoration: line-through;">R$ 10.000</p>
+        </div>
+
+        <div class="bloco-acampamento bg-highlight"
+          style="background-color: var(--c-ambar); border-radius: 12px; padding: 1.5rem; flex: 1; text-align: center; box-shadow: 0 10px 25px rgba(217,138,43,0.3); transform: scale(1.05);">
+          <p class="text-small"
+            style="color: #fff; margin-bottom: 0.5rem; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">
+            7 horas de Acampamento</p>
+          <p class="h2" style="color: #fff; font-weight: 900;">R$ 17</p>
+        </div>
+
+      </div>
+
+      <!-- Card Principal -->
+      <div class="card-preco reveal"
+        style="background-color: var(--c-bg-claro); border-radius: 16px; padding: 4rem 2rem 2rem 2rem; max-width: 600px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.4); text-align: center; color: #1F2A24 !important;">
+
+        <p class="text-large" style="margin-bottom: 1rem; color: #1F2A24 !important;">Uma hora de palestra do Rafa custa
+          R$ 10 mil. No Acampamento, são 7 horas de conteúdo ao vivo com ele.</p>
+
+        <div class="preco-destaque" style="margin: 2rem 0;">
+          <p
+            style="font-size: 1.5rem; color: #E53935 !important; text-decoration: line-through; text-decoration-color: #E53935; text-decoration-thickness: 3px;">
+            De R$ 97</p>
+          <p class="preco-final"
+            style="font-size: clamp(2.5rem, 10vw, 4.5rem); font-weight: 900; color: #1F2A24 !important; line-height: 1; margin: 0.5rem 0;">
+            POR R$ 17</p>
+          <p class="lote-badge"
+            style="display: inline-block; background-color: var(--c-ambar); color: #fff !important; padding: 0.25rem 1rem; border-radius: 999px; font-weight: bold; font-size: 14px; text-transform: uppercase;">
+            Lote 0</p>
+        </div>
+
+        <div class="barra-lote"
+          style="background-color: rgba(31, 42, 36, 0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 0.5rem; width: 100%;">
+          <div class="barra-fill" style="background-color: var(--c-ambar); width: 85%; height: 100%;"></div>
+        </div>
+        <p style="color: rgba(31, 42, 36, 0.8) !important; font-weight: bold; margin-bottom: 2rem; font-size: 0.85rem;">
+          85% dos ingressos do Lote 0 vendidos</p>
+
+        <div class="incluso-lista"
+          style="text-align: left; margin-bottom: 2rem; border-top: 1px solid rgba(31, 42, 36, 0.1); padding-top: 2rem;">
+          <p class="font-serif"
+            style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem; color: #1F2A24 !important;">Está
+            incluído:</p>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li
+              style="margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; color: #1F2A24 !important;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--c-ambar)" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20" style="flex-shrink: 0; margin-top: 2px;">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Acampamento ao vivo, sábado 17/10, das 9h às 18h</span>
+            </li>
+            <li
+              style="margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; color: #1F2A24 !important;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--c-ambar)" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20" style="flex-shrink: 0; margin-top: 2px;">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Seu protocolo montado durante o dia</span>
+            </li>
+            <li
+              style="margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; color: #1F2A24 !important;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--c-ambar)" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20" style="flex-shrink: 0; margin-top: 2px;">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Certificado de participação</span>
+            </li>
+            <li
+              style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 0.75rem; color: #1F2A24 !important;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--c-ambar)" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20" style="flex-shrink: 0; margin-top: 2px;">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Reembolso garantido até 19/10</span>
+            </li>
+          </ul>
+        </div>
+
+        <a href="https://checkout.thebank.com.br/7509325389419266048" class="btn pulse-anim"
+          style="width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 0.75rem;">Garantir
+          minha vaga</a>
+        <div
+          style="display: flex; align-items: center; justify-content: center; gap: 0.25rem; color: rgba(31, 42, 36, 0.7) !important;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" width="14" height="14" style="flex-shrink: 0;">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span style="font-size: clamp(10px, 3.5vw, 14px); font-weight: bold; white-space: nowrap;">Pix ou cartão |
+            Compra segura</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 9 — POR QUE TÃO BARATO
+       ========================================== -->
+  <section id="dobra-9" class="por-que-barato"
+    style="background-color: var(--c-bg-claro); background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E'); color: var(--c-texto-escuro); padding: 5rem 1rem;">
+    <div class="container reveal"
+      style="max-width: 600px; margin: 0 auto; background-color: #FAFAF8; padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05);">
+      <p class="text-small text-center"
+        style="color: var(--c-ambar); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+        por que tão barato? Tem pegadinha?</p>
+      <div class="carta-texto text-large" style="line-height: 1.6; color: #1F2A24 !important;">
+
+        <p style="margin-bottom: 1rem; color: #1F2A24 !important;">Um dia inteiro de treino ao vivo. Pelo preço de um
+          almoço. Você deve estar se
+          perguntando por quê.</p>
+        <p style="margin-bottom: 1rem; color: #1F2A24 !important;">Meu compromisso é impactar 10 milhões de pessoas até
+          2030. Mais de 80 mil já
+          passaram por aqui. Ainda falta muito. E ninguém deveria ficar de fora por causa do preço.</p>
+        <p style="margin-bottom: 1rem; color: #1F2A24 !important;">Por isso o ingresso é acessível de propósito. Assim,
+          o dinheiro nunca é a
+          barreira.</p>
+        <p style="margin-bottom: 1.5rem; color: #1F2A24 !important;">E quem investe, mesmo que pouco, aparece e aplica.
+          Se você está pronto para
+          isso, seu lugar está guardado.</p>
+
+        <div class="assinatura" style="margin-top: 3rem;">
+          <svg class="assinatura-svg" viewBox="0 0 300 80" width="120" height="40" stroke="#1F2A24" stroke-width="2"
+            fill="none">
+            <!-- Curvas manuscritas simulando assinatura -->
+            <path
+              d="M10 50 C 30 10, 50 40, 60 50 C 80 70, 90 30, 100 40 C 110 50, 130 30, 140 40 C 160 60, 180 30, 200 40"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M50 60 L 80 40" stroke-linecap="round" />
+          </svg>
+          <p class="text-small"
+            style="margin-top: 0.5rem; font-weight: bold; margin-left: 1rem; color: #1F2A24 !important;">Rafa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 10 — SOBRE O RAFA
+       ========================================== -->
+  <section id="dobra-10"
+    style="background-color: var(--c-verde-musgo, #1F2A24); color: var(--c-texto-claro); padding: 6rem 1rem;">
+    <div class="container reveal">
+
+      <div class="sobre-layout" style="align-items: center; gap: 4rem;">
+
+        <!-- Foto -->
+        <div class="sobre-img-wrapper" style="flex: 1; max-width: 450px; margin: 0 auto;">
+          <img src="../assets/images/rafa-perfil.webp" alt="Rafa Barbosa" loading="lazy"
+            style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="sobre-content" style="flex: 1; max-width: 600px; margin: 0 auto;">
+          <p class="text-small"
+            style="color: var(--c-ambar); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+            Por que passar esse sábado com o Rafa?</p>
+
+          <div style="margin-bottom: 1.5rem;">
+            <p class="h3" style="color: #FFFFFF; font-weight: 900; margin-bottom: 0.25rem;">RAFA BARBOSA</p>
+          </div>
+
+          <p class="text-regular" style="color: rgba(245, 240, 230, 0.9); margin-bottom: 1rem;">Filósofo, com graduação
+            e pós em Filosofia. Professor e escritor.</p>
+          <p class="text-regular" style="color: rgba(245, 240, 230, 0.9); margin-bottom: 1.5rem;">O Rafa traduz ideias
+            complexas em ferramentas simples. Para quem quer usar a filosofia na vida real, e não só estudar.</p>
+
+          <p
+            style="color: rgba(245, 240, 230, 0.5); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; font-weight: bold; margin-bottom: 3rem;">
+            A Nova Voz da Filosofia</p>
+
+          <!-- Contadores -->
+          <div class="contadores-layout"
+            style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; gap: 2rem; width: 100%;">
+            <div style="flex: 1;">
+              <p class="h2" style="color: var(--c-ambar); font-weight: 900; margin-bottom: 0.25rem;">+<span
+                  class="contador" data-target="3000">0</span></p>
+              <p class="text-small"
+                style="color: rgba(245, 240, 230, 0.7); font-weight: bold; text-transform: uppercase;">Alunos</p>
+            </div>
+            <div style="flex: 1;">
+              <p class="h2" style="color: var(--c-ambar); font-weight: 900; margin-bottom: 0.25rem;">+<span
+                  class="contador" data-target="80000">0</span></p>
+              <p class="text-small"
+                style="color: rgba(245, 240, 230, 0.7); font-weight: bold; text-transform: uppercase;">Pessoas atingidas
+              </p>
+            </div>
+            <div style="flex: 1;">
+              <p class="h2" style="color: var(--c-ambar); font-weight: 900; margin-bottom: 0.25rem;"><span
+                  class="contador" data-target="27">0</span></p>
+              <p class="text-small"
+                style="color: rgba(245, 240, 230, 0.7); font-weight: bold; text-transform: uppercase;">Estados (Todo o
+                Brasil)</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 11 — GARANTIA
+       ========================================== -->
+  <section id="dobra-11" style="background-color: var(--c-bg-claro); color: var(--c-texto-escuro); padding: 5rem 1rem;">
+    <div class="container reveal">
+      <div class="sobre-layout" style="align-items: center; max-width: 800px; margin: 0 auto; gap: 4rem;">
+
+        <!-- Selo Giratório -->
+        <div style="width: 160px; height: 160px; flex-shrink: 0; position: relative; margin: 0 auto;">
+          <svg viewBox="0 0 100 100" width="100%" height="100%" class="spin-slow">
+            <defs>
+              <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+            </defs>
+            <text font-weight="bold" font-size="12" fill="#1F2A24">
+              <textPath href="#circlePath" startOffset="0%" textLength="250" lengthAdjust="spacing">
+                GARANTIA • GARANTIA • GARANTIA •
+              </textPath>
+            </text>
+          </svg>
+          <!-- Ícone central fixo -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--c-ambar)" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" width="40" height="40"
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+
+        <!-- Texto -->
+        <div class="garantia-texto" style="flex: 1; text-align: left;">
+          <p class="text-small"
+            style="color: var(--c-ambar); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+            Comprei e não vou conseguir participar</p>
+          <p class="text-regular" style="color: rgba(31, 42, 36, 0.8);">
+            Sem crise, você ainda pode participar do evento e solicitar o reembolso do seu ingresso em até 2 dias após o
+            evento. Eu sei que será o evento mais prático, técnico e Data-driven que você já fez. Só não vai curtir se
+            realmente não for o seu momento.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 12 — FAQ
+       ========================================== -->
+  <section id="dobra-12"
+    style="background-color: var(--c-verde-musgo, #1F2A24); color: var(--c-texto-claro); padding: 5rem 1rem;">
+    <div class="container reveal" style="max-width: 800px; margin: 0 auto;">
+      <p class="text-small text-center"
+        style="color: var(--c-ambar); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+        Perguntas Frequentes</p>
+      <h2 class="h2 text-center" style="color: #FFFFFF; margin-bottom: 4rem;">Ainda tem alguma dúvida?</h2>
+
+      <div class="faq-container">
+        <!-- Q1 -->
+        <div class="faq-item active">
+          <button class="faq-question">
+            Quando acontece o Acampamento Estoico?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" style="max-height: 200px;">
+            <p>Sábado, 17 de outubro. Um dia inteiro de treino ao vivo, das 9h às 18h.</p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Preciso saber filosofia?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Não. Você não precisa ter lido nada. O Rafa explica do zero, com exemplos do dia a dia.</p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Funciona pra quem já faz ou já fez terapia?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim. O Acampamento não substitui a terapia. Ele trabalha outro ângulo: treinar a sua reação, com
+              exercícios guiados, na hora em que a vida aperta.</p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Já tentei livros, cursos e vídeos. Por que aqui seria diferente?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Porque ler ajuda a entender, mas o padrão volta. Aqui você treina a resposta e sai com um protocolo para
+              usar sozinho, todos os dias.</p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Não sou muito bom com tecnologia. Vou conseguir assistir?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Vai. A transmissão é pelo YouTube. Você só precisa clicar no link, pelo celular, computador ou TV. Se
+              travar, o suporte te ajuda no WhatsApp.</p>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Fico o dia todo parado na frente da tela?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Não. O dia tem pausas e exercícios práticos. Você não assiste parado: aplica junto.</p>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            As aulas vão ficar gravadas?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Não. E isso é proposital. Quando a aula fica para depois, o depois vira amanhã. Depois vira semana que
+              vem. E a aula nunca é vista. Reserve o seu sábado.</p>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Como vou receber o acesso?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Logo após a compra, você recebe um e-mail com o link do grupo oficial no WhatsApp. No dia 17, o link da
+              transmissão é enviado no grupo. Use um e-mail válido e confira também a caixa de spam.</p>
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            O que acontece depois do Acampamento?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Você sai com seu protocolo pronto para usar. Para quem quiser continuar o treino com acompanhamento, o
+              Rafa apresenta os próximos passos durante o evento.</p>
+          </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            O valor pode mudar?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim. O valor atual vale só para este lote e sobe a qualquer momento, na virada. Se você quer participar, garanta pelo valor de hoje.</p>
+          </div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Existe garantia?
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="20" height="20">
+                <line x1="12" y1="5" x2="12" y2="19" class="faq-vertical"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim. Você tem até 2 dias corridos após o evento para pedir o dinheiro de volta. Basta solicitar o
+              cancelamento. Sem perguntas.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOBRA 13 — CTA FINAL
+       ========================================== -->
+  <section id="dobra-13"
+    style="position: relative; background-color: var(--c-verde-musgo, #1F2A24); color: #fff; padding: 8rem 1rem 6rem 1rem; text-align: center; overflow: hidden;">
+
+    <!-- Brilho Fogueira Pulsante -->
+    <div
+      style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 100vw; max-width: 800px; max-height: 800px; background: radial-gradient(circle, rgba(217, 138, 43, 0.25) 0%, rgba(31, 42, 36, 0) 65%); border-radius: 50%; pointer-events: none; animation: pulse-fogueira 4s infinite alternate; transform: translate(-50%, -50%); z-index: 1;">
+    </div>
+
+    <div class="container reveal" style="position: relative; z-index: 2; max-width: 600px; margin: 0 auto;">
+
+      <!-- Ciclo da Hero Quebrado -->
+      <div style="margin: 0 auto 2rem auto; max-width: 250px;">
+        <svg viewBox="0 0 340 260" width="100%" height="100%" style="overflow: visible;">
+          <!-- Anel quebrado (stroke-dasharray cria o vão) -->
+          <circle cx="170" cy="130" r="100" fill="none" stroke="var(--c-ambar)" stroke-width="8" stroke-linecap="round"
+            stroke-dasharray="450 628" style="transform: rotate(135deg); transform-origin: center;" />
+          <!-- Pequena brasa caindo/quebrada -->
+          <circle cx="280" cy="190" r="6" fill="var(--c-ambar)" />
+        </svg>
+      </div>
+
+      <h2 class="h2" style="color: #fff; margin-bottom: 1.5rem; line-height: 1.2; font-size: clamp(2rem, 5vw, 3rem);">
+        Sábado, 17/10. Um dia para quebrar o ciclo.</h2>
+
+      <p class="text-regular"
+        style="color: rgba(255,255,255,0.8); margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+        De <span style="text-decoration: line-through; opacity: 0.7;">R$ 97</span> por <strong
+          style="color: var(--c-ambar); font-size: 1.25rem;">R$ 17</strong> | Lote 0.<br>Reembolso garantido até 19/10.
+      </p>
+
+      <a href="https://checkout.thebank.com.br/7509325389419266048" class="btn pulse-anim"
+        style="width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem; line-height: 1.2;">
+        <span style="font-size: clamp(1.1rem, 5vw, 1.5rem); font-weight: 900; text-transform: uppercase;">Garantir meu
+          lugar</span>
+        <span
+          style="font-size: 0.85rem; font-weight: 600; opacity: 0.9; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 1px;">Lote
+          0</span>
+      </a>
+
+    </div>
+  </section>
+
+  <script src="../js/p4.js"></script>
+</body>
+
+</html>
