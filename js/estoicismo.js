@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==========================================================================
  * ESTOICISMO CONTEMPORÂNEO - MOTION E INTERAÇÕES
  * ==========================================================================
@@ -161,7 +161,7 @@ function animateProgressBar(targetPercentage) {
         currentNumber = targetNumber;
         clearInterval(counter);
       }
-      const labelText = Math.floor(currentNumber) + '% das vagas preenchidas a R$17,00';
+      const labelText = Math.floor(currentNumber) + '% das vagas preenchidas a R$27,00';
       text.textContent = labelText;
       if (textFloat) textFloat.textContent = labelText;
       if (textOffer) textOffer.textContent = labelText;

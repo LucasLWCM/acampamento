@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==========================================================================
  * P2 - MOTION E INTERAÇÕES (PERFORMANCE-FIRST)
  * ==========================================================================
@@ -161,7 +161,7 @@ function animateProgressBar(targetPercentage) {
         currentNumber = targetNumber;
         clearInterval(counter);
       }
-      const labelText = Math.floor(currentNumber) + '% dos ingressos vendidos a R$17,00';
+      const labelText = Math.floor(currentNumber) + '% dos ingressos vendidos a R$27,00';
       text.textContent = labelText;
       if (textFloat) textFloat.textContent = labelText;
       if (textOffer) textOffer.textContent = labelText;
