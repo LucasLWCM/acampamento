@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,12 +20,14 @@
       min-height: 100vh;
       margin: 0;
     }
+
     .container {
       max-width: 600px;
       width: 100%;
       margin: 0 auto;
       padding: 2rem 1rem;
     }
+
     .progress-container {
       background-color: rgba(255, 255, 255, 0.2);
       border-radius: 20px;
@@ -35,6 +38,7 @@
       width: 100%;
       max-width: 400px;
     }
+
     .progress-bar {
       background-color: #25D366;
       height: 100%;
@@ -42,6 +46,7 @@
       transition: width 1.5s ease-in-out;
       border-radius: 20px;
     }
+
     .progress-text {
       font-weight: bold;
       color: var(--c-sand, #F2E8CF);
@@ -50,6 +55,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
     h1 {
       font-size: clamp(2rem, 5vw, 3rem);
       color: var(--c-light, #FFFFFF);
@@ -57,19 +63,23 @@
       font-family: var(--font-serif, serif);
       line-height: 1.1;
     }
+
     p {
       font-size: 1.15rem;
       line-height: 1.6;
       margin-bottom: 1rem;
       color: var(--c-light, #FFFFFF);
     }
+
     .alert-text {
-      color: #ff4444; /* Vermelho alerta para destacar a urgência */
+      color: #ff4444;
+      /* Vermelho alerta para destacar a urgência */
       font-weight: 800;
       margin-bottom: 2.5rem;
       text-transform: uppercase;
       font-size: 1.2rem;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -87,17 +97,21 @@
       text-transform: uppercase;
       transition: transform 0.2s, background-color 0.2s;
     }
+
     .btn:hover {
       transform: scale(1.02);
     }
+
     .btn-whatsapp {
       background-color: #25D366;
       color: #fff;
       box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     }
+
     .btn-whatsapp:hover {
       background-color: #1ebe5d;
     }
+
     .btn-support {
       background-color: #ffcc00;
       color: #1F2A24;
@@ -106,49 +120,57 @@
       font-size: 1rem;
       margin-bottom: 1rem;
     }
+
     .btn-support:hover {
       background-color: #e6b800;
     }
   </style>
 
   <!-- Start VWO Async SmartCode -->
-  <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com"/>
+  <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
   <script type='text/javascript' id="vwoCode">
-  window._vwo_code ||
-  (function () {
-  var w=window,
-  d=document;
-  var account_id=834797,
-  version=2.2,
-  settings_tolerance=2000,
-  hide_element='body',
-  hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;';
-  /* DO NOT EDIT BELOW THIS LINE */
-  var f=0, v;
-  if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1<d.URL.indexOf('__vwo_disable__')||w._vwo_code)return;try{var e=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=e&&'object'==typeof e?e:{}}catch(e){}function r(t){try{return decodeURIComponent(t)}catch(e){return t}}var s=function(){var e={combination:[],combinationChoose:[],split:[],exclude:[],uuid:null,consent:null,optOut:null},t=d.cookie||'';if(!t)return e;for(var n,i,o=/(?:^|;\s*)(?:(_vis_opt_exp_(\d+)_combi=([^;]*))|(_vis_opt_exp_(\d+)_combi_choose=([^;]*))|(_vis_opt_exp_(\d+)_split=([^:;]*))|(_vis_opt_exp_(\d+)_exclude=[^;]*)|(_vis_opt_out=([^;]*))|(_vwo_global_opt_out=[^;]*)|(_vwo_uuid=([^;]*))|(_vwo_consent=([^;]*)))/g;null!==(n=o.exec(t));)try{n[1]?e.combination.push({id:n[2],value:r(n[3])}):n[4]?e.combinationChoose.push({id:n[5],value:r(n[6])}):n[7]?e.split.push({id:n[8],value:r(n[9])}):n[10]?e.exclude.push({id:n[11]}):n[12]?e.optOut=r(n[13]):n[14]?e.optOut=!0:n[15]?e.uuid=r(n[16]):n[17]&&(i=r(n[18]),e.consent=i&&3<=i.length?i.substring(0,3):null)}catch(e){}return e}();function i(){var e=function(){if(w.VWO&&Array.isArray(w.VWO))for(var e=0;e<w.VWO.length;e++){var t=w.VWO[e];if(Array.isArray(t)&&('setVisitorId'===t[0]||'setSessionId'===t[0]))return!0}return!1}(),t='a='+account_id+'&u='+encodeURIComponent(w._vis_opt_url||d.URL)+'&vn='+version+'&ph=1'+('undefined'!=typeof platform?'&p='+platform:'')+'&st='+w.performance.now();e||((n=function(){var e,t=[],n={},i=w.VWO&&w.VWO.appliedCampaigns||{};for(e in i){var o=i[e]&&i[e].v;o&&(t.push(e+'-'+o+'-1'),n[e]=!0)}if(s&&s.combination)for(var r=0;r<s.combination.length;r++){var a=s.combination[r];n[a.id]||t.push(a.id+'-'+a.value)}return t.join('|')}())&&(t+='&c='+n),(n=function(){var e=[],t={};if(s&&s.combinationChoose)for(var n=0;n<s.combinationChoose.length;n++){var i=s.combinationChoose[n];e.push(i.id+'-'+i.value),t[i.id]=!0}if(s&&s.split)for(var o=0;o<s.split.length;o++)t[(i=s.split[o]).id]||e.push(i.id+'-'+i.value);return e.join('|')}())&&(t+='&cc='+n),(n=function(){var e={},t=[];if(w.VWO&&Array.isArray(w.VWO))for(var n=0;n<w.VWO.length;n++){var i=w.VWO[n];if(Array.isArray(i)&&'setVariation'===i[0]&&i[1]&&Array.isArray(i[1]))for(var o=0;o<i[1].length;o++){var r,a=i[1][o];a&&'object'==typeof a&&(r=a.e,a=a.v,r&&a&&(e[r]=a))}}for(r in e)t.push(r+'-'+e[r]);return t.join('|')}())&&(t+='&sv='+n)),s&&s.optOut&&(t+='&o='+s.optOut);var n=function(){var e=[],t={};if(s&&s.exclude)for(var n=0;n<s.exclude.length;n++){var i=s.exclude[n];t[i.id]||(e.push(i.id),t[i.id]=!0)}return e.join('|')}();return n&&(t+='&e='+n),s&&s.uuid&&(t+='&id='+s.uuid),s&&s.consent&&(t+='&consent='+s.consent),w.name&&-1<w.name.indexOf('_vis_preview')&&(t+='&pM=true'),w.VWO&&w.VWO.ed&&(t+='&ed='+w.VWO.ed),t}code={script:v,nonce:v&&v.nonce,library_tolerance:function(){return'undefined'!=typeof library_tolerance?library_tolerance:void 0},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':'string'==typeof cc.hE?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){var t;f||(f=!0,(t=d.getElementById('_vis_opt_path_hides'))&&t.parentNode.removeChild(t),e&&((new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e))},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript',e.src?t.src=e.src:t.text=e.text,v&&t.setAttribute('nonce',v.nonce),d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){t=t||{};var n=new XMLHttpRequest;n.open('GET',e,!0),n.withCredentials=!t.dSC,n.responseType=t.responseType||'text',n.onload=function(){if(t.onloadCb)return t.onloadCb(n,e);200===n.status?_vwo_code.addScript({text:n.responseText}):_vwo_code.finish('&e=loading_failure:'+e)},n.onerror=function(){if(t.onerrorCb)return t.onerrorCb(e);_vwo_code.finish('&e=loading_failure:'+e)},n.send()},init:function(){var e,t=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish()},t),'body'!==this.hide_element()?(n=d.createElement('style'),e=(t=this.hide_element())?t+this.hide_element_style():'',t=d.getElementsByTagName('head')[0],n.setAttribute('id','_vis_opt_path_hides'),v&&n.setAttribute('nonce',v.nonce),n.setAttribute('type','text/css'),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(d.createTextNode(e)),t.appendChild(n)):(n=d.getElementsByTagName('head')[0],(e=d.createElement('div')).style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;',e.setAttribute('id','_vis_opt_path_hides'),e.classList.add('_vis_hide_layer'),n.parentNode.insertBefore(e,n.nextSibling));var n='https://dev.visualwebsiteoptimizer.com/j.php?'+i();-1!==w.location.search.indexOf('_vwo_xhr')?this.addScript({src:n}):this.load(n+'&x=true',{l:1})}};w._vwo_code=code;code.init();})();
+    window._vwo_code ||
+      (function () {
+        var w = window,
+          d = document;
+        var account_id = 834797,
+          version = 2.2,
+          settings_tolerance = 2000,
+          hide_element = 'body',
+          hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;';
+        /* DO NOT EDIT BELOW THIS LINE */
+        var f = 0, v;
+        if (f = !1, v = d.querySelector('#vwoCode'), cc = {}, -1 < d.URL.indexOf('__vwo_disable__') || w._vwo_code) return; try { var e = JSON.parse(localStorage.getItem('_vwo_' + account_id + '_config')); cc = e && 'object' == typeof e ? e : {} } catch (e) { } function r(t) { try { return decodeURIComponent(t) } catch (e) { return t } } var s = function () { var e = { combination: [], combinationChoose: [], split: [], exclude: [], uuid: null, consent: null, optOut: null }, t = d.cookie || ''; if (!t) return e; for (var n, i, o = /(?:^|;\s*)(?:(_vis_opt_exp_(\d+)_combi=([^;]*))|(_vis_opt_exp_(\d+)_combi_choose=([^;]*))|(_vis_opt_exp_(\d+)_split=([^:;]*))|(_vis_opt_exp_(\d+)_exclude=[^;]*)|(_vis_opt_out=([^;]*))|(_vwo_global_opt_out=[^;]*)|(_vwo_uuid=([^;]*))|(_vwo_consent=([^;]*)))/g; null !== (n = o.exec(t));)try { n[1] ? e.combination.push({ id: n[2], value: r(n[3]) }) : n[4] ? e.combinationChoose.push({ id: n[5], value: r(n[6]) }) : n[7] ? e.split.push({ id: n[8], value: r(n[9]) }) : n[10] ? e.exclude.push({ id: n[11] }) : n[12] ? e.optOut = r(n[13]) : n[14] ? e.optOut = !0 : n[15] ? e.uuid = r(n[16]) : n[17] && (i = r(n[18]), e.consent = i && 3 <= i.length ? i.substring(0, 3) : null) } catch (e) { } return e }(); function i() { var e = function () { if (w.VWO && Array.isArray(w.VWO)) for (var e = 0; e < w.VWO.length; e++) { var t = w.VWO[e]; if (Array.isArray(t) && ('setVisitorId' === t[0] || 'setSessionId' === t[0])) return !0 } return !1 }(), t = 'a=' + account_id + '&u=' + encodeURIComponent(w._vis_opt_url || d.URL) + '&vn=' + version + '&ph=1' + ('undefined' != typeof platform ? '&p=' + platform : '') + '&st=' + w.performance.now(); e || ((n = function () { var e, t = [], n = {}, i = w.VWO && w.VWO.appliedCampaigns || {}; for (e in i) { var o = i[e] && i[e].v; o && (t.push(e + '-' + o + '-1'), n[e] = !0) } if (s && s.combination) for (var r = 0; r < s.combination.length; r++) { var a = s.combination[r]; n[a.id] || t.push(a.id + '-' + a.value) } return t.join('|') }()) && (t += '&c=' + n), (n = function () { var e = [], t = {}; if (s && s.combinationChoose) for (var n = 0; n < s.combinationChoose.length; n++) { var i = s.combinationChoose[n]; e.push(i.id + '-' + i.value), t[i.id] = !0 } if (s && s.split) for (var o = 0; o < s.split.length; o++)t[(i = s.split[o]).id] || e.push(i.id + '-' + i.value); return e.join('|') }()) && (t += '&cc=' + n), (n = function () { var e = {}, t = []; if (w.VWO && Array.isArray(w.VWO)) for (var n = 0; n < w.VWO.length; n++) { var i = w.VWO[n]; if (Array.isArray(i) && 'setVariation' === i[0] && i[1] && Array.isArray(i[1])) for (var o = 0; o < i[1].length; o++) { var r, a = i[1][o]; a && 'object' == typeof a && (r = a.e, a = a.v, r && a && (e[r] = a)) } } for (r in e) t.push(r + '-' + e[r]); return t.join('|') }()) && (t += '&sv=' + n)), s && s.optOut && (t += '&o=' + s.optOut); var n = function () { var e = [], t = {}; if (s && s.exclude) for (var n = 0; n < s.exclude.length; n++) { var i = s.exclude[n]; t[i.id] || (e.push(i.id), t[i.id] = !0) } return e.join('|') }(); return n && (t += '&e=' + n), s && s.uuid && (t += '&id=' + s.uuid), s && s.consent && (t += '&consent=' + s.consent), w.name && -1 < w.name.indexOf('_vis_preview') && (t += '&pM=true'), w.VWO && w.VWO.ed && (t += '&ed=' + w.VWO.ed), t } code = { script: v, nonce: v && v.nonce, library_tolerance: function () { return 'undefined' != typeof library_tolerance ? library_tolerance : void 0 }, settings_tolerance: function () { return cc.sT || settings_tolerance }, hide_element_style: function () { return '{' + (cc.hES || hide_element_style) + '}' }, hide_element: function () { return performance.getEntriesByName('first-contentful-paint')[0] ? '' : 'string' == typeof cc.hE ? cc.hE : hide_element }, getVersion: function () { return version }, finish: function (e) { var t; f || (f = !0, (t = d.getElementById('_vis_opt_path_hides')) && t.parentNode.removeChild(t), e && ((new Image).src = 'https://dev.visualwebsiteoptimizer.com/ee.gif?a=' + account_id + e)) }, finished: function () { return f }, addScript: function (e) { var t = d.createElement('script'); t.type = 'text/javascript', e.src ? t.src = e.src : t.text = e.text, v && t.setAttribute('nonce', v.nonce), d.getElementsByTagName('head')[0].appendChild(t) }, load: function (e, t) { t = t || {}; var n = new XMLHttpRequest; n.open('GET', e, !0), n.withCredentials = !t.dSC, n.responseType = t.responseType || 'text', n.onload = function () { if (t.onloadCb) return t.onloadCb(n, e); 200 === n.status ? _vwo_code.addScript({ text: n.responseText }) : _vwo_code.finish('&e=loading_failure:' + e) }, n.onerror = function () { if (t.onerrorCb) return t.onerrorCb(e); _vwo_code.finish('&e=loading_failure:' + e) }, n.send() }, init: function () { var e, t = this.settings_tolerance(); w._vwo_settings_timer = setTimeout(function () { _vwo_code.finish() }, t), 'body' !== this.hide_element() ? (n = d.createElement('style'), e = (t = this.hide_element()) ? t + this.hide_element_style() : '', t = d.getElementsByTagName('head')[0], n.setAttribute('id', '_vis_opt_path_hides'), v && n.setAttribute('nonce', v.nonce), n.setAttribute('type', 'text/css'), n.styleSheet ? n.styleSheet.cssText = e : n.appendChild(d.createTextNode(e)), t.appendChild(n)) : (n = d.getElementsByTagName('head')[0], (e = d.createElement('div')).style.cssText = 'z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;', e.setAttribute('id', '_vis_opt_path_hides'), e.classList.add('_vis_hide_layer'), n.parentNode.insertBefore(e, n.nextSibling)); var n = 'https://dev.visualwebsiteoptimizer.com/j.php?' + i(); -1 !== w.location.search.indexOf('_vwo_xhr') ? this.addScript({ src: n }) : this.load(n + '&x=true', { l: 1 }) } }; w._vwo_code = code; code.init();
+      })();
   </script>
   <!-- End VWO Async SmartCode -->
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1566967544562221');
-fbq('init', '2115550092258715');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1566967544562221&ev=PageView&noscript=1"/>
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2115550092258715&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1566967544562221');
+    fbq('init', '2115550092258715');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1566967544562221&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2115550092258715&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
 </head>
+
 <body class="bg-dark">
   <div class="container fade-up">
     <div class="progress-container">
@@ -158,39 +180,45 @@ fbq('track', 'PageView');
 
     <h1 class="font-serif">falta apenas um passo</h1>
 
-    <p>Toque no botão abaixo e entre para o grupo do evento, é por lá que serão enviados os comunicados e link da aula no dia 17/10.</p>
-    
+    <p>Toque no botão abaixo e entre para o grupo do evento, é por lá que serão enviados os comunicados e link da aula
+      no dia 17/10.</p>
+
     <p class="alert-text">Caso não entre no grupo não vai receber o link</p>
 
     <!-- O link real do grupo deve ser inserido abaixo onde está o "#" -->
-    <a href="#" class="btn btn-whatsapp" target="_blank">
-      <svg style="width: 24px; height: 24px; margin-right: 12px; fill: currentColor;" viewBox="0 0 24 24"><path d="M12.031 21.492c-1.57-.008-3.111-.422-4.471-1.196l-4.996 1.31 1.332-4.871a9.92 9.92 0 0 1-1.34-4.994C2.565 6.273 6.814 2.034 12.28 2.04c5.467.006 9.71 4.256 9.704 9.722 0 5.468-4.254 9.722-9.953 9.73zM12.03 4.041C7.917 4.037 4.568 7.39 4.57 11.503c0 1.32.341 2.613.985 3.753l-1.042 3.81 3.896-1.021a7.925 7.925 0 0 0 3.619.876h.004c4.113.004 7.464-3.348 7.464-7.462 0-4.115-3.349-7.416-7.466-7.418zm4.07 10.428c-.224-.112-1.322-.653-1.526-.728-.204-.075-.353-.112-.5.112-.15.224-.576.728-.707.877-.13.15-.262.168-.486.056-.224-.112-.942-.347-1.796-1.111-.664-.594-1.112-1.329-1.242-1.554-.131-.225-.014-.347.098-.458.1-.1.224-.262.336-.393.112-.13.15-.224.224-.374.075-.15.037-.28-.019-.393-.056-.112-.5-1.206-.684-1.65-.18-.432-.363-.374-.5-.38l-.427-.006c-.15 0-.393.056-.598.28-.204.225-.783.766-.783 1.868 0 1.103.803 2.168.914 2.317.112.15 1.58 2.41 3.827 3.38.535.23 1.018.396 1.41.525.545.18 1.042.155 1.436.094.444-.068 1.322-.54 1.508-1.065.187-.525.187-.975.13-1.065-.056-.094-.204-.15-.428-.262z"/></svg>
+    <a href="https://chat.whatsapp.com/KVoiOh1DBqp82W9PLp52mt" class="btn btn-whatsapp" target="_blank">
+      <svg style="width: 24px; height: 24px; margin-right: 12px; fill: currentColor;" viewBox="0 0 24 24">
+        <path
+          d="M12.031 21.492c-1.57-.008-3.111-.422-4.471-1.196l-4.996 1.31 1.332-4.871a9.92 9.92 0 0 1-1.34-4.994C2.565 6.273 6.814 2.034 12.28 2.04c5.467.006 9.71 4.256 9.704 9.722 0 5.468-4.254 9.722-9.953 9.73zM12.03 4.041C7.917 4.037 4.568 7.39 4.57 11.503c0 1.32.341 2.613.985 3.753l-1.042 3.81 3.896-1.021a7.925 7.925 0 0 0 3.619.876h.004c4.113.004 7.464-3.348 7.464-7.462 0-4.115-3.349-7.416-7.466-7.418zm4.07 10.428c-.224-.112-1.322-.653-1.526-.728-.204-.075-.353-.112-.5.112-.15.224-.576.728-.707.877-.13.15-.262.168-.486.056-.224-.112-.942-.347-1.796-1.111-.664-.594-1.112-1.329-1.242-1.554-.131-.225-.014-.347.098-.458.1-.1.224-.262.336-.393.112-.13.15-.224.224-.374.075-.15.037-.28-.019-.393-.056-.112-.5-1.206-.684-1.65-.18-.432-.363-.374-.5-.38l-.427-.006c-.15 0-.393.056-.598.28-.204.225-.783.766-.783 1.868 0 1.103.803 2.168.914 2.317.112.15 1.58 2.41 3.827 3.38.535.23 1.018.396 1.41.525.545.18 1.042.155 1.436.094.444-.068 1.322-.54 1.508-1.065.187-.525.187-.975.13-1.065-.056-.094-.204-.15-.428-.262z" />
+      </svg>
       Entrar no grupo do evento
     </a>
 
-    <p style="margin-top: 3rem; font-size: 0.95rem; color: #a4b3a9; max-width: 450px; margin-left: auto; margin-right: auto;">
+    <p
+      style="margin-top: 3rem; font-size: 0.95rem; color: #a4b3a9; max-width: 450px; margin-left: auto; margin-right: auto;">
       Caso não consiga entrar no grupo, entre em contato com nosso time de suporte.
     </p>
-    
-    <a href="https://wa.me/5511939454468?text=N%C3%A3o%20consegui%20entrar%20no%20grupo%20do%20evento%2C%20pode%20me%20adicionar%3F" class="btn btn-support" target="_blank">
+
+    <a href="https://wa.me/5511939454468?text=N%C3%A3o%20consegui%20entrar%20no%20grupo%20do%20evento%2C%20pode%20me%20adicionar%3F"
+      class="btn btn-support" target="_blank">
       Falar com o suporte
     </a>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       // Animação da barra de progresso
-      setTimeout(function() {
+      setTimeout(function () {
         document.getElementById("progressBar").style.width = "90%";
       }, 300);
-      
+
       // Animação de entrada
       const container = document.querySelector('.fade-up');
       if (container) {
         container.style.opacity = '0';
         container.style.transform = 'translateY(20px)';
         container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        
+
         setTimeout(() => {
           container.style.opacity = '1';
           container.style.transform = 'translateY(0)';
@@ -199,4 +227,5 @@ fbq('track', 'PageView');
     });
   </script>
 </body>
+
 </html>
