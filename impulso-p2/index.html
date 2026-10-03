@@ -14,6 +14,45 @@
 
   <link rel="preload" href="../assets/images/rafa_hero_paz.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="../css/ansiedade.css">
+
+﻿<!-- Start VWO Async SmartCode -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com"/>
+<script type='text/javascript' id="vwoCode">
+window._vwo_code ||
+(function () {
+var w=window,
+d=document;
+var account_id=834797,
+version=2.2,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;';
+/* DO NOT EDIT BELOW THIS LINE */
+var f=0, v;
+if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1<d.URL.indexOf('__vwo_disable__')||w._vwo_code)return;try{var e=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=e&&'object'==typeof e?e:{}}catch(e){}function r(t){try{return decodeURIComponent(t)}catch(e){return t}}var s=function(){var e={combination:[],combinationChoose:[],split:[],exclude:[],uuid:null,consent:null,optOut:null},t=d.cookie||'';if(!t)return e;for(var n,i,o=/(?:^|;\s*)(?:(_vis_opt_exp_(\d+)_combi=([^;]*))|(_vis_opt_exp_(\d+)_combi_choose=([^;]*))|(_vis_opt_exp_(\d+)_split=([^:;]*))|(_vis_opt_exp_(\d+)_exclude=[^;]*)|(_vis_opt_out=([^;]*))|(_vwo_global_opt_out=[^;]*)|(_vwo_uuid=([^;]*))|(_vwo_consent=([^;]*)))/g;null!==(n=o.exec(t));)try{n[1]?e.combination.push({id:n[2],value:r(n[3])}):n[4]?e.combinationChoose.push({id:n[5],value:r(n[6])}):n[7]?e.split.push({id:n[8],value:r(n[9])}):n[10]?e.exclude.push({id:n[11]}):n[12]?e.optOut=r(n[13]):n[14]?e.optOut=!0:n[15]?e.uuid=r(n[16]):n[17]&&(i=r(n[18]),e.consent=i&&3<=i.length?i.substring(0,3):null)}catch(e){}return e}();function i(){var e=function(){if(w.VWO&&Array.isArray(w.VWO))for(var e=0;e<w.VWO.length;e++){var t=w.VWO[e];if(Array.isArray(t)&&('setVisitorId'===t[0]||'setSessionId'===t[0]))return!0}return!1}(),t='a='+account_id+'&u='+encodeURIComponent(w._vis_opt_url||d.URL)+'&vn='+version+'&ph=1'+('undefined'!=typeof platform?'&p='+platform:'')+'&st='+w.performance.now();e||((n=function(){var e,t=[],n={},i=w.VWO&&w.VWO.appliedCampaigns||{};for(e in i){var o=i[e]&&i[e].v;o&&(t.push(e+'-'+o+'-1'),n[e]=!0)}if(s&&s.combination)for(var r=0;r<s.combination.length;r++){var a=s.combination[r];n[a.id]||t.push(a.id+'-'+a.value)}return t.join('|')}())&&(t+='&c='+n),(n=function(){var e=[],t={};if(s&&s.combinationChoose)for(var n=0;n<s.combinationChoose.length;n++){var i=s.combinationChoose[n];e.push(i.id+'-'+i.value),t[i.id]=!0}if(s&&s.split)for(var o=0;o<s.split.length;o++)t[(i=s.split[o]).id]||e.push(i.id+'-'+i.value);return e.join('|')}())&&(t+='&cc='+n),(n=function(){var e={},t=[];if(w.VWO&&Array.isArray(w.VWO))for(var n=0;n<w.VWO.length;n++){var i=w.VWO[n];if(Array.isArray(i)&&'setVariation'===i[0]&&i[1]&&Array.isArray(i[1]))for(var o=0;o<i[1].length;o++){var r,a=i[1][o];a&&'object'==typeof a&&(r=a.e,a=a.v,r&&a&&(e[r]=a))}}for(r in e)t.push(r+'-'+e[r]);return t.join('|')}())&&(t+='&sv='+n)),s&&s.optOut&&(t+='&o='+s.optOut);var n=function(){var e=[],t={};if(s&&s.exclude)for(var n=0;n<s.exclude.length;n++){var i=s.exclude[n];t[i.id]||(e.push(i.id),t[i.id]=!0)}return e.join('|')}();return n&&(t+='&e='+n),s&&s.uuid&&(t+='&id='+s.uuid),s&&s.consent&&(t+='&consent='+s.consent),w.name&&-1<w.name.indexOf('_vis_preview')&&(t+='&pM=true'),w.VWO&&w.VWO.ed&&(t+='&ed='+w.VWO.ed),t}code={script:v,nonce:v&&v.nonce,library_tolerance:function(){return'undefined'!=typeof library_tolerance?library_tolerance:void 0},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':'string'==typeof cc.hE?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){var t;f||(f=!0,(t=d.getElementById('_vis_opt_path_hides'))&&t.parentNode.removeChild(t),e&&((new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e))},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript',e.src?t.src=e.src:t.text=e.text,v&&t.setAttribute('nonce',v.nonce),d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){t=t||{};var n=new XMLHttpRequest;n.open('GET',e,!0),n.withCredentials=!t.dSC,n.responseType=t.responseType||'text',n.onload=function(){if(t.onloadCb)return t.onloadCb(n,e);200===n.status?_vwo_code.addScript({text:n.responseText}):_vwo_code.finish('&e=loading_failure:'+e)},n.onerror=function(){if(t.onerrorCb)return t.onerrorCb(e);_vwo_code.finish('&e=loading_failure:'+e)},n.send()},init:function(){var e,t=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish()},t),'body'!==this.hide_element()?(n=d.createElement('style'),e=(t=this.hide_element())?t+this.hide_element_style():'',t=d.getElementsByTagName('head')[0],n.setAttribute('id','_vis_opt_path_hides'),v&&n.setAttribute('nonce',v.nonce),n.setAttribute('type','text/css'),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(d.createTextNode(e)),t.appendChild(n)):(n=d.getElementsByTagName('head')[0],(e=d.createElement('div')).style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;',e.setAttribute('id','_vis_opt_path_hides'),e.classList.add('_vis_hide_layer'),n.parentNode.insertBefore(e,n.nextSibling));var n='https://dev.visualwebsiteoptimizer.com/j.php?'+i();-1!==w.location.search.indexOf('_vwo_xhr')?this.addScript({src:n}):this.load(n+'&x=true',{l:1})}};w._vwo_code=code;code.init();})();
+</script>
+<!-- End VWO Async SmartCode -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1566967544562221');
+fbq('init', '2115550092258715');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1566967544562221&ev=PageView&noscript=1"/>
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2115550092258715&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 
 <body>
@@ -37,18 +76,21 @@
             </div>
           </div>
         </div>
-        <h1><b>Pare de explodir com pessoas desrespeitosas</b> e <b>retome o controle absoluto</b> da sua paz de espírito em 1 dia.</h1>
-        <p class="hero-sub">Chega de viver com o "pavio curto" e perder a cabeça por impulso. Aplique o método exato para manter a sua serenidade intacta e focar apenas nas soluções.</p>
-        <h5 class="hero-chamada"><b>Chegou a hora de se libertar</b> do comportamento imediatista, que faz com que algo pontual acabe com o seu dia todo, te afastando da sua paz e do domínio sobre as suas próprias reações.</h5>
+        <h1><b>Pare de explodir com pessoas desrespeitosas</b> e <b>retome o controle absoluto</b> da sua paz de
+          espírito em 1 dia.</h1>
+        <p class="hero-sub">Chega de viver com o "pavio curto" e perder a cabeça por impulso. Aplique o método exato
+          para manter a sua serenidade intacta e focar apenas nas soluções.</p>
+        <h5 class="hero-chamada"><b>Chegou a hora de se libertar</b> do comportamento imediatista, que faz com que algo
+          pontual acabe com o seu dia todo, te afastando da sua paz e do domínio sobre as suas próprias reações.</h5>
       </div>
       <div class="hero-direita">
         <img class="hero-foto" src="../assets/images/rafa_hero_paz.webp" alt="Rafael Paz" fetchpriority="high"
           decoding="async">
       </div>
-          <h5 class="contador-texto" id="hero-progress-text">0% dos ingressos vendidos</h5>
-        </div>
-      </div>
-    </section>
+      <h5 class="contador-texto" id="hero-progress-text">0% dos ingressos vendidos</h5>
+  </div>
+  </div>
+  </section>
 
   </div>
 
@@ -57,8 +99,8 @@
     <div class="manchetes manchetes-fade">
       <picture>
         <source media="(max-width: 767px)" srcset="../assets/images/raiva_mobile.webp">
-        <img src="../assets/images/Raiva.webp" alt="Manchetes de veículos sobre explosão emocional e raiva" loading="lazy"
-          decoding="async">
+        <img src="../assets/images/Raiva.webp" alt="Manchetes de veículos sobre explosão emocional e raiva"
+          loading="lazy" decoding="async">
       </picture>
     </div>
     <div class="espelho-conteudo">
@@ -68,7 +110,11 @@
         <span class="linha espelho-fade" style="transition-delay: 500ms;"><span>DE QUEM</span> É O PESO?</span>
       </h2>
       <div class="espelho-texto">
-        <p class="espelho-fade" style="transition-delay: 750ms;">Talvez essas perguntas tragam um incômodo profundo agora. O fato é que você pega os problemas dos outros e fica mal. Essa sobrecarga cria um pavio curto que te faz explodir com pessoas desrespeitosas. Você acaba perdendo a cabeça por impulso e gastando a sua saúde diária. Mas você faz tudo isso por um motivo nobre e justo. Você absorve a carga alheia apenas para proteger quem ama e evitar danos.</p>
+        <p class="espelho-fade" style="transition-delay: 750ms;">Talvez essas perguntas tragam um incômodo profundo
+          agora. O fato é que você pega os problemas dos outros e fica mal. Essa sobrecarga cria um pavio curto que te
+          faz explodir com pessoas desrespeitosas. Você acaba perdendo a cabeça por impulso e gastando a sua saúde
+          diária. Mas você faz tudo isso por um motivo nobre e justo. Você absorve a carga alheia apenas para proteger
+          quem ama e evitar danos.</p>
       </div>
     </div>
   </section>
@@ -80,8 +126,13 @@
         <img src="../assets/images/Rafa_em_paz.webp" alt="Rafael Paz" loading="lazy" decoding="async">
       </div>
       <div class="crenca-coluna">
-        <h3 class="crenca-grande">Te contaram que tentar manter a calma em qualquer situação, respirar fundo e pensar antes de responder era o segredo para evitar atritos, mas esqueceram de te contar algo sobre o seu limite diário...</h3>
-        <h4 class="crenca-menor"><b class="tese-sublinhado">A verdadeira paz de espírito nasce da pura arte de ignorar tudo o que não está sob o seu controle.</b> Mas você ainda não consegue viver isso, pois gasta toda a sua paciência tentando equilibrar a loucura do mundo e vive afogado na ansiedade de querer controlar tudo o que os outros fazem.</h4>
+        <h3 class="crenca-grande">Te contaram que tentar manter a calma em qualquer situação, respirar fundo e pensar
+          antes de responder era o segredo para evitar atritos, mas esqueceram de te contar algo sobre o seu limite
+          diário...</h3>
+        <h4 class="crenca-menor"><b class="tese-sublinhado">A verdadeira paz de espírito nasce da pura arte de ignorar
+            tudo o que não está sob o seu controle.</b> Mas você ainda não consegue viver isso, pois gasta toda a sua
+          paciência tentando equilibrar a loucura do mundo e vive afogado na ansiedade de querer controlar tudo o que os
+          outros fazem.</h4>
         <h3 class="crenca-cabecalho"><b>Há quanto tempo você:</b></h3>
         <ul class="crenca-lista">
           <li class="checklist-fade" style="transition-delay: 0ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
@@ -90,27 +141,39 @@
           <li class="checklist-fade" style="transition-delay: 80ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
               </svg></span><span class="crenca-item">tenta controlar o que o outro faz e se frustra?</span></li>
-          <li class="checklist-fade" style="transition-delay: 160ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
+          <li class="checklist-fade" style="transition-delay: 160ms"><span class="crenca-icone"><svg
+                viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
               </svg></span><span class="crenca-item">deixa algo pontual acabar com o seu dia todo?</span></li>
-          <li class="checklist-fade" style="transition-delay: 240ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
+          <li class="checklist-fade" style="transition-delay: 240ms"><span class="crenca-icone"><svg
+                viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
-              </svg></span><span class="crenca-item">sofre por antecipação imaginando problemas num futuro desconhecido?</span></li>
-          <li class="checklist-fade" style="transition-delay: 320ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
+              </svg></span><span class="crenca-item">sofre por antecipação imaginando problemas num futuro
+              desconhecido?</span></li>
+          <li class="checklist-fade" style="transition-delay: 320ms"><span class="crenca-icone"><svg
+                viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
-              </svg></span><span class="crenca-item">desperdiça energia discutindo com quem não merece a sua atenção?</span></li>
-          <li class="checklist-fade" style="transition-delay: 400ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
+              </svg></span><span class="crenca-item">desperdiça energia discutindo com quem não merece a sua
+              atenção?</span></li>
+          <li class="checklist-fade" style="transition-delay: 400ms"><span class="crenca-icone"><svg
+                viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
-              </svg></span><span class="crenca-item"><b>SURTA</b> por impulso e depois acaba se sentindo um lixo?</span></li>
-          <li class="checklist-fade" style="transition-delay: 480ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
+              </svg></span><span class="crenca-item"><b>SURTA</b> por impulso e depois acaba se sentindo um lixo?</span>
+          </li>
+          <li class="checklist-fade" style="transition-delay: 480ms"><span class="crenca-icone"><svg
+                viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
-              </svg></span><span class="crenca-item">chega do trabalho exausto por absorver a tensão do ambiente?</span></li>
-          <li class="checklist-fade" style="transition-delay: 560ms"><span class="crenca-icone"><svg viewBox="0 0 24 24">
+              </svg></span><span class="crenca-item">chega do trabalho exausto por absorver a tensão do ambiente?</span>
+          </li>
+          <li class="checklist-fade" style="transition-delay: 560ms"><span class="crenca-icone"><svg
+                viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
-              </svg></span><span class="crenca-item">sente a sua <b>MENTE</b> refém do comportamento de qualquer idiota?</span></li>
+              </svg></span><span class="crenca-item">sente a sua <b>MENTE</b> refém do comportamento de qualquer
+              idiota?</span></li>
         </ul>
-        <h4 class="crenca-fechamento">Já parou para pensar? Talvez há alguns meses ou até mesmo anos...<br><br><b>CHEGA DE NORMALIZAR ESSA EXAUSTÃO.</b></h4>
-        </div>
+        <h4 class="crenca-fechamento">Já parou para pensar? Talvez há alguns meses ou até mesmo anos...<br><br><b>CHEGA
+            DE NORMALIZAR ESSA EXAUSTÃO.</b></h4>
+      </div>
     </div>
   </section>
 
@@ -126,37 +189,43 @@
           <span class="entregaveis-check"><svg viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
             </svg></span>
-          <span class="entregaveis-texto"><b>Mapeie o limite entre o controle e o caos.</b> Pratique o filtro prático de Epicteto para parar de gastar energia e perder a cabeça com o comportamento dos outros.</span>
+          <span class="entregaveis-texto"><b>Mapeie o limite entre o controle e o caos.</b> Pratique o filtro prático de
+            Epicteto para parar de gastar energia e perder a cabeça com o comportamento dos outros.</span>
         </li>
         <li class="card-fade" style="transition-delay: 100ms">
           <span class="entregaveis-check"><svg viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
             </svg></span>
-          <span class="entregaveis-texto"><b>Construa o seu escudo contra provocações.</b> Desenhe um plano visual para examinar as aparências e impedir que palavras desagradáveis afetem o seu humor diário.</span>
+          <span class="entregaveis-texto"><b>Construa o seu escudo contra provocações.</b> Desenhe um plano visual para
+            examinar as aparências e impedir que palavras desagradáveis afetem o seu humor diário.</span>
         </li>
         <li class="card-fade" style="transition-delay: 200ms">
           <span class="entregaveis-check"><svg viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
             </svg></span>
-          <span class="entregaveis-texto"><b>Treine a arte de ignorar o que é inútil.</b> Aplique a sabedoria estoica para neutralizar o impacto de quem tenta te irritar, mantendo a serenidade intacta.</span>
+          <span class="entregaveis-texto"><b>Treine a arte de ignorar o que é inútil.</b> Aplique a sabedoria estoica
+            para neutralizar o impacto de quem tenta te irritar, mantendo a serenidade intacta.</span>
         </li>
         <li class="card-fade" style="transition-delay: 300ms">
           <span class="entregaveis-check"><svg viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
             </svg></span>
-          <span class="entregaveis-texto"><b>Substitua a resposta por impulso pela lucidez.</b> Execute exercícios guiados para silenciar o pavio curto e agir com total soberania sobre as suas reações.</span>
+          <span class="entregaveis-texto"><b>Substitua a resposta por impulso pela lucidez.</b> Execute exercícios
+            guiados para silenciar o pavio curto e agir com total soberania sobre as suas reações.</span>
         </li>
         <li class="card-fade" style="transition-delay: 400ms">
           <span class="entregaveis-check"><svg viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
             </svg></span>
-          <span class="entregaveis-texto"><b>Reorganize o foco nas suas próprias escolhas.</b> Crie uma rotina de proteção mental para lembrar que a única coisa sob o seu poder de vontade é a sua mente.</span>
+          <span class="entregaveis-texto"><b>Reorganize o foco nas suas próprias escolhas.</b> Crie uma rotina de
+            proteção mental para lembrar que a única coisa sob o seu poder de vontade é a sua mente.</span>
         </li>
         <li class="card-fade" style="transition-delay: 500ms">
           <span class="entregaveis-check"><svg viewBox="0 0 24 24">
               <path d="M5 13l4 4L19 7" />
             </svg></span>
-          <span class="entregaveis-texto"><b>Acesse o Roteiro da Mente Calma.</b> Leve o passo a passo exato validado por mais de 10.000 alunos para blindar sua paz de espírito todos os dias.</span>
+          <span class="entregaveis-texto"><b>Acesse o Roteiro da Mente Calma.</b> Leve o passo a passo exato validado
+            por mais de 10.000 alunos para blindar sua paz de espírito todos os dias.</span>
         </li>
       </ul>
     </div>
@@ -210,7 +279,9 @@
     <div class="metodo-inner">
       <img class="metodo-logo" src="../assets/images/Logo2.webp" alt="Roteiro da Mente Calma">
       <div class="metodo-conteudo">
-        <h3 class="metodo-titulo">O evento é a porta de entrada prática para o Roteiro da Mente Calma. Rafa Barbosa aplicou este método exato na própria rotina para vencer a reatividade e blindar suas reações. Hoje, essa estrutura já foi validada ao longo de 10 anos com mais de 100 mil pessoas.</h3>
+        <h3 class="metodo-titulo">O evento é a porta de entrada prática para o Roteiro da Mente Calma. Rafa Barbosa
+          aplicou este método exato na própria rotina para vencer a reatividade e blindar suas reações. Hoje, essa
+          estrutura já foi validada ao longo de 10 anos com mais de 100 mil pessoas.</h3>
         <p class="metodo-texto"></p>
       </div>
     </div>
@@ -255,7 +326,8 @@
             viver livre de verdade.</span>
         </li>
       </ul>
-      <h3 class="pilares-soma">Na imersão, você vai aplicar os primeiros passos desse método e sair com o mapa completo para continuar blindando a sua paz diariamente.</h3>
+      <h3 class="pilares-soma">Na imersão, você vai aplicar os primeiros passos desse método e sair com o mapa completo
+        para continuar blindando a sua paz diariamente.</h3>
     </div>
   </section>
 
@@ -265,8 +337,11 @@
 
       <div class="oferta-texto">
         <h3 class="oferta-pergunta">Agora você deve estar calculando quanto custa participar deste evento ao vivo.</h3>
-        <p>Você receberá as ferramentas exatas para parar de se estressar e recuperar a sua paz mental. Se fosse comprar livros práticos, aplicativos pagos e cursos teóricos, investiria no mínimo R$ 567.</p>
-        <p>Mas o meu objetivo é remover qualquer obstáculo financeiro que te impeça de avançar hoje. Para que o dinheiro não justifique continuar perdendo a cabeça com os outros, liberei um valor puramente simbólico. Você pode garantir seu ingresso para o evento por apenas</p>
+        <p>Você receberá as ferramentas exatas para parar de se estressar e recuperar a sua paz mental. Se fosse comprar
+          livros práticos, aplicativos pagos e cursos teóricos, investiria no mínimo R$ 567.</p>
+        <p>Mas o meu objetivo é remover qualquer obstáculo financeiro que te impeça de avançar hoje. Para que o dinheiro
+          não justifique continuar perdendo a cabeça com os outros, liberei um valor puramente simbólico. Você pode
+          garantir seu ingresso para o evento por apenas</p>
       </div>
 
       <div class="bonus">
@@ -304,8 +379,10 @@
           <div class="crono-pilula"><span class="crono-hora">09:00 - 10:30</span>
             <h5>Bloco 1: O limite entre o controle e o caos</h5>
           </div>
-          <p class="crono-desc">Mapeie as situações estressantes para parar de perder a cabeça com o comportamento dos outros.</p>
-          <p class="crono-exercicio"><b>Exercício:</b> Escrita do filtro prático de Epicteto para blindar sua paciência.</p>
+          <p class="crono-desc">Mapeie as situações estressantes para parar de perder a cabeça com o comportamento dos
+            outros.</p>
+          <p class="crono-exercicio"><b>Exercício:</b> Escrita do filtro prático de Epicteto para blindar sua paciência.
+          </p>
         </div>
         <div class="crono-bloco">
           <div class="crono-pilula"><span class="crono-hora">10:30 - 12:00</span>
@@ -324,17 +401,19 @@
             <h5>Bloco 3: A interrupção da resposta por impulso</h5>
           </div>
           <p class="crono-desc">Treine a arte de ignorar o que é inútil para silenciar o pavio curto imediatamente.</p>
-          <p class="crono-exercicio"><b>Exercício:</b> Execução de técnicas guiadas de soberania sobre as próprias reações.</p>
+          <p class="crono-exercicio"><b>Exercício:</b> Execução de técnicas guiadas de soberania sobre as próprias
+            reações.</p>
         </div>
         <div class="crono-bloco">
           <div class="crono-pilula"><span class="crono-hora">15:30 - 18:00</span>
             <h5>Bloco 4: O fim do estresse e o governo da mente</h5>
           </div>
-          <p class="crono-desc">Organize suas prioridades diárias para lembrar que o único domínio real é a sua própria mente.</p>
+          <p class="crono-desc">Organize suas prioridades diárias para lembrar que o único domínio real é a sua própria
+            mente.</p>
           <p class="crono-exercicio"><b>Exercício:</b> Montagem final do seu Roteiro da Mente Calma.</p>
         </div>
-        <p class="crono-nota">*(Nota opcional: Considere encerrar um pouco mais tarde, caso os participantes peçam para
-          aprofundarmos em alguma dinâmica).*</p>
+        <p class="crono-nota">Considere encerrar um pouco mais tarde, caso os participantes peçam para
+          aprofundarmos em alguma dinâmica</p>
       </div>
 
       <div class="card-preco" id="preco">
@@ -345,7 +424,8 @@
         <p class="card-de">De <s>R$173,00</s> por apenas</p>
         <span class="card-valor">R$ 24</span>
         <h2 class="card-parcela">Ou 12x de R$2,48</h2>
-        <a class="btn-compra" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar ingresso | Lote 1</a>
+        <a class="btn-compra" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar ingresso
+          | Lote 1</a>
         <div class="contador" style="margin-top: 16px;">
           <div class="contador-interno">
             <div class="contador-linha" id="oferta-progress" style="width: 0%; transition: width 2s linear;"></div>
@@ -515,7 +595,8 @@
   <section id="cta-final" class="cta-final">
     <div class="cta-inner">
       <h3 class="cta-frase">Liberte sua mente do excesso de pensamentos em 1 dia.</h3>
-      <a class="btn-compra cta-btn" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar ingresso | Lote 1</a>
+      <a class="btn-compra cta-btn" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar
+        ingresso | Lote 1</a>
       <div class="contador cta-contador">
         <div class="contador-interno">
           <div class="contador-linha" id="cta-progress" style="width: 0%; transition: width 2s linear;"></div>
@@ -544,7 +625,8 @@
         <h5 class="contador-texto" id="floating-progress-text">0% dos ingressos vendidos</h5>
       </div>
     </div>
-    <a class="btn-hero btn-floating" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar ingresso | Lote 1</a>
+    <a class="btn-hero btn-floating" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar
+      ingresso | Lote 1</a>
   </div>
 
   <script src="../js/ansiedade.js"></script>
