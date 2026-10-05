@@ -98,6 +98,14 @@ fbq('track', 'PageView');
       <div class="hero-direita">
         <img class="hero-foto" src="../assets/images/rafa_hero_paz.webp" alt="Rafa Barbosa" fetchpriority="high"
           decoding="async">
+        <a class="btn-hero" href="#oferta">Comprar ingresso | LOTE 1</a>
+        <p class="hero-depor">De <s>R$ 97,00</s> por apenas <b>R$ 24,00</b></p>
+        <div class="contador">
+          <div class="contador-interno">
+            <div class="contador-linha" id="hero-progress" style="width: 0%; transition: width 2s linear;"></div>
+          </div>
+          <h5 class="contador-texto" id="hero-progress-text">0% dos ingressos vendidos</h5>
+        </div>
       </div>
     </section>
 
@@ -463,7 +471,7 @@ fbq('track', 'PageView');
         <p class="card-de">De <s>R$173,00</s> por apenas</p>
         <span class="card-valor">R$ 24</span>
         <h2 class="card-parcela">Ou 12x de R$2,48</h2>
-        <a class="btn-compra" href="https://checkout.thebank.com.br/7510485087637504000?src=estoicismo-aplicado-p2">Comprar
+        <a class="btn-compra" href="https://checkout.thebank.com.br/7510485087637504000?src=estoicismo-aplicado">Comprar
           ingresso
           | LOTE 1</a>
         <div class="contador" style="margin-top: 16px;">
@@ -691,21 +699,31 @@ fbq('track', 'PageView');
       }, 300);
 
       // Lógica Floating CTA
+      const heroButton = document.querySelector('.hero-direita .btn-hero');
       const ofertaSection = document.getElementById('oferta');
       const floatingCta = document.getElementById('floating-cta');
       const floatingBtn = floatingCta ? floatingCta.querySelector('.btn-floating') : null;
 
-      if (ofertaSection && floatingCta && floatingBtn) {
+      if (heroButton && ofertaSection && floatingCta && floatingBtn) {
+        floatingBtn.addEventListener('click', function(e) {
+          const ofertaRect = ofertaSection.getBoundingClientRect();
+          if (ofertaRect.top > window.innerHeight) {
+            e.preventDefault();
+            ofertaSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+
         window.addEventListener('scroll', () => {
+          const heroRect = heroButton.getBoundingClientRect();
           const ofertaRect = ofertaSection.getBoundingClientRect();
 
-          // Depois da seção de oferta
-          if (ofertaRect.bottom < 0) {
-            floatingCta.classList.add('visible');
-            floatingBtn.href = 'https://checkout.thebank.com.br/7510485087637504000?src=estoicismo-aplicado-p2';
-          }
-          // Antes ou durante a seção de oferta
-          else {
+          if (heroRect.bottom < 0) {
+            if (ofertaRect.top > window.innerHeight || ofertaRect.bottom < 0) {
+              floatingCta.classList.add('visible');
+            } else {
+              floatingCta.classList.remove('visible');
+            }
+          } else {
             floatingCta.classList.remove('visible');
           }
         }, { passive: true });

@@ -86,16 +86,11 @@ fbq('track', 'PageView');
       <div class="hero-direita">
         <img class="hero-foto" src="../assets/images/rafa_hero_paz.webp" alt="Rafael Paz" fetchpriority="high"
           decoding="async">
-        <a class="btn-hero" href="#oferta">Comprar ingresso | Lote 1</a>
-        <p class="hero-depor">De <s>R$ 97,00</s> por apenas <b>R$ 24,00</b></p>
-        <div class="contador">
-          <div class="contador-interno">
-            <div class="contador-linha" id="hero-progress" style="width: 0%; transition: width 2s linear;"></div>
-          </div>
-          <h5 class="contador-texto" id="hero-progress-text">0% dos ingressos vendidos</h5>
-        </div>
       </div>
-    </section>
+      <h5 class="contador-texto" id="hero-progress-text">0% dos ingressos vendidos</h5>
+  </div>
+  </div>
+  </section>
 
   </div>
 
@@ -178,7 +173,6 @@ fbq('track', 'PageView');
         </ul>
         <h4 class="crenca-fechamento">Já parou para pensar? Talvez há alguns meses ou até mesmo anos...<br><br><b>CHEGA
             DE NORMALIZAR ESSA EXAUSTÃO.</b></h4>
-        <a class="btn-hero" href="#oferta" style="margin-top: 2rem;">Quero construir meus limites hoje</a>
       </div>
     </div>
   </section>
@@ -430,8 +424,8 @@ fbq('track', 'PageView');
         <p class="card-de">De <s>R$173,00</s> por apenas</p>
         <span class="card-valor">R$ 24</span>
         <h2 class="card-parcela">Ou 12x de R$2,48</h2>
-        <a class="btn-compra" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso">Comprar ingresso |
-          Lote 1</a>
+        <a class="btn-compra" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar ingresso
+          | Lote 1</a>
         <div class="contador" style="margin-top: 16px;">
           <div class="contador-interno">
             <div class="contador-linha" id="oferta-progress" style="width: 0%; transition: width 2s linear;"></div>
@@ -601,7 +595,8 @@ fbq('track', 'PageView');
   <section id="cta-final" class="cta-final">
     <div class="cta-inner">
       <h3 class="cta-frase">Liberte sua mente do excesso de pensamentos em 1 dia.</h3>
-      <a class="btn-compra cta-btn" href="#preco">Comprar ingresso | Lote 1</a>
+      <a class="btn-compra cta-btn" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar
+        ingresso | Lote 1</a>
       <div class="contador cta-contador">
         <div class="contador-interno">
           <div class="contador-linha" id="cta-progress" style="width: 0%; transition: width 2s linear;"></div>
@@ -630,7 +625,8 @@ fbq('track', 'PageView');
         <h5 class="contador-texto" id="floating-progress-text">0% dos ingressos vendidos</h5>
       </div>
     </div>
-    <a class="btn-hero btn-floating" href="#oferta">Comprar ingresso | Lote 1</a>
+    <a class="btn-hero btn-floating" href="https://checkout.thebank.com.br/7510485087637504000?src=impulso-p2">Comprar
+      ingresso | Lote 1</a>
   </div>
 
   <script src="../js/ansiedade.js"></script>
@@ -658,36 +654,19 @@ fbq('track', 'PageView');
       }, 300);
 
       // Lógica Floating CTA
-      const heroButton = document.querySelector('.hero-direita .btn-hero');
       const ofertaSection = document.getElementById('oferta');
       const floatingCta = document.getElementById('floating-cta');
       const floatingBtn = floatingCta ? floatingCta.querySelector('.btn-floating') : null;
 
-      if (heroButton && ofertaSection && floatingCta && floatingBtn) {
+      if (ofertaSection && floatingCta && floatingBtn) {
         window.addEventListener('scroll', () => {
-          const heroRect = heroButton.getBoundingClientRect();
           const ofertaRect = ofertaSection.getBoundingClientRect();
-
-          if (heroRect.bottom < 0) {
-            // Antes da seção de oferta
-            if (ofertaRect.top > window.innerHeight) {
-              floatingCta.classList.add('visible');
-              floatingBtn.href = '#oferta';
-            }
-            // Depois da seção de oferta
-            else if (ofertaRect.bottom < 0) {
-              floatingCta.classList.add('visible');
-              floatingBtn.href = 'https://checkout.thebank.com.br/7510485087637504000?src=impulso';
-            }
-            // Durante a seção de oferta
-            else {
-              floatingCta.classList.remove('visible');
-            }
+          if (ofertaRect.bottom < 0) {
+            floatingCta.classList.add('visible');
           } else {
             floatingCta.classList.remove('visible');
           }
         }, { passive: true });
-        // Initial check in case user loads halfway down the page
         window.dispatchEvent(new Event('scroll'));
       }
 
