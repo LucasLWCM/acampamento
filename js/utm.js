@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         var sck = utms.join('|');
         
-        var links = document.querySelectorAll('a[href*="checkout.thebank.com.br"]');
+        var links = document.querySelectorAll('a[href*="checkout.thebank.com.br"], a[href*="pay.hotmart.com"]');
         links.forEach(function(link) {
             try {
                 var url = new URL(link.href);
