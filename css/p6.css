@@ -1,0 +1,191 @@
+/* ==========================================================
+   P6 — Direção "Pergaminho"
+   Papel creme, tinta oliva, destaque terracota, serifa clássica.
+   Mobile first.
+   ========================================================== */
+
+:root {
+  --papel: #F3ECDC;
+  --papel-claro: #FAF6EC;
+  --papel-sombra: #E7DCC5;
+  --tinta: #26261B;
+  --tinta-suave: #5B5A48;
+  --oliva: #45452B;
+  --areia: #DCC8A0;
+  --terracota: #A8482A;
+  --linha: rgba(69, 69, 43, 0.28);
+
+  --fonte-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --largura: 560px;
+  --margem: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--papel);
+  /* grão de papel */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .27 0 0 0 0 .27 0 0 0 0 .17 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding: 0 var(--margem);
+}
+
+/* Rótulo em versalete: datas, selos, legendas */
+.rotulo {
+  font-family: var(--fonte-texto);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--oliva);
+}
+
+/* Filete com ornamento central */
+.filete {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--oliva);
+}
+
+.filete::before,
+.filete::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--linha);
+}
+
+.filete svg {
+  width: 10px;
+  height: 10px;
+  flex: none;
+}
+
+/* ==========================================================
+   DOBRA 1 — HERO
+   ========================================================== */
+
+.hero {
+  position: relative;
+  padding: 28px 0 0;
+  text-align: center;
+  overflow: hidden;
+  /* luz no centro da folha, bordas mais queimadas */
+  background: radial-gradient(120% 70% at 50% 30%, var(--papel-claro) 0%, rgba(250, 246, 236, 0) 70%);
+}
+
+.hero-logo {
+  width: 132px;
+  margin: 0 auto 18px;
+  mix-blend-mode: multiply;
+}
+
+.hero .filete {
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(33px, 9.4vw, 46px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  color: var(--tinta);
+}
+
+.hero h1 em {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--terracota);
+}
+
+.hero-sub {
+  margin: 0 auto;
+  max-width: 34ch;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--tinta-suave);
+  text-wrap: pretty;
+}
+
+.hero-foto-wrap {
+  position: relative;
+  margin: 26px calc(var(--margem) * -1) 0;
+}
+
+/* arco de areia atrás da foto, eco do sol da logo */
+.hero-foto-wrap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  bottom: 0;
+  width: 84%;
+  transform: translateX(-50%);
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(180deg, var(--areia) 0%, var(--papel-sombra) 100%);
+  opacity: 0.75;
+}
+
+.hero-foto {
+  position: relative;
+  width: 100%;
+}
+
+.hero-rodape {
+  position: relative;
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+  background: var(--papel-claro);
+  padding: 13px var(--margem);
+}
+
+.hero-rodape .rotulo {
+  display: block;
+  color: var(--terracota);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero-logo {
+    width: 168px;
+  }
+
+  .hero-foto-wrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

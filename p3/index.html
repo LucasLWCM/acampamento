@@ -12,43 +12,49 @@
 
 
 
-﻿<!-- Start VWO Async SmartCode -->
-<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com"/>
-<script type='text/javascript' id="vwoCode">
-window._vwo_code ||
-(function () {
-var w=window,
-d=document;
-var account_id=834797,
-version=2.2,
-settings_tolerance=2000,
-hide_element='body',
-hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;';
-/* DO NOT EDIT BELOW THIS LINE */
-var f=0, v;
-if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1<d.URL.indexOf('__vwo_disable__')||w._vwo_code)return;try{var e=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=e&&'object'==typeof e?e:{}}catch(e){}function r(t){try{return decodeURIComponent(t)}catch(e){return t}}var s=function(){var e={combination:[],combinationChoose:[],split:[],exclude:[],uuid:null,consent:null,optOut:null},t=d.cookie||'';if(!t)return e;for(var n,i,o=/(?:^|;\s*)(?:(_vis_opt_exp_(\d+)_combi=([^;]*))|(_vis_opt_exp_(\d+)_combi_choose=([^;]*))|(_vis_opt_exp_(\d+)_split=([^:;]*))|(_vis_opt_exp_(\d+)_exclude=[^;]*)|(_vis_opt_out=([^;]*))|(_vwo_global_opt_out=[^;]*)|(_vwo_uuid=([^;]*))|(_vwo_consent=([^;]*)))/g;null!==(n=o.exec(t));)try{n[1]?e.combination.push({id:n[2],value:r(n[3])}):n[4]?e.combinationChoose.push({id:n[5],value:r(n[6])}):n[7]?e.split.push({id:n[8],value:r(n[9])}):n[10]?e.exclude.push({id:n[11]}):n[12]?e.optOut=r(n[13]):n[14]?e.optOut=!0:n[15]?e.uuid=r(n[16]):n[17]&&(i=r(n[18]),e.consent=i&&3<=i.length?i.substring(0,3):null)}catch(e){}return e}();function i(){var e=function(){if(w.VWO&&Array.isArray(w.VWO))for(var e=0;e<w.VWO.length;e++){var t=w.VWO[e];if(Array.isArray(t)&&('setVisitorId'===t[0]||'setSessionId'===t[0]))return!0}return!1}(),t='a='+account_id+'&u='+encodeURIComponent(w._vis_opt_url||d.URL)+'&vn='+version+'&ph=1'+('undefined'!=typeof platform?'&p='+platform:'')+'&st='+w.performance.now();e||((n=function(){var e,t=[],n={},i=w.VWO&&w.VWO.appliedCampaigns||{};for(e in i){var o=i[e]&&i[e].v;o&&(t.push(e+'-'+o+'-1'),n[e]=!0)}if(s&&s.combination)for(var r=0;r<s.combination.length;r++){var a=s.combination[r];n[a.id]||t.push(a.id+'-'+a.value)}return t.join('|')}())&&(t+='&c='+n),(n=function(){var e=[],t={};if(s&&s.combinationChoose)for(var n=0;n<s.combinationChoose.length;n++){var i=s.combinationChoose[n];e.push(i.id+'-'+i.value),t[i.id]=!0}if(s&&s.split)for(var o=0;o<s.split.length;o++)t[(i=s.split[o]).id]||e.push(i.id+'-'+i.value);return e.join('|')}())&&(t+='&cc='+n),(n=function(){var e={},t=[];if(w.VWO&&Array.isArray(w.VWO))for(var n=0;n<w.VWO.length;n++){var i=w.VWO[n];if(Array.isArray(i)&&'setVariation'===i[0]&&i[1]&&Array.isArray(i[1]))for(var o=0;o<i[1].length;o++){var r,a=i[1][o];a&&'object'==typeof a&&(r=a.e,a=a.v,r&&a&&(e[r]=a))}}for(r in e)t.push(r+'-'+e[r]);return t.join('|')}())&&(t+='&sv='+n)),s&&s.optOut&&(t+='&o='+s.optOut);var n=function(){var e=[],t={};if(s&&s.exclude)for(var n=0;n<s.exclude.length;n++){var i=s.exclude[n];t[i.id]||(e.push(i.id),t[i.id]=!0)}return e.join('|')}();return n&&(t+='&e='+n),s&&s.uuid&&(t+='&id='+s.uuid),s&&s.consent&&(t+='&consent='+s.consent),w.name&&-1<w.name.indexOf('_vis_preview')&&(t+='&pM=true'),w.VWO&&w.VWO.ed&&(t+='&ed='+w.VWO.ed),t}code={script:v,nonce:v&&v.nonce,library_tolerance:function(){return'undefined'!=typeof library_tolerance?library_tolerance:void 0},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':'string'==typeof cc.hE?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){var t;f||(f=!0,(t=d.getElementById('_vis_opt_path_hides'))&&t.parentNode.removeChild(t),e&&((new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e))},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript',e.src?t.src=e.src:t.text=e.text,v&&t.setAttribute('nonce',v.nonce),d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){t=t||{};var n=new XMLHttpRequest;n.open('GET',e,!0),n.withCredentials=!t.dSC,n.responseType=t.responseType||'text',n.onload=function(){if(t.onloadCb)return t.onloadCb(n,e);200===n.status?_vwo_code.addScript({text:n.responseText}):_vwo_code.finish('&e=loading_failure:'+e)},n.onerror=function(){if(t.onerrorCb)return t.onerrorCb(e);_vwo_code.finish('&e=loading_failure:'+e)},n.send()},init:function(){var e,t=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish()},t),'body'!==this.hide_element()?(n=d.createElement('style'),e=(t=this.hide_element())?t+this.hide_element_style():'',t=d.getElementsByTagName('head')[0],n.setAttribute('id','_vis_opt_path_hides'),v&&n.setAttribute('nonce',v.nonce),n.setAttribute('type','text/css'),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(d.createTextNode(e)),t.appendChild(n)):(n=d.getElementsByTagName('head')[0],(e=d.createElement('div')).style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;',e.setAttribute('id','_vis_opt_path_hides'),e.classList.add('_vis_hide_layer'),n.parentNode.insertBefore(e,n.nextSibling));var n='https://dev.visualwebsiteoptimizer.com/j.php?'+i();-1!==w.location.search.indexOf('_vwo_xhr')?this.addScript({src:n}):this.load(n+'&x=true',{l:1})}};w._vwo_code=code;code.init();})();
-</script>
-<!-- End VWO Async SmartCode -->
+  ﻿<!-- Start VWO Async SmartCode -->
+  <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+  <script type='text/javascript' id="vwoCode">
+    window._vwo_code ||
+      (function () {
+        var w = window,
+          d = document;
+        var account_id = 834797,
+          version = 2.2,
+          settings_tolerance = 2000,
+          hide_element = 'body',
+          hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;';
+        /* DO NOT EDIT BELOW THIS LINE */
+        var f = 0, v;
+        if (f = !1, v = d.querySelector('#vwoCode'), cc = {}, -1 < d.URL.indexOf('__vwo_disable__') || w._vwo_code) return; try { var e = JSON.parse(localStorage.getItem('_vwo_' + account_id + '_config')); cc = e && 'object' == typeof e ? e : {} } catch (e) { } function r(t) { try { return decodeURIComponent(t) } catch (e) { return t } } var s = function () { var e = { combination: [], combinationChoose: [], split: [], exclude: [], uuid: null, consent: null, optOut: null }, t = d.cookie || ''; if (!t) return e; for (var n, i, o = /(?:^|;\s*)(?:(_vis_opt_exp_(\d+)_combi=([^;]*))|(_vis_opt_exp_(\d+)_combi_choose=([^;]*))|(_vis_opt_exp_(\d+)_split=([^:;]*))|(_vis_opt_exp_(\d+)_exclude=[^;]*)|(_vis_opt_out=([^;]*))|(_vwo_global_opt_out=[^;]*)|(_vwo_uuid=([^;]*))|(_vwo_consent=([^;]*)))/g; null !== (n = o.exec(t));)try { n[1] ? e.combination.push({ id: n[2], value: r(n[3]) }) : n[4] ? e.combinationChoose.push({ id: n[5], value: r(n[6]) }) : n[7] ? e.split.push({ id: n[8], value: r(n[9]) }) : n[10] ? e.exclude.push({ id: n[11] }) : n[12] ? e.optOut = r(n[13]) : n[14] ? e.optOut = !0 : n[15] ? e.uuid = r(n[16]) : n[17] && (i = r(n[18]), e.consent = i && 3 <= i.length ? i.substring(0, 3) : null) } catch (e) { } return e }(); function i() { var e = function () { if (w.VWO && Array.isArray(w.VWO)) for (var e = 0; e < w.VWO.length; e++) { var t = w.VWO[e]; if (Array.isArray(t) && ('setVisitorId' === t[0] || 'setSessionId' === t[0])) return !0 } return !1 }(), t = 'a=' + account_id + '&u=' + encodeURIComponent(w._vis_opt_url || d.URL) + '&vn=' + version + '&ph=1' + ('undefined' != typeof platform ? '&p=' + platform : '') + '&st=' + w.performance.now(); e || ((n = function () { var e, t = [], n = {}, i = w.VWO && w.VWO.appliedCampaigns || {}; for (e in i) { var o = i[e] && i[e].v; o && (t.push(e + '-' + o + '-1'), n[e] = !0) } if (s && s.combination) for (var r = 0; r < s.combination.length; r++) { var a = s.combination[r]; n[a.id] || t.push(a.id + '-' + a.value) } return t.join('|') }()) && (t += '&c=' + n), (n = function () { var e = [], t = {}; if (s && s.combinationChoose) for (var n = 0; n < s.combinationChoose.length; n++) { var i = s.combinationChoose[n]; e.push(i.id + '-' + i.value), t[i.id] = !0 } if (s && s.split) for (var o = 0; o < s.split.length; o++)t[(i = s.split[o]).id] || e.push(i.id + '-' + i.value); return e.join('|') }()) && (t += '&cc=' + n), (n = function () { var e = {}, t = []; if (w.VWO && Array.isArray(w.VWO)) for (var n = 0; n < w.VWO.length; n++) { var i = w.VWO[n]; if (Array.isArray(i) && 'setVariation' === i[0] && i[1] && Array.isArray(i[1])) for (var o = 0; o < i[1].length; o++) { var r, a = i[1][o]; a && 'object' == typeof a && (r = a.e, a = a.v, r && a && (e[r] = a)) } } for (r in e) t.push(r + '-' + e[r]); return t.join('|') }()) && (t += '&sv=' + n)), s && s.optOut && (t += '&o=' + s.optOut); var n = function () { var e = [], t = {}; if (s && s.exclude) for (var n = 0; n < s.exclude.length; n++) { var i = s.exclude[n]; t[i.id] || (e.push(i.id), t[i.id] = !0) } return e.join('|') }(); return n && (t += '&e=' + n), s && s.uuid && (t += '&id=' + s.uuid), s && s.consent && (t += '&consent=' + s.consent), w.name && -1 < w.name.indexOf('_vis_preview') && (t += '&pM=true'), w.VWO && w.VWO.ed && (t += '&ed=' + w.VWO.ed), t } code = { script: v, nonce: v && v.nonce, library_tolerance: function () { return 'undefined' != typeof library_tolerance ? library_tolerance : void 0 }, settings_tolerance: function () { return cc.sT || settings_tolerance }, hide_element_style: function () { return '{' + (cc.hES || hide_element_style) + '}' }, hide_element: function () { return performance.getEntriesByName('first-contentful-paint')[0] ? '' : 'string' == typeof cc.hE ? cc.hE : hide_element }, getVersion: function () { return version }, finish: function (e) { var t; f || (f = !0, (t = d.getElementById('_vis_opt_path_hides')) && t.parentNode.removeChild(t), e && ((new Image).src = 'https://dev.visualwebsiteoptimizer.com/ee.gif?a=' + account_id + e)) }, finished: function () { return f }, addScript: function (e) { var t = d.createElement('script'); t.type = 'text/javascript', e.src ? t.src = e.src : t.text = e.text, v && t.setAttribute('nonce', v.nonce), d.getElementsByTagName('head')[0].appendChild(t) }, load: function (e, t) { t = t || {}; var n = new XMLHttpRequest; n.open('GET', e, !0), n.withCredentials = !t.dSC, n.responseType = t.responseType || 'text', n.onload = function () { if (t.onloadCb) return t.onloadCb(n, e); 200 === n.status ? _vwo_code.addScript({ text: n.responseText }) : _vwo_code.finish('&e=loading_failure:' + e) }, n.onerror = function () { if (t.onerrorCb) return t.onerrorCb(e); _vwo_code.finish('&e=loading_failure:' + e) }, n.send() }, init: function () { var e, t = this.settings_tolerance(); w._vwo_settings_timer = setTimeout(function () { _vwo_code.finish() }, t), 'body' !== this.hide_element() ? (n = d.createElement('style'), e = (t = this.hide_element()) ? t + this.hide_element_style() : '', t = d.getElementsByTagName('head')[0], n.setAttribute('id', '_vis_opt_path_hides'), v && n.setAttribute('nonce', v.nonce), n.setAttribute('type', 'text/css'), n.styleSheet ? n.styleSheet.cssText = e : n.appendChild(d.createTextNode(e)), t.appendChild(n)) : (n = d.getElementsByTagName('head')[0], (e = d.createElement('div')).style.cssText = 'z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;', e.setAttribute('id', '_vis_opt_path_hides'), e.classList.add('_vis_hide_layer'), n.parentNode.insertBefore(e, n.nextSibling)); var n = 'https://dev.visualwebsiteoptimizer.com/j.php?' + i(); -1 !== w.location.search.indexOf('_vwo_xhr') ? this.addScript({ src: n }) : this.load(n + '&x=true', { l: 1 }) } }; w._vwo_code = code; code.init();
+      })();
+  </script>
+  <!-- End VWO Async SmartCode -->
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1566967544562221');
-fbq('init', '2115550092258715');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1566967544562221&ev=PageView&noscript=1"/>
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2115550092258715&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1566967544562221');
+    fbq('init', '2115550092258715');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1566967544562221&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2115550092258715&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
 </head>
 
@@ -428,7 +434,8 @@ fbq('track', 'PageView');
         <div style="background: #FFF; padding: 3rem 2rem; border: 1px solid var(--c-border); border-radius: 8px;">
           <span class="eyebrow text-graphite" style="opacity: 0.7; margin-bottom: 1rem;">PRIMEIRO</span>
           <h3 class="font-serif text-graphite" style="font-size: 1.5rem; margin-bottom: 1rem;">Enxergar</h3>
-          <p class="text-body text-graphite" style="opacity: 0.8;">Identifique as pessoas, situações, pensamentos e padrões que mais consomem sua
+          <p class="text-body text-graphite" style="opacity: 0.8;">Identifique as pessoas, situações, pensamentos e
+            padrões que mais consomem sua
             energia hoje. Perceba o que costuma acontecer entre o gatilho e sua reação.</p>
         </div>
 
@@ -436,7 +443,8 @@ fbq('track', 'PageView');
           style="background: var(--c-sand); padding: 3rem 2rem; border: 1px solid var(--c-border); border-radius: 8px;">
           <span class="eyebrow text-graphite" style="opacity: 0.7; margin-bottom: 1rem;">DEPOIS</span>
           <h3 class="font-serif text-graphite" style="font-size: 1.5rem; margin-bottom: 1rem;">Separar</h3>
-          <p class="text-body text-graphite" style="opacity: 0.8;">Aprenda a distinguir com mais clareza aquilo sobre o que você pode agir
+          <p class="text-body text-graphite" style="opacity: 0.8;">Aprenda a distinguir com mais clareza aquilo sobre o
+            que você pode agir
             daquilo que precisa parar de tentar controlar.</p>
         </div>
 
@@ -622,55 +630,35 @@ fbq('track', 'PageView');
     <div class="carousel fade-up delay-100" style="margin-top: 0;">
       <div class="carousel-track">
         <div class="carousel-group">
-          <img class="carousel-img" src="../assets/images/Dep_1.webp"
-            alt="Depoimento 1">
-          <img class="carousel-img" src="../assets/images/Dep_2.webp"
-            alt="Depoimento 2">
-          <img class="carousel-img" src="../assets/images/Dep_3.webp"
-            alt="Depoimento 3">
-          <img class="carousel-img" src="../assets/images/Dep_4.webp"
-            alt="Depoimento 4">
-          <img class="carousel-img" src="../assets/images/Dep_5.webp"
-            alt="Depoimento 5">
+          <img class="carousel-img" src="../assets/images/Dep_1.webp" alt="Depoimento 1">
+          <img class="carousel-img" src="../assets/images/Dep_2.webp" alt="Depoimento 2">
+          <img class="carousel-img" src="../assets/images/Dep_3.webp" alt="Depoimento 3">
+          <img class="carousel-img" src="../assets/images/Dep_4.webp" alt="Depoimento 4">
+          <img class="carousel-img" src="../assets/images/Dep_5.webp" alt="Depoimento 5">
         </div>
         <div class="carousel-group">
-          <img class="carousel-img" src="../assets/images/Dep_1.webp"
-            alt="Depoimento 1">
-          <img class="carousel-img" src="../assets/images/Dep_2.webp"
-            alt="Depoimento 2">
-          <img class="carousel-img" src="../assets/images/Dep_3.webp"
-            alt="Depoimento 3">
-          <img class="carousel-img" src="../assets/images/Dep_4.webp"
-            alt="Depoimento 4">
-          <img class="carousel-img" src="../assets/images/Dep_5.webp"
-            alt="Depoimento 5">
+          <img class="carousel-img" src="../assets/images/Dep_1.webp" alt="Depoimento 1">
+          <img class="carousel-img" src="../assets/images/Dep_2.webp" alt="Depoimento 2">
+          <img class="carousel-img" src="../assets/images/Dep_3.webp" alt="Depoimento 3">
+          <img class="carousel-img" src="../assets/images/Dep_4.webp" alt="Depoimento 4">
+          <img class="carousel-img" src="../assets/images/Dep_5.webp" alt="Depoimento 5">
         </div>
       </div>
 
       <div class="carousel-track reverse">
         <div class="carousel-group">
-          <img class="carousel-img" src="../assets/images/Dep_6.webp"
-            alt="Depoimento 6">
-          <img class="carousel-img" src="../assets/images/Dep_7.webp"
-            alt="Depoimento 7">
-          <img class="carousel-img" src="../assets/images/Dep_8.webp"
-            alt="Depoimento 8">
-          <img class="carousel-img" src="../assets/images/Dep_9.webp"
-            alt="Depoimento 9">
-          <img class="carousel-img" src="../assets/images/Dep_10.webp"
-            alt="Depoimento 10">
+          <img class="carousel-img" src="../assets/images/Dep_6.webp" alt="Depoimento 6">
+          <img class="carousel-img" src="../assets/images/Dep_7.webp" alt="Depoimento 7">
+          <img class="carousel-img" src="../assets/images/Dep_8.webp" alt="Depoimento 8">
+          <img class="carousel-img" src="../assets/images/Dep_9.webp" alt="Depoimento 9">
+          <img class="carousel-img" src="../assets/images/Dep_10.webp" alt="Depoimento 10">
         </div>
         <div class="carousel-group">
-          <img class="carousel-img" src="../assets/images/Dep_6.webp"
-            alt="Depoimento 6">
-          <img class="carousel-img" src="../assets/images/Dep_7.webp"
-            alt="Depoimento 7">
-          <img class="carousel-img" src="../assets/images/Dep_8.webp"
-            alt="Depoimento 8">
-          <img class="carousel-img" src="../assets/images/Dep_9.webp"
-            alt="Depoimento 9">
-          <img class="carousel-img" src="../assets/images/Dep_10.webp"
-            alt="Depoimento 10">
+          <img class="carousel-img" src="../assets/images/Dep_6.webp" alt="Depoimento 6">
+          <img class="carousel-img" src="../assets/images/Dep_7.webp" alt="Depoimento 7">
+          <img class="carousel-img" src="../assets/images/Dep_8.webp" alt="Depoimento 8">
+          <img class="carousel-img" src="../assets/images/Dep_9.webp" alt="Depoimento 9">
+          <img class="carousel-img" src="../assets/images/Dep_10.webp" alt="Depoimento 10">
         </div>
       </div>
     </div>
@@ -864,7 +852,8 @@ fbq('track', 'PageView');
           <h3 class="text-small text-muted" style="margin-bottom: 8px;">LOTE 1</h3>
           <div class="h-display font-serif" style="color: var(--c-olive); margin-bottom: 2rem;">R$ 27,00</div>
 
-          <a href="https://checkout.thebank.com.br/7510485087637504000?src=p3" class="btn" style="width: 100%; font-size: 1rem;">GARANTIR MEU
+          <a href="https://checkout.thebank.com.br/7510485087637504000?src=p3" class="btn"
+            style="width: 100%; font-size: 1rem;">GARANTIR MEU
             INGRESSO</a>
 
           <div class="progress-container progress-trigger" style="margin-top: 1rem; margin-bottom: 1rem; width: 100%;">
@@ -935,7 +924,7 @@ fbq('track', 'PageView');
           </p>
           <ul class="text-small" style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
             <li><span class="text-olive">/</span> 3.000 ALUNOS</li>
-            <li><span class="text-olive">/</span> 70.000 PESSOAS ATINGIDAS</li>
+            <li><span class="text-olive">/</span> 100.000 PESSOAS ATINGIDAS</li>
             <li><span class="text-olive">/</span> PALESTROU EM TODO O BRASIL</li>
           </ul>
         </div>
@@ -961,35 +950,45 @@ fbq('track', 'PageView');
         <div class="faq-item">
           <button class="faq-q">As aulas vão ficar gravadas?</button>
           <div class="faq-a">
-            <div class="faq-a-content text-muted text-body">Não. E isso é proposital. Sabemos que, quando uma aula fica disponível para assistir depois, é muito fácil esse depois virar amanhã, semana que vem… e a aula nunca ser assistida.</div>
+            <div class="faq-a-content text-muted text-body">Não. E isso é proposital. Sabemos que, quando uma aula fica
+              disponível para assistir depois, é muito fácil esse depois virar amanhã, semana que vem… e a aula nunca
+              ser assistida.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q">Quando acontece o Acampamento Estoico?</button>
           <div class="faq-a">
-            <div class="faq-a-content text-muted text-body">O acampamento vai acontecer no sábado dia 17 de outubro, 1 dia inteiro de aula ao vivo.</div>
+            <div class="faq-a-content text-muted text-body">O acampamento vai acontecer no sábado dia 17 de outubro, 1
+              dia inteiro de aula ao vivo.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q">Como vou receber o acesso às aulas ao vivo?</button>
           <div class="faq-a">
-            <div class="faq-a-content text-muted text-body">Depois de garantir sua participação, fique de olho no seu e-mail. Vamos enviar por lá todas as informações e o link de acesso para você acompanhar as aulas ao vivo.<br><br>Por isso, utilize um e-mail válido no momento da inscrição e acompanhe sua caixa de entrada conforme a data do desafio se aproxima.</div>
+            <div class="faq-a-content text-muted text-body">Depois de garantir sua participação, fique de olho no seu
+              e-mail. Vamos enviar por lá todas as informações e o link de acesso para você acompanhar as aulas ao
+              vivo.<br><br>Por isso, utilize um e-mail válido no momento da inscrição e acompanhe sua caixa de entrada
+              conforme a data do desafio se aproxima.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q">O valor pode mudar?</button>
           <div class="faq-a">
-            <div class="faq-a-content text-muted text-body">Sim. O valor de R$ 27,00 é referente ao LOTE 1 e pode aumentar a qualquer momento com a virada de lote. Se você quer participar, recomendamos garantir sua vaga pelo valor atual.</div>
+            <div class="faq-a-content text-muted text-body">Sim. O valor de R$ 27,00 é referente ao LOTE 1 e pode
+              aumentar a qualquer momento com a virada de lote. Se você quer participar, recomendamos garantir sua vaga
+              pelo valor atual.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q">Existe garantia?</button>
           <div class="faq-a">
-            <div class="faq-a-content text-muted text-body">Sim. Você tem até 2 dias corridos após ao evento para pedir o dinheiro de volta. Se mudar de ideia dentro desse período, basta solicitar o cancelamento e o reembolso do valor pago.</div>
+            <div class="faq-a-content text-muted text-body">Sim. Você tem até 2 dias corridos após ao evento para pedir
+              o dinheiro de volta. Se mudar de ideia dentro desse período, basta solicitar o cancelamento e o reembolso
+              do valor pago.</div>
           </div>
         </div>
       </div>
@@ -1014,7 +1013,8 @@ fbq('track', 'PageView');
       <p class="text-small text-olive" style="margin-bottom: 1rem;">R$ 27,00 no LOTE 1</p>
 
       <div style="max-width: 320px; margin: 0 auto;">
-        <a href="https://checkout.thebank.com.br/7510485087637504000?src=p3" class="btn btn-outline" style="width: 100%;">GARANTIR MINHA VAGA</a>
+        <a href="https://checkout.thebank.com.br/7510485087637504000?src=p3" class="btn btn-outline"
+          style="width: 100%;">GARANTIR MINHA VAGA</a>
       </div>
     </div>
   </section>
