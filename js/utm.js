@@ -23,16 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     url.searchParams.set(key, value);
                 });
                 
-                // Adiciona a string combinada ao src (Origem do Produtor) e sck (Origem do Afiliado)
+                // Adiciona a string combinada ao sck (Origem do Afiliado)
                 if (utmString) {
-                    var existingSrc = url.searchParams.get('src');
-                    if (existingSrc) {
-                        // Se ja tem src (ex: src=estoicismo-p2), concatena as utms. Ex: estoicismo-p2|fb|ig
-                        url.searchParams.set('src', existingSrc + '|' + utmString);
-                    } else {
-                        url.searchParams.set('src', utmString);
-                    }
-
                     var existingSck = url.searchParams.get('sck');
                     if (existingSck) {
                         url.searchParams.set('sck', existingSck + '|' + utmString);
