@@ -1,5 +1,5 @@
 /* css/principal.css */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,500;1,700&display=swap');
+/* Fontes carregadas via <link> no HTML para evitar bloqueio de renderização */
 
 :root {
   --cor-papel: #0F0F0F;

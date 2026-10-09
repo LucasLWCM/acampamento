@@ -1,5 +1,5 @@
 /* css/principal.css */
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&display=swap');
+/* Fontes carregadas via <link> no HTML para evitar bloqueio de renderização */
 
 :root {
   --cor-papel: #F2EAD8;
