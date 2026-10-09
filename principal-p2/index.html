@@ -11,7 +11,7 @@
   <!-- Otimização de Performance (Preconnect & Preload) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="../assets/images/hero_principal.webp">
+  <link rel="preload" as="image" href="../assets/images/hero_principal.webp" fetchpriority="high">
 
   <!-- Start VWO Async SmartCode -->
   <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
@@ -967,22 +967,28 @@
       const guaranteeSection = document.getElementById('garantia');
       if (guaranteeSection) {
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let ticking = false;
         window.addEventListener('scroll', () => {
-          if (prefersReduced) {
-            guaranteeSection.style.clipPath = 'circle(100% at 50% 50%)';
-            guaranteeSection.classList.add('visible');
-            return;
-          }
-          const rect = guaranteeSection.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
-          // Abre mais rápido, dividindo apenas por windowHeight ou multiplicando o progresso
-          let progress = (windowHeight - rect.top) / windowHeight;
-          if (progress < 0) progress = 0;
-          let radius = progress * 130; // 130 garante que cubra as bordas mais rápido
-          if (radius > 100) radius = 100;
-          guaranteeSection.style.clipPath = `circle(${radius}% at 50% 50%)`;
-          if (progress > 0.25) {
-            guaranteeSection.classList.add('visible');
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              if (prefersReduced) {
+                guaranteeSection.style.clipPath = 'circle(100% at 50% 50%)';
+                guaranteeSection.classList.add('visible');
+              } else {
+                const rect = guaranteeSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                let progress = (windowHeight - rect.top) / windowHeight;
+                if (progress < 0) progress = 0;
+                let radius = progress * 130;
+                if (radius > 100) radius = 100;
+                guaranteeSection.style.clipPath = `circle(${radius}% at 50% 50%)`;
+                if (progress > 0.25) {
+                  guaranteeSection.classList.add('visible');
+                }
+              }
+              ticking = false;
+            });
+            ticking = true;
           }
         });
         window.dispatchEvent(new Event('scroll'));
@@ -994,20 +1000,25 @@
       const ultimaOferta = document.getElementById('preco-final');
 
       if (floatingCta && primeiraOferta && ultimaOferta) {
+        let ctaTicking = false;
         window.addEventListener('scroll', () => {
-          const primeiraRect = primeiraOferta.getBoundingClientRect();
-          const ultimaRect = ultimaOferta.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
+          if (!ctaTicking) {
+            window.requestAnimationFrame(() => {
+              const primeiraRect = primeiraOferta.getBoundingClientRect();
+              const ultimaRect = ultimaOferta.getBoundingClientRect();
+              const windowHeight = window.innerHeight;
 
-          // Mostrar após o primeiro #preco sair da tela
-          const passouPrimeira = primeiraRect.bottom < 0;
-          // Esconder quando o #preco-final entrar na tela
-          const chegouUltima = ultimaRect.top < windowHeight;
+              const passouPrimeira = primeiraRect.bottom < 0;
+              const chegouUltima = ultimaRect.top < windowHeight;
 
-          if (passouPrimeira && !chegouUltima) {
-            floatingCta.classList.add('visible');
-          } else {
-            floatingCta.classList.remove('visible');
+              if (passouPrimeira && !chegouUltima) {
+                floatingCta.classList.add('visible');
+              } else {
+                floatingCta.classList.remove('visible');
+              }
+              ctaTicking = false;
+            });
+            ctaTicking = true;
           }
         });
         window.dispatchEvent(new Event('scroll'));
