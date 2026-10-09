@@ -925,22 +925,7 @@
   </div>
 
   <script>
-    // Script para repassar parâmetros UTM nos botões de checkout
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = window.location.search;
-      if (urlParams) {
-        const botoes = document.querySelectorAll('.btn-comprar');
-        botoes.forEach(btn => {
-          let href = btn.getAttribute('href');
-          if (href && !href.startsWith('#')) {
-            if (href.indexOf('?') !== -1) {
-              btn.setAttribute('href', href + '&' + urlParams.substring(1));
-            } else {
-              btn.setAttribute('href', href + urlParams);
-            }
-          }
-        });
-      }
+
 
       // Intersection Observer para animar seções
       const observer = new IntersectionObserver((entries) => {
@@ -1035,6 +1020,7 @@
     });
   </script>
 
+  <script src="../js/utm.js"></script>
 </body>
 
 </html>
