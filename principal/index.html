@@ -6,7 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Acampamento Estoico</title>
 
-  <link rel="stylesheet" href="../css/principal.css">
+  <!-- CSS Crítico inline (acima da dobra) — elimina bloqueio de renderização -->
+  <style>
+    :root{--cor-papel:#F2EAD8;--cor-papel-claro:#FBF7EE;--cor-areia:#DCC8A0;--cor-oliva:#45452B;--cor-noite:#1F2018;--cor-terracota:#B5482A;--cor-terracota-clara:#E08A5B;--fonte-titulo:'Fraunces',serif;--fonte-texto:'Figtree',sans-serif}
+    body{margin:0;padding:0;font-family:var(--fonte-texto);background-color:var(--cor-papel);color:var(--cor-noite);-webkit-font-smoothing:antialiased}
+    img{max-width:100%;height:auto;display:block}
+    .dobra{padding:60px 20px;display:flex;flex-direction:column;align-items:center}
+    .bg-papel{background-color:var(--cor-papel)}
+    .container{width:100%;max-width:800px;margin:0 auto}
+    h1,h2,h3,h4,h5,h6{font-family:var(--fonte-titulo);margin:0 0 20px 0;line-height:1.1;font-weight:700}
+    h1{font-size:38px;text-align:center;text-transform:uppercase}
+    .hero-sub{font-family:var(--fonte-texto);font-size:20px;font-weight:400;line-height:1.4;color:var(--cor-noite);margin-bottom:40px;text-align:center}
+    .destaque{color:var(--cor-terracota);font-style:italic;font-weight:700}
+    .rotulo{font-family:var(--fonte-texto);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:1px;color:var(--cor-oliva);border:1px solid var(--cor-oliva);padding:6px 12px;border-radius:4px;display:inline-block;margin-bottom:24px}
+    .hero{padding-top:40px;text-align:center;padding-bottom:60px;overflow:hidden}
+    .hero .logo{max-width:150px;margin:0 auto 40px auto}
+    .hero .hero-img{max-width:100%;margin:0 auto;margin-top:20px}
+    @media(min-width:992px){
+      h1{font-size:52px;text-align:left}
+      .hero-sub{font-size:22px;text-align:left;margin-bottom:0}
+      .container.hero-container{max-width:1288px;display:grid;grid-template-columns:1fr 1.2fr;align-items:center;gap:80px}
+      .hero-text-col{text-align:left;padding-bottom:60px}
+      .hero-img-col{display:flex;justify-content:flex-end}
+      .hero .logo{max-width:130px;margin:0 0 30px 0}
+      .hero .rotulo{margin-bottom:20px}
+      .hero{padding-top:80px;padding-bottom:0}
+      .hero .hero-img{margin-top:0;margin-left:auto;margin-right:0;max-width:110%;align-self:flex-end}
+    }
+    @media(min-width:768px){h1{font-size:56px}}
+  </style>
+  <!-- CSS completo carregado de forma assíncrona (não bloqueia renderização) -->
+  <link rel="preload" href="../css/principal.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/principal.css"></noscript>
 
   <!-- Meta Description (SEO) -->
   <meta name="description" content="Acampamento Estoico — A maior oficina de estoicismo do Brasil. Em um sábado, domine os princípios estoicos que já transformaram 3 mil alunos. Online e ao vivo.">
@@ -74,7 +105,7 @@
     <div class="container hero-container">
 
       <div class="hero-text-col">
-        <img width="320" height="213" src="../assets/images/Logo2.webp" alt="Acampamento Estoico" class="logo">
+        <img width="263" height="175" src="../assets/images/Logo2.webp" alt="Acampamento Estoico" class="logo">
 
         <div class="rotulo">
           17 de outubro ONLINE E AO VIVO
@@ -87,7 +118,7 @@
       </div>
 
       <div class="hero-img-col">
-        <img fetchpriority="high" width="780" height="390" src="../assets/images/hero_principal.webp" alt="Hero"
+        <img fetchpriority="high" width="651" height="326" src="../assets/images/hero_principal.webp" alt="Hero"
           class="hero-img">
       </div>
 
