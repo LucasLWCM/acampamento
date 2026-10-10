@@ -741,6 +741,7 @@ if(isMobile) {
     
     tr.style.overflowX = 'hidden';
     tr.style.scrollSnapType = 'none';
+    tr.style.scrollBehavior = 'auto';
     
     var hint = cr.querySelector('.cr-hint');
     if(hint) hint.innerHTML = "continue rolando para baixo";
@@ -753,14 +754,21 @@ if(isMobile) {
     // setTimeout to ensure layout is calculated
     setTimeout(updateH, 100);
     
+    var st_ticking = false;
     window.addEventListener('scroll', function() {
-        var rect = wrap.getBoundingClientRect();
-        var maxS = tr.scrollWidth - tr.clientWidth;
-        var st = -rect.top + (window.innerHeight * 0.1);
-        if(st > 0) {
-            tr.scrollLeft = Math.min(st, maxS);
-        } else {
-            tr.scrollLeft = 0;
+        if (!st_ticking) {
+            window.requestAnimationFrame(function() {
+                var rect = wrap.getBoundingClientRect();
+                var maxS = tr.scrollWidth - tr.clientWidth;
+                var st = -rect.top + (window.innerHeight * 0.1);
+                if(st > 0) {
+                    tr.scrollLeft = Math.min(st, maxS);
+                } else {
+                    tr.scrollLeft = 0;
+                }
+                st_ticking = false;
+            });
+            st_ticking = true;
         }
     }, {passive: true});
 } else {
