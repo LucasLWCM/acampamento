@@ -8,32 +8,174 @@
 
   <!-- CSS Crítico inline (acima da dobra) — elimina bloqueio de renderização -->
   <style>
-    :root{--cor-papel:#F2EAD8;--cor-papel-claro:#FBF7EE;--cor-areia:#DCC8A0;--cor-oliva:#45452B;--cor-noite:#1F2018;--cor-terracota:#B5482A;--cor-terracota-clara:#E08A5B;--fonte-titulo:'Fraunces',serif;--fonte-texto:'Figtree',sans-serif}
-    body{margin:0;padding:0;font-family:var(--fonte-texto);background-color:var(--cor-papel);color:var(--cor-noite);-webkit-font-smoothing:antialiased}
-    img{max-width:100%;height:auto;display:block}
-    .dobra{padding:60px 20px;display:flex;flex-direction:column;align-items:center}
-    .bg-papel{background-color:var(--cor-papel)}
-    .container{width:100%;max-width:800px;margin:0 auto}
-    h1,h2,h3,h4,h5,h6{font-family:var(--fonte-titulo);margin:0 0 20px 0;line-height:1.1;font-weight:700}
-    h1{font-size:38px;text-align:center;text-transform:uppercase}
-    .hero-sub{font-family:var(--fonte-texto);font-size:20px;font-weight:400;line-height:1.4;color:var(--cor-noite);margin-bottom:40px;text-align:center}
-    .destaque{color:var(--cor-terracota);font-style:italic;font-weight:700}
-    .rotulo{font-family:var(--fonte-texto);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:1px;color:var(--cor-oliva);border:1px solid var(--cor-oliva);padding:6px 12px;border-radius:4px;display:inline-block;margin-bottom:24px}
-    .hero{padding-top:40px;text-align:center;padding-bottom:60px;overflow:hidden}
-    .hero .logo{max-width:150px;margin:0 auto 40px auto}
-    .hero .hero-img{max-width:100%;margin:0 auto;margin-top:20px}
-    @media(min-width:992px){
-      h1{font-size:52px;text-align:left}
-      .hero-sub{font-size:22px;text-align:left;margin-bottom:0}
-      .container.hero-container{max-width:1288px;display:grid;grid-template-columns:1fr 1.2fr;align-items:center;gap:80px}
-      .hero-text-col{text-align:left;padding-bottom:60px}
-      .hero-img-col{display:flex;justify-content:flex-end}
-      .hero .logo{max-width:130px;margin:0 0 30px 0}
-      .hero .rotulo{margin-bottom:20px}
-      .hero{padding-top:80px;padding-bottom:0}
-      .hero .hero-img{margin-top:0;margin-left:auto;margin-right:0;max-width:110%;align-self:flex-end}
+    :root {
+      --cor-papel: #F2EAD8;
+      --cor-papel-claro: #FBF7EE;
+      --cor-areia: #DCC8A0;
+      --cor-oliva: #45452B;
+      --cor-noite: #1F2018;
+      --cor-terracota: #B5482A;
+      --cor-terracota-clara: #E08A5B;
+      --fonte-titulo: 'Fraunces', serif;
+      --fonte-texto: 'Figtree', sans-serif
     }
-    @media(min-width:768px){h1{font-size:56px}}
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--fonte-texto);
+      background-color: var(--cor-papel);
+      color: var(--cor-noite);
+      -webkit-font-smoothing: antialiased
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .dobra {
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+
+    .bg-papel {
+      background-color: var(--cor-papel)
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--fonte-titulo);
+      margin: 0 0 20px 0;
+      line-height: 1.1;
+      font-weight: 700
+    }
+
+    h1 {
+      font-size: 38px;
+      text-align: center;
+      text-transform: uppercase
+    }
+
+    .hero-sub {
+      font-family: var(--fonte-texto);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--cor-noite);
+      margin-bottom: 40px;
+      text-align: center
+    }
+
+    .destaque {
+      color: var(--cor-terracota);
+      font-style: italic;
+      font-weight: 700
+    }
+
+    .rotulo {
+      font-family: var(--fonte-texto);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--cor-oliva);
+      border: 1px solid var(--cor-oliva);
+      padding: 6px 12px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 24px
+    }
+
+    .hero {
+      padding-top: 40px;
+      text-align: center;
+      padding-bottom: 60px;
+      overflow: hidden
+    }
+
+    .hero .logo {
+      max-width: 150px;
+      margin: 0 auto 40px auto
+    }
+
+    .hero .hero-img {
+      max-width: 100%;
+      margin: 0 auto;
+      margin-top: 20px
+    }
+
+    @media(min-width:992px) {
+      h1 {
+        font-size: 52px;
+        text-align: left
+      }
+
+      .hero-sub {
+        font-size: 22px;
+        text-align: left;
+        margin-bottom: 0
+      }
+
+      .container.hero-container {
+        max-width: 1288px;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        align-items: center;
+        gap: 80px
+      }
+
+      .hero-text-col {
+        text-align: left;
+        padding-bottom: 60px
+      }
+
+      .hero-img-col {
+        display: flex;
+        justify-content: flex-end
+      }
+
+      .hero .logo {
+        max-width: 130px;
+        margin: 0 0 30px 0
+      }
+
+      .hero .rotulo {
+        margin-bottom: 20px
+      }
+
+      .hero {
+        padding-top: 80px;
+        padding-bottom: 0
+      }
+
+      .hero .hero-img {
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: 0;
+        max-width: 110%;
+        align-self: flex-end
+      }
+    }
+
+    @media(min-width:768px) {
+      h1 {
+        font-size: 56px
+      }
+    }
 
     /* Estilos do Card de Oferta Única com Timer */
     .card-oferta-unica {
@@ -50,6 +192,7 @@
       border: 1px solid rgba(0, 0, 0, 0.08);
       position: relative;
     }
+
     .timer-alerta-box {
       background: #FEF2F2;
       border: 1px solid #FECACA;
@@ -62,6 +205,7 @@
       margin-bottom: 24px;
       box-sizing: border-box;
     }
+
     .timer-badge {
       background: #FEE2E2;
       color: #DC2626;
@@ -74,6 +218,7 @@
       display: inline-block;
       flex-shrink: 0;
     }
+
     .timer-texto {
       color: #DC2626;
       font-size: 13px;
@@ -81,6 +226,7 @@
       line-height: 1.25;
       text-align: left;
     }
+
     .titulo-oferta-card {
       font-family: var(--fonte-titulo);
       font-size: clamp(24px, 4vw, 30px);
@@ -89,12 +235,14 @@
       color: #1F2018;
       margin: 0 0 20px 0;
     }
+
     .lista-beneficios-unica {
       list-style: none;
       padding: 0;
       margin: 0 0 24px 0;
       text-align: left;
     }
+
     .lista-beneficios-unica li {
       display: flex;
       align-items: center;
@@ -106,9 +254,11 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       line-height: 1.35;
     }
+
     .lista-beneficios-unica li:last-child {
       border-bottom: none;
     }
+
     .lista-beneficios-unica .check-ico {
       width: 22px;
       height: 22px;
@@ -122,18 +272,22 @@
       font-size: 13px;
       flex-shrink: 0;
     }
+
     .bloco-preco-unico {
       margin: 20px 0 24px;
     }
+
     .preco-de-alerta {
       margin: 0 0 4px 0;
       color: #DC2626;
       font-size: 15px;
       font-weight: 700;
     }
+
     .preco-de-alerta .riscado {
       text-decoration: line-through;
     }
+
     .preco-destaque-grande {
       font-family: var(--fonte-titulo);
       font-size: clamp(54px, 9vw, 68px);
@@ -143,6 +297,7 @@
       margin: 4px 0 0;
       letter-spacing: -1px;
     }
+
     .btn-oferta-dourado {
       display: block;
       width: 100%;
@@ -160,11 +315,46 @@
       box-shadow: 0 8px 24px rgba(216, 152, 45, 0.4);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
+      animation: botaoPulo 2.2s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
     }
+
     .btn-oferta-dourado:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(216, 152, 45, 0.55);
+      animation-play-state: paused;
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 36px rgba(216, 152, 45, 0.65);
     }
+
+    @keyframes botaoPulo {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 8px 24px rgba(216, 152, 45, 0.4);
+      }
+      12% {
+        transform: translateY(-10px) scale(1.04);
+        box-shadow: 0 18px 36px rgba(216, 152, 45, 0.65), 0 0 24px rgba(232, 180, 79, 0.55);
+      }
+      24% {
+        transform: translateY(0) scale(0.98);
+        box-shadow: 0 6px 16px rgba(216, 152, 45, 0.35);
+      }
+      36% {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 12px 28px rgba(216, 152, 45, 0.55), 0 0 16px rgba(232, 180, 79, 0.4);
+      }
+      48% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 8px 24px rgba(216, 152, 45, 0.4);
+      }
+      60% {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 10px 24px rgba(216, 152, 45, 0.45);
+      }
+      70% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 8px 24px rgba(216, 152, 45, 0.4);
+      }
+    }
+
     .garantia-subtexto {
       color: #C8963E;
       font-size: 12px;
@@ -174,6 +364,7 @@
       margin: 16px 0 14px;
       text-transform: uppercase;
     }
+
     .selos-seguranca {
       display: flex;
       align-items: center;
@@ -183,18 +374,22 @@
       font-size: 13px;
       font-weight: 600;
     }
+
     @media(max-width: 480px) {
       .card-oferta-unica {
         padding: 24px 18px 28px;
       }
+
       .timer-alerta-box {
         flex-direction: column;
         text-align: center;
         gap: 6px;
       }
+
       .timer-texto {
         text-align: center;
       }
+
       .btn-oferta-dourado {
         font-size: 16px;
         padding: 16px 20px;
@@ -203,10 +398,13 @@
   </style>
   <!-- CSS completo carregado de forma assíncrona (não bloqueia renderização) -->
   <link rel="preload" href="../css/principal.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="../css/principal.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="../css/principal.css">
+  </noscript>
 
   <!-- Meta Description (SEO) -->
-  <meta name="description" content="Acampamento Estoico — A maior oficina de estoicismo do Brasil. Em um sábado, domine os princípios estoicos que já transformaram 3 mil alunos. Online e ao vivo.">
+  <meta name="description"
+    content="Acampamento Estoico — A maior oficina de estoicismo do Brasil. Em um sábado, domine os princípios estoicos que já transformaram 3 mil alunos. Online e ao vivo.">
 
   <!-- Otimização de Performance (Preconnect & Preload) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -214,9 +412,15 @@
   <link rel="preload" as="image" href="../assets/images/hero_principal.webp" fetchpriority="high">
 
   <!-- Google Fonts — carregamento assíncrono (não bloqueia renderização) -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&display=swap"></noscript>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700;1,9..144,900&display=swap">
+  </noscript>
 
   <!-- Start VWO Async SmartCode -->
   <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
@@ -691,7 +895,7 @@
         <!-- Timer Alerta -->
         <div class="timer-alerta-box">
           <span class="timer-badge timer-clock">00:00:00</span>
-          <span class="timer-texto">Hoje encerra o Lote 1. Após o cronômetro zerar, o valor vai para R$ 97,00</span>
+          <span class="timer-texto">Hoje encerra o Lote 1. Após o cronômetro zerar, o valor vai para R$ 47,00</span>
         </div>
 
         <h3 class="titulo-oferta-card">Hoje você garante tudo isso por apenas:</h3>
@@ -709,15 +913,16 @@
           <div class="preco-destaque-grande">R$ 24,00</div>
         </div>
 
-        <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7"
-          class="btn-oferta-dourado pulse">Quero dominar o estoicismo</a>
+        <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7" class="btn-oferta-dourado pulse">Quero
+          dominar o estoicismo</a>
 
-        <p class="garantia-subtexto">ACESSO AO VIVO · 7 DIAS DE GARANTIA</p>
+        <p class="garantia-subtexto">ACESSO AO VIVO · COM CONTEÚDOS IMEDIATOS</p>
 
         <div class="selos-seguranca">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="m9 12 2 2 4-4"/>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="m9 12 2 2 4-4" />
           </svg>
           <span>Compra 100% Segura</span>
         </div>
@@ -995,7 +1200,7 @@
         <!-- Timer Alerta -->
         <div class="timer-alerta-box">
           <span class="timer-badge timer-clock">00:00:00</span>
-          <span class="timer-texto">Hoje encerra o Lote 1. Após o cronômetro zerar, o valor vai para R$ 97,00</span>
+          <span class="timer-texto">Hoje encerra o Lote 1. Após o cronômetro zerar, o valor vai para R$ 47,00</span>
         </div>
 
         <h3 class="titulo-oferta-card">Hoje você garante tudo isso por apenas:</h3>
@@ -1013,15 +1218,16 @@
           <div class="preco-destaque-grande">R$ 24,00</div>
         </div>
 
-        <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7"
-          class="btn-oferta-dourado pulse">Quero dominar o estoicismo</a>
+        <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7" class="btn-oferta-dourado pulse">Quero
+          dominar o estoicismo</a>
 
         <p class="garantia-subtexto">ACESSO AO VIVO · 7 DIAS DE GARANTIA</p>
 
         <div class="selos-seguranca">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <path d="m9 12 2 2 4-4"/>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="m9 12 2 2 4-4" />
           </svg>
           <span>Compra 100% Segura</span>
         </div>
