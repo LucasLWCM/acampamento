@@ -34,6 +34,172 @@
       .hero .hero-img{margin-top:0;margin-left:auto;margin-right:0;max-width:110%;align-self:flex-end}
     }
     @media(min-width:768px){h1{font-size:56px}}
+
+    /* Estilos do Card de Oferta Única com Timer */
+    .card-oferta-unica {
+      background: #FFFFFF;
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+      padding: 32px 28px 36px;
+      max-width: 490px;
+      width: 100%;
+      margin: 0 auto 36px;
+      box-sizing: border-box;
+      text-align: center;
+      color: #1F2018;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+    .timer-alerta-box {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      box-sizing: border-box;
+    }
+    .timer-badge {
+      background: #FEE2E2;
+      color: #DC2626;
+      font-size: 17px;
+      font-weight: 800;
+      font-family: monospace;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .timer-texto {
+      color: #DC2626;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: left;
+    }
+    .titulo-oferta-card {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(24px, 4vw, 30px);
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1F2018;
+      margin: 0 0 20px 0;
+    }
+    .lista-beneficios-unica {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      text-align: left;
+    }
+    .lista-beneficios-unica li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #2D2E24;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      line-height: 1.35;
+    }
+    .lista-beneficios-unica li:last-child {
+      border-bottom: none;
+    }
+    .lista-beneficios-unica .check-ico {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #F4E8D0;
+      color: var(--cor-terracota);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .bloco-preco-unico {
+      margin: 20px 0 24px;
+    }
+    .preco-de-alerta {
+      margin: 0 0 4px 0;
+      color: #DC2626;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .preco-de-alerta .riscado {
+      text-decoration: line-through;
+    }
+    .preco-destaque-grande {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(54px, 9vw, 68px);
+      font-weight: 900;
+      line-height: 1;
+      color: #C8963E;
+      margin: 4px 0 0;
+      letter-spacing: -1px;
+    }
+    .btn-oferta-dourado {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 18px 24px;
+      border-radius: 999px;
+      background: #E5A93C;
+      background: linear-gradient(180deg, #E8B44F 0%, #D8982D 100%);
+      color: #1F2018;
+      font-family: var(--fonte-texto);
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(216, 152, 45, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-oferta-dourado:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(216, 152, 45, 0.55);
+    }
+    .garantia-subtexto {
+      color: #C8963E;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-decoration: underline;
+      margin: 16px 0 14px;
+      text-transform: uppercase;
+    }
+    .selos-seguranca {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #777;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    @media(max-width: 480px) {
+      .card-oferta-unica {
+        padding: 24px 18px 28px;
+      }
+      .timer-alerta-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+      }
+      .timer-texto {
+        text-align: center;
+      }
+      .btn-oferta-dourado {
+        font-size: 16px;
+        padding: 16px 20px;
+      }
+    }
   </style>
   <!-- CSS completo carregado de forma assíncrona (não bloqueia renderização) -->
   <link rel="preload" href="../css/principal.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -518,71 +684,42 @@
   <!-- Dobra 9: Oferta / Preço -->
   <section id="preco" class="dobra bg-noite secao-preco">
     <div class="container container-preco">
-      <h2 class="titulo-preco">ESCOLHA O MELHOR<br>INGRESSO PARA VOCÊ</h2>
+      <h2 class="titulo-preco">GARANTA SUA VAGA NO<br>ACAMPAMENTO ESTOICO</h2>
 
-      <div class="grid-precos">
-        <!-- Card Padrão -->
-        <div class="card-preco padrao" style="padding-top: 32px;">
-          <h3 class="nome-ingresso" style="margin-top: 0;">Ingresso Padrão</h3>
-
-          <ul class="lista-beneficios">
-            <li><span class="icone-check">✓</span> Acampamento Estoico ao vivo</li>
-            <li><span class="icone-check">✓</span> Série Um Dia Com Marco Aurélio</li>
-            <li><span class="icone-check">✓</span> Área de Preparação</li>
-            <li><span class="icone-check">✓</span> Material de Apoio Exclusivo</li>
-            <li><span class="icone-check">✓</span> Certificado de Participação</li>
-            <li class="nao-incluso"><span class="icone-x">✗</span> Aula: Leitura comentada do Manual "A Arte de Viver",
-              de Epicteto</li>
-            <li class="nao-incluso"><span class="icone-x">✗</span> Curso: O Essencial da Filosofia</li>
-            <li class="nao-incluso"><span class="icone-x">✗</span> Aula: As 4 situações que mais desequilibram sua mente
-            </li>
-          </ul>
-
-          <hr class="linha-divisoria dark">
-
-          <p class="preco-de"><span class="riscado">R$ 97,00</span></p>
-          <p class="preco-por">R$ 47,00</p>
-
-          <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7"
-            class="btn-comprar btn-padrao">Garantir o ingresso padrão</a>
+      <!-- Card Oferta Única -->
+      <div class="card-oferta-unica">
+        <!-- Timer Alerta -->
+        <div class="timer-alerta-box">
+          <span class="timer-badge timer-clock">00:00:00</span>
+          <span class="timer-texto">Hoje encerra o Lote 1. Após o cronômetro zerar, o valor vai para R$ 97,00</span>
         </div>
 
-        <!-- Card VIP -->
-        <div class="card-preco vip">
-          <div class="tag-vip-container">
-            <div class="tag-vip">
-              <span class="tag-linha1">INGRESSO VIP! 👇</span>
-              <span class="tag-linha2">8 a cada 10 pessoas escolhem este</span>
-            </div>
-          </div>
+        <h3 class="titulo-oferta-card">Hoje você garante tudo isso por apenas:</h3>
 
-          <div class="img-ingresso-wrapper vip-img">
-            <img width="1536" height="1024" loading="lazy" decoding="async"
-              src="../assets/images/mockup_ingresso_vip.webp" alt="Ingresso VIP" class="img-ingresso"
-              onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#701616';">
-          </div>
-          <h3 class="nome-ingresso vip-nome">Ingresso VIP</h3>
+        <ul class="lista-beneficios-unica">
+          <li><span class="check-ico">✓</span> Acampamento Estoico ao vivo</li>
+          <li><span class="check-ico">✓</span> Série Um Dia Com Marco Aurélio</li>
+          <li><span class="check-ico">✓</span> Área de Preparação</li>
+          <li><span class="check-ico">✓</span> Material de Apoio Exclusivo</li>
+          <li><span class="check-ico">✓</span> Certificado de Participação</li>
+        </ul>
 
-          <ul class="lista-beneficios vip-lista">
-            <li><span class="icone-check vip-check">✓</span> Acampamento Estoico ao vivo</li>
-            <li><span class="icone-check vip-check">✓</span> Série Um Dia Com Marco Aurélio</li>
-            <li><span class="icone-check vip-check">✓</span> Área de Preparação</li>
-            <li><span class="icone-check vip-check">✓</span> Material de Apoio Exclusivo</li>
-            <li><span class="icone-check vip-check">✓</span> Certificado de Participação</li>
-            <li><span class="icone-check vip-check">✓</span> <strong>Aula:</strong> Leitura comentada do Manual "A Arte
-              de Viver", de Epicteto</li>
-            <li><span class="icone-check vip-check">✓</span> <strong>Curso:</strong> O Essencial da Filosofia</li>
-            <li><span class="icone-check vip-check">✓</span> <strong>Aula:</strong> As 4 situações que mais
-              desequilibram sua mente</li>
-          </ul>
+        <div class="bloco-preco-unico">
+          <p class="preco-de-alerta">de <span class="riscado">R$ 97,00</span> por:</p>
+          <div class="preco-destaque-grande">R$ 24,00</div>
+        </div>
 
-          <hr class="linha-divisoria light">
+        <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7"
+          class="btn-oferta-dourado pulse">Quero dominar o estoicismo</a>
 
-          <p class="preco-de vip-de"><span class="riscado">R$ 297,00</span></p>
-          <p class="preco-por vip-por">R$ 67,00</p>
+        <p class="garantia-subtexto">ACESSO AO VIVO · 7 DIAS DE GARANTIA</p>
 
-          <a href="https://checkout.thebank.com.br/7514215763365158912?src=p7"
-            class="btn-comprar btn-vip pulse">Garantir o ingresso VIP</a>
+        <div class="selos-seguranca">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          <span>Compra 100% Segura</span>
         </div>
       </div>
 
@@ -853,113 +990,40 @@
     <div class="container container-preco">
       <h2 class="titulo-preco fade-up">GARANTA O SEU INGRESSO</h2>
 
-      <div class="grid-precos">
-        <!-- Card Padrão -->
-        <div class="card-preco padrao fade-up" style="padding-top: 32px; transition-delay: 0.1s;">
-          <h3 class="nome-ingresso" style="margin-top: 0;">Ingresso Padrão</h3>
-
-          <ul class="lista-beneficios">
-            <li><span class="icone-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Acampamento Estoico ao vivo</li>
-            <li><span class="icone-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Série Um Dia Com Marco Aurélio</li>
-            <li><span class="icone-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Área de Preparação</li>
-            <li><span class="icone-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Material de Apoio Exclusivo</li>
-            <li><span class="icone-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Certificado de Participação</li>
-            <li class="nao-incluso"><span class="icone-x"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg></span> Aula: Leitura comentada do Manual "A Arte de Viver", de Epicteto</li>
-            <li class="nao-incluso"><span class="icone-x"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg></span> Curso: O Essencial da Filosofia</li>
-            <li class="nao-incluso"><span class="icone-x"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg></span> Aula: As 4 situações que mais desequilibram sua mente</li>
-          </ul>
-
-          <hr class="linha-divisoria dark">
-
-          <p class="preco-de"><span class="riscado">R$ 97,00</span></p>
-          <p class="preco-por">R$ 47,00</p>
-
-          <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7"
-            class="btn-comprar btn-padrao">Garantir o ingresso padrão</a>
+      <!-- Card Oferta Única -->
+      <div class="card-oferta-unica fade-up">
+        <!-- Timer Alerta -->
+        <div class="timer-alerta-box">
+          <span class="timer-badge timer-clock">00:00:00</span>
+          <span class="timer-texto">Hoje encerra o Lote 1. Após o cronômetro zerar, o valor vai para R$ 97,00</span>
         </div>
 
-        <!-- Card VIP -->
-        <div class="card-preco vip fade-up" style="transition-delay: 0.3s;">
-          <div class="tag-vip-container">
-            <div class="tag-vip">
-              <span class="tag-linha1">INGRESSO VIP! 👇</span>
-              <span class="tag-linha2">8 a cada 10 pessoas escolhem este</span>
-            </div>
-          </div>
+        <h3 class="titulo-oferta-card">Hoje você garante tudo isso por apenas:</h3>
 
-          <div class="img-ingresso-wrapper vip-img">
-            <img width="1536" height="1024" loading="lazy" decoding="async"
-              src="../assets/images/mockup_ingresso_vip.webp" alt="Ingresso VIP" class="img-ingresso"
-              onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#701616';">
-          </div>
-          <h3 class="nome-ingresso vip-nome">Ingresso VIP</h3>
+        <ul class="lista-beneficios-unica">
+          <li><span class="check-ico">✓</span> Acampamento Estoico ao vivo</li>
+          <li><span class="check-ico">✓</span> Série Um Dia Com Marco Aurélio</li>
+          <li><span class="check-ico">✓</span> Área de Preparação</li>
+          <li><span class="check-ico">✓</span> Material de Apoio Exclusivo</li>
+          <li><span class="check-ico">✓</span> Certificado de Participação</li>
+        </ul>
 
-          <ul class="lista-beneficios vip-lista">
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Acampamento Estoico ao vivo</li>
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Série Um Dia Com Marco Aurélio</li>
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Área de Preparação</li>
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Material de Apoio Exclusivo</li>
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> Certificado de Participação</li>
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> <strong>Aula:</strong> Leitura comentada do Manual "A Arte de Viver", de Epicteto</li>
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> <strong>Curso:</strong> O Essencial da Filosofia</li>
-            <li><span class="icone-check vip-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg></span> <strong>Aula:</strong> As 4 situações que mais desequilibram sua mente</li>
-          </ul>
+        <div class="bloco-preco-unico">
+          <p class="preco-de-alerta">de <span class="riscado">R$ 97,00</span> por:</p>
+          <div class="preco-destaque-grande">R$ 24,00</div>
+        </div>
 
-          <hr class="linha-divisoria light">
+        <a href="https://checkout.thebank.com.br/7514217468014751744?src=p7"
+          class="btn-oferta-dourado pulse">Quero dominar o estoicismo</a>
 
-          <p class="preco-de vip-de"><span class="riscado">R$ 297,00</span></p>
-          <p class="preco-por vip-por">R$ 67,00</p>
+        <p class="garantia-subtexto">ACESSO AO VIVO · 7 DIAS DE GARANTIA</p>
 
-          <a href="https://checkout.thebank.com.br/7514215763365158912?src=p7"
-            class="btn-comprar btn-vip pulse">Garantir o ingresso VIP</a>
+        <div class="selos-seguranca">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8963E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+          <span>Compra 100% Segura</span>
         </div>
       </div>
 
@@ -1098,6 +1162,27 @@
       document.querySelectorAll('.section-animate:not(#garantia)').forEach(sec => {
         observer.observe(sec);
       });
+
+      // Cronômetro regressivo até meia-noite (00h)
+      function iniciarTimerMeiaNoite() {
+        function atualizar() {
+          const agora = new Date();
+          const meiaNoite = new Date(agora);
+          meiaNoite.setHours(24, 0, 0, 0); // 00h de hoje/próximo dia
+          let diff = meiaNoite.getTime() - agora.getTime();
+          if (diff < 0) diff = 0;
+          const horas = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+          const minutos = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+          const segundos = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+          const formatado = `${horas}:${minutos}:${segundos}`;
+          document.querySelectorAll('.timer-clock').forEach(el => {
+            el.textContent = formatado;
+          });
+        }
+        atualizar();
+        setInterval(atualizar, 1000);
+      }
+      iniciarTimerMeiaNoite();
     });
   </script>
 
