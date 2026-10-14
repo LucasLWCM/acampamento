@@ -1377,17 +1377,20 @@
         observer.observe(sec);
       });
 
-      // Cronômetro regressivo até meia-noite (00h)
+      // Cronômetro regressivo que sempre reinicia a 00h00 (fim do dia)
       function iniciarTimerMeiaNoite() {
         function atualizar() {
           const agora = new Date();
-          const meiaNoite = new Date(agora);
-          meiaNoite.setHours(24, 0, 0, 0); // 00h de hoje/próximo dia
-          let diff = meiaNoite.getTime() - agora.getTime();
+          // Define a meia-noite do final do dia atual (23:59:59.999)
+          const fimDoDia = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate(), 23, 59, 59, 999);
+          let diff = fimDoDia.getTime() - agora.getTime();
           if (diff < 0) diff = 0;
-          const horas = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
-          const minutos = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-          const segundos = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+
+          const totalSegundos = Math.floor(diff / 1000);
+          const horas = String(Math.floor(totalSegundos / 3600)).padStart(2, '0');
+          const minutos = String(Math.floor((totalSegundos % 3600) / 60)).padStart(2, '0');
+          const segundos = String(totalSegundos % 60).padStart(2, '0');
+
           const formatado = `${horas}:${minutos}:${segundos}`;
           document.querySelectorAll('.timer-clock').forEach(el => {
             el.textContent = formatado;
